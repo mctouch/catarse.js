@@ -38,8 +38,8 @@ const adminContributionDetail = {
                     innerLabel: 'Id do novo apoiador:',
                     outerLabel: 'Transferir Apoio',
                     placeholder: 'ex: 129908',
-                    successMessage: 'Apoio transferido com sucesso!',
-                    errorMessage: 'O apoio não foi transferido!',
+                    successMessage: 'Support transferred successfully!',
+                    errorMessage: 'Support has not been transferred!',
                     model: models.contributionDetail
                 },
                 reward: {
