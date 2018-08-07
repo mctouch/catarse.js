@@ -7,22 +7,22 @@ const adminTransactionHistory = {
         const contribution = args.contribution,
             mapEvents = _.reduce([{
                 date: contribution.paid_at,
-                name: 'Apoio confirmado'
+                name: 'Support confirmed'
             }, {
                 date: contribution.pending_refund_at,
-                name: 'Reembolso solicitado'
+                name: 'Refund requested'
             }, {
                 date: contribution.refunded_at,
-                name: 'Estorno realizado'
+                name: 'Reversal made'
             }, {
                 date: contribution.created_at,
-                name: 'Apoio criado'
+                name: 'Support created'
             }, {
                 date: contribution.refused_at,
-                name: 'Apoio cancelado'
+                name: 'Support canceled'
             }, {
                 date: contribution.deleted_at,
-                name: 'Apoio excluído'
+                name: 'Support deleted'
             }, {
                 date: contribution.chargeback_at,
                 name: 'Chargeback'
@@ -42,7 +42,7 @@ const adminTransactionHistory = {
     },
     view: function(ctrl) {
         return m('.w-col.w-col-4', [
-            m('.fontweight-semibold.fontsize-smaller.lineheight-tighter.u-marginbottom-20', 'Histórico da transação'),
+            m('.fontweight-semibold.fontsize-smaller.lineheight-tighter.u-marginbottom-20', 'Transaction history'),
             ctrl.orderedEvents.map(cEvent => m('.w-row.fontsize-smallest.lineheight-looser.date-event', [
                 m('.w-col.w-col-6', [
                     m('.fontcolor-secondary', cEvent.date)

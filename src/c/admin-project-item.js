@@ -86,10 +86,10 @@ const adminProjectItem = {
                             project.email
                         ),
                         m('.fontcolor-secondary.fontsize-smallest',
-                            `${project.total_published} projetos criados`
+                            `${project.total_published} created projects`
                         ),
                         m('.fontcolor-secondary.fontsize-smallest',
-                            'Ainda não apoiou projetos'
+                            'Has not yet supported projects'
                         )
                     ])
                 ])

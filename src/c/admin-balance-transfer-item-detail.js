@@ -93,15 +93,15 @@ const adminBalanceTransferItemDetail = {
             m('.w-row.card.card-terciary.u-radius', [
                 m('.w-col.w-col-4', [
                     (bankAccount ? [
-                        m('.fontsize-smaller.fontweight-semibold.lineheight-tighter.u-marginbottom-20', 'Dados bancários'),
+                        m('.fontsize-smaller.fontweight-semibold.lineheight-tighter.u-marginbottom-20', 'Bank data'),
                         m('.fontsize-smallest.lineheight-looser', [
-                            m('span.fontweight-semibold', 'Banco:'),
+                            m('span.fontweight-semibold', 'Bank:'),
                             `${bankAccount.bank_code} - ${(bankAccount.bank_name ? bankAccount.bank_name : '')}`, m('br'),
-                            m('span.fontweight-semibold', 'Agencia:'),
+                            m('span.fontweight-semibold', 'Agency:'),
                             ` ${bankAccount.agency} - ${bankAccount.agency_digit ? bankAccount.agency_digit : ''}`, m('br'),
-                            m('span.fontweight-semibold', 'Conta:'),
+                            m('span.fontweight-semibold', 'Account:'),
                             ` ${bankAccount.account} - ${bankAccount.account_digit ? bankAccount.account_digit : ''}`, m('br'),
-                            m('span.fontweight-semibold', 'Nome:'),
+                            m('span.fontweight-semibold', 'Name:'),
                             bankAccount.owner_name, m('br'),
                             m('span.fontweight-semibold', 'CPF:'),
                             bankAccount.owner_document

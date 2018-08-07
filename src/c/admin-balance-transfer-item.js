@@ -43,7 +43,7 @@ const adminBalanceTransferItem = {
             ]),
             m('.w-col.w-col-2', [
                 m('.fontsize-smallest', [
-                    'Solicitado em: ',
+                    'Requested at: ',
                     m('span.fontsize-small.lineheight-tightest', h.momentify(item.created_at)),
                     m('br'),
                     m('span.fontsize-smallest.lineheight-tightest', `(${h.momentify(item.transfer_limit_date)})`)
@@ -51,7 +51,7 @@ const adminBalanceTransferItem = {
             ]),
             m('.w-col.w-col-2', [
                 m('.fontsize-smallest', [
-                    'Confirmado em: ',
+                    'Confirmed in: ',
                     (item.transferred_at ? m('span.fontsize-small.lineheight-tightest', h.momentify(item.transferred_at)) : ''),
                 ])
             ]),

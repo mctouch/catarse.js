@@ -26,7 +26,7 @@ const adminList = {
                         m('.w-col.w-col-12', [
                             m('.fontsize-base',
                                 list.isLoading() ?
-                              `Carregando ${label.toLowerCase()}...` : [
+                              `Loading ${label.toLowerCase()}...` : [
                                   m('.w-row', [
                                       m('.w-col.w-col-2', [
                                           m('.fontweight-semibold', list.total()),
@@ -54,7 +54,7 @@ const adminList = {
                                         h.loader() :
                                         m('button#load-more.btn.btn-medium.btn-terciary', {
                                             onclick: list.nextPage
-                                        }, 'Carregar mais'),
+                                        }, 'Load more'),
                                     ])
                                 ])
                             ])

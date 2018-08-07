@@ -5,14 +5,14 @@ const announceExpirationModal = {
         return m('div', [
             m('.modal-dialog-content', [
                 m('.fontsize-large.u-text-center.u-marginbottom-30.fontweight-semibold',
-                    'Você confirma?'
+                    'You confirm?'
                 ),
                 m('.fontsize-large.u-text-center.u-marginbottom-30', [
-                    'Sua arrecadação irá terminar no dia  ',
+                    'Your collection will end on the day  ',
                     m('span.expire-date',
                         args.expirationDate
                     ),
-                    ', as 23h59. Até lá, você pode captar recursos e seguir firme na sua campanha! Assim que o seu prazo chegar ao fim, você deverá confirmar os seus dados bancários. A partir de então, depositaremos o dinheiro na sua conta em até 10 dias úteis.'
+                    ', at 11:50 p.m. Until then, you can capture resources and stay strong in your campaign! Once your deadline has expired, you will need to confirm your bank details. We will then deposit the money into your account within 10 business days.'
                 ])
             ]),
             m('.modal-dialog-nav-bottom',
@@ -26,7 +26,7 @@ const announceExpirationModal = {
                         m('button.btn.btn-large.btn-terciary', {
                             onclick: args.displayModal.toggle
                         },
-                            ' Não'
+                            ' No'
                         )
                     ),
                     m('.w-col.w-col-2')

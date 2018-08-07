@@ -107,7 +107,7 @@ const adminSubscriptionDetail = {
             m('.w-col.w-col-4',
                 m('div', [
                     m('.fontweight-semibold.fontsize-smaller.lineheight-tighter.u-marginbottom-20',
-                      'Histórico da transação'
+                      'Transaction history'
                      ),
                     _.map(transitions, transition => m('.fontsize-smallest.lineheight-looser.w-row', [
                         m('.w-col.w-col-6',
@@ -139,7 +139,7 @@ const adminSubscriptionDetail = {
                                 ))
                     ])),
                     m('.fontweight-semibold.fontsize-smaller.lineheight-tighter.u-marginbottom-20.u-margintop-20',
-                      'Notificações'
+                      'Notifications'
                      ),
                     _.map(notifications, notification => m('.fontsize-smallest.lineheight-looser.w-row', [
                         m('.w-col.w-col-6',
@@ -156,26 +156,26 @@ const adminSubscriptionDetail = {
             m('.w-col.w-col-4',
                 m('div', [
                     m('.fontweight-semibold.fontsize-smaller.lineheight-tighter.u-marginbottom-20',
-                        'Detalhes do apoio mensal'
+                        'Monthly support details'
                     ),
                     m('.fontsize-smallest.lineheight-loose', currentPayment() ? [
                         `Início: ${h.momentify(currentPayment().created_at, 'DD/MM/YYYY hh:mm')}`,
                         m('br'),
-                        `Confirmação: ${h.momentify(currentPayment().paid_at, 'DD/MM/YYYY hh:mm')}`,
+                        `Confirmation: ${h.momentify(currentPayment().paid_at, 'DD/MM/YYYY hh:mm')}`,
                         m('br'),
-                        `Valor: R$${currentPayment().amount / 100}`,
+                        `Value: R$${currentPayment().amount / 100}`,
                         m('br'),
                         // 'Taxa: R$3,35',
                         // m('br'),
-                        !_.isEmpty(reward) ? `Recompensa: R$${reward.data.minimum_value / 100} - ${reward.data.title} - ${reward.data.description.substring(0, 90)}(...)` : 'Sem recompensa',
+                        !_.isEmpty(reward) ? `Reward: R$${reward.data.minimum_value / 100} - ${reward.data.title} - ${reward.data.description.substring(0, 90)}(...)` : 'No reward',
                         // m('br'),
                         // 'Anônimo: Não',
                         m('br'),
-                        `Id pagamento: ${currentPayment().id}`,
+                        `Payment ID: ${currentPayment().id}`,
                         m('br'),
                         `Id gateway: ${currentPayment().gateway_id}`,
                         m('br'),
-                        'Apoio:',
+                        'Support:',
                         m.trust('&nbsp;'),
                         currentPayment().subscription_id,
                         // m('br'),
@@ -189,13 +189,13 @@ const adminSubscriptionDetail = {
                         // `Operadora: STONE`,
                         m('br'),
                         currentPayment().payment_method === 'credit_card' ? [
-                            'Cartão ',
+                            'Card ',
                             m.trust('&nbsp;'),
                             `${currentPayment().payment_method_details.first_digits}******${currentPayment().payment_method_details.last_digits}`,
                             m.trust('&nbsp;'),
                             m.trust('&nbsp;'),
                             currentPayment().payment_method_details.brand
-                        ] : 'Boleto'
+                        ] : 'Ticket'
                     ] : '')
                 ])
             ),

@@ -137,7 +137,7 @@ const adminProjectDetail = {
                 m('.w-col.w-col-2', [
                     m('button.btn.btn-small.btn-terciary', {
                         onclick: ctrl.actions.changeUserAction.toggler.toggle
-                    }, 'Trocar realizador'),
+                    }, 'Switch director'),
                     (ctrl.actions.changeUserAction.toggler() ? 
                         m('.dropdown-list.card.u-radius.dropdown-list-medium.zindex-10', {
                             config: ctrl.actionUnload(ctrl.actions.changeUserAction)
@@ -145,7 +145,7 @@ const adminProjectDetail = {
                             m('form.w-form', {
                                 onsubmit: ctrl.actions.changeUserAction.submit
                             }, (!ctrl.actions.changeUserAction.complete()) ? [
-                                m('label', 'Id do novo realizador:'),
+                                m('label', 'Id of the new director:'),
                                 m('input.w-input.text-field[type="tel"][placeholder="ex: 239049"]', {
                                     onchange: m.withAttr('value', ctrl.actions.changeUserAction.newValue),
                                     value: ctrl.actions.changeUserAction.newValue()
@@ -155,34 +155,34 @@ const adminProjectDetail = {
                                 })
                             ] : (!ctrl.actions.changeUserAction.error()) ? [
                                 m('.w-form-done[style="display:block;"]', [
-                                    m('p', 'Usuário transferido com sucesso')
+                                    m('p', 'Successfully transferred user')
                                 ])
                             ] : [
                                 m('.w-form-error[style="display:block;"]', [
-                                    m('p', 'Houve um problema na requisição. Verifique se o usuário que vai receber o projeto possui dados válidos.')
+                                    m('p', 'There was a problem with the request. Verify that the user who will receive the project has valid data.')
                                 ])
                             ])
                         ]) : '')
                 ]),
                 m('.w-col.w-col-2', [
                     (item.mode === 'sub' ?
-                        m('a.btn.btn-small.btn-terciary', { href: `/projects/${item.project_id}/subscriptions_report` }, 'Base de assinantes')
-                        : m('a.btn.btn-small.btn-terciary', { href: `/projects/${item.project_id}/contributions_report` }, 'Relatório de apoios'))
+                        m('a.btn.btn-small.btn-terciary', { href: `/projects/${item.project_id}/subscriptions_report` }, 'Subscriber Base')
+                        : m('a.btn.btn-small.btn-terciary', { href: `/projects/${item.project_id}/contributions_report` }, 'Support report'))
                 ]),
                 (item.mode === 'sub' && item.state === 'online' ?
                     m('.w-col.w-col-3', [
                         m('button.btn.btn-small.btn-terciary', {
                             onclick: ctrl.actions.projectRevert.toggler.toggle
-                        }, (totalSubscriptions > 0 ? 'Encerrar projeto' : 'Virar projeto para Draft')),
+                        }, (totalSubscriptions > 0 ? 'Close project' : 'Turn project to Draft')),
                         (ctrl.actions.projectRevert.toggler() ? 
                             (ctrl.actions.projectRevert.loading() ? h.loader()
                                 : m('.dropdown-list.card.u-radius.dropdown-list-medium.zindex-10', [
                                     m('form.w-form', {
                                         onsubmit: ctrl.actions.projectRevert.submit
                                     }, [
-                                        m('label', (totalSubscriptions > 0 ? 'Ao encerrar esse projeto, ele será convertido para o status FINALIZADO (Flex) e suas assinaturas serão transformadas em CANCELADAS. Tem certeza que deseja encerrar esse projeto?' : 'Tem certeza que deseja transformar esse projeto em Draft?')),
+                                        m('label', (totalSubscriptions > 0 ? 'When you close this project, it will be converted to the FINALIZED (Flex) status and your signatures will be transformed into CANCELED. Are you sure you want to close this project? ' : 'Are you sure you want to turn this project into Draft?')),
                                         m('input.w-button.btn.btn-small[type="submit"]', {
-                                            value: (totalSubscriptions > 0 ? 'Encerrar projeto' : 'Virar projeto para Draft' )
+                                            value: (totalSubscriptions > 0 ? 'Close project' : 'Turn project to Draft' )
                                         })
                                     ])
                                 ])) : '')
@@ -191,7 +191,7 @@ const adminProjectDetail = {
             m('.w-row.card.card-terciary.u-radius', [
                 m('.w-col.w-col-4', [
                     m('.fontsize-smaller.fontweight-semibold.lineheight-tighter.u-marginbottom-20',
-                        'Detalhes do projeto'
+                        'Design Dalethes'
                     ),
                     m('.fontsize-smallest.fontweight-semibold.u-marginbottom-20',
                         `catarse.me/${item.permalink}`
@@ -203,61 +203,61 @@ const adminProjectDetail = {
                         ` R$ ${h.formatNumber(item.goal, 2, 3)}\ `,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Alcançado:'
+                            'Reached:'
                         ),
                         ` R$ ${h.formatNumber(item.pledged, 2, 3)}\ `
                     ]),
                     m('.fontsize-smallest.lineheight-looser', [
                         m('span.fontweight-semibold',
-                            'Início: '
+                            'Start: '
                         ),
                         h.momentify(item.project_online_date, 'DD/MM/YYYY, HH:mm'),
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Término: '
+                            'Finished: '
                         ),
                         h.momentify(item.project_expires_at, 'DD/MM/YYYY, HH:mm'),
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Últ. atualização: '
+                            'Last update: '
                         ),
                         h.momentify(item.updated_at, 'DD/MM/YYYY, HH:mm'),
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Novidades: '
+                            'News: '
                         ),
                         item.posts_count,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Últ. novidade: '
+                            'Latest novelty: '
                         ),
                         h.momentify(item.last_post, 'DD/MM/YYYY, HH:mm')
                     ])
                 ]),
                 m('.w-col.w-col-4', [
                     m('.fontsize-smaller.fontweight-semibold.lineheight-tighter.u-marginbottom-20',
-                        'Dados bancários'
+                        'Bank data'
                     ),
                     m('.fontsize-smallest.lineheight-looser', [
                         m('span.fontweight-semibold',
-                            'Banco: '
+                            'Bank: '
                         ),
                         bankAccount.bank_name,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Agencia: '
+                            'Agency: '
                         ),
                         `${bankAccount.agency}-${bankAccount.agency_digit}`,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Conta: '
+                            'Account: '
                         ),
                         `${bankAccount.account}-${bankAccount.account_digit}`,
                         m('br'),
                         bankAccount.account_type,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Nome: '
+                            'Name: '
                         ),
                         bankAccount.owner_name,
                         m('br'),
@@ -269,11 +269,11 @@ const adminProjectDetail = {
                 ]),
                 m('.w-col.w-col-4', [
                     m('.fontsize-smaller.fontweight-semibold.lineheight-tighter.u-marginbottom-20',
-                        'Detalhes do realizador'
+                        'Details of the director'
                     ),
                     m('.fontsize-smallest.lineheight-looser.u-marginbottom-20', [
                         m('span.fontweight-semibold',
-                            'Nome: '
+                            'Name: '
                         ),
                         user.name,
                         m('br'),
@@ -283,7 +283,7 @@ const adminProjectDetail = {
                         user.owner_document,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Inscrição estadual: '
+                            'State registration: '
                         ),
                         user.state_inscription,
                         m('br'),
@@ -293,18 +293,18 @@ const adminProjectDetail = {
                         user.email,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Endereço: '
+                            'Address: '
                         ),
                         m.trust('&nbsp;'),
                         ` ${userAddress.address_street}, ${userAddress.address_number} ${userAddress.address_complement} - ${userAddress.address_city} - ${userAddress.address_state} ${userAddress.address_zip_code}`,
                         m('br'),
                         m('span.fontweight-semibold',
-                            'Telefone:'
+                            'telephone:'
                         ),
                         userAddress.phone_number
                     ]),
                     m('.fontsize-smallest.lineheight-looser', [
-                        `${user.total_published_projects} projetos criados `,
+                        `${user.total_published_projects} created projects `,
                         m('br'),
                         m.trust('&nbsp;'),
                         m('br')

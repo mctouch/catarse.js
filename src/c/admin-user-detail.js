@@ -26,27 +26,27 @@ const adminUserDetail = {
             actions: {
                 reset: {
                     property: 'password',
-                    callToAction: 'Redefinir',
-                    innerLabel: 'Nova senha de Usuário:',
-                    outerLabel: 'Redefinir senha',
+                    callToAction: 'Reset',
+                    innerLabel: 'New User Password:',
+                    outerLabel: 'Redefine password',
                     placeholder: 'ex: 123mud@r',
                     model: models.user
                 },
                 ban: {
                     updateKey: 'id',
-                    callToAction: 'Banir usuário',
-                    innerLabel: 'Tem certeza que deseja banir o usuário?',
-                    outerLabel: 'Banir usuário',
+                    callToAction: 'Ban user',
+                    innerLabel: 'Are you sure you want to ban the user?',
+                    outerLabel: 'Ban user',
                     model: models.user
                 },
                 reactivate: {
                     property: 'deactivated_at',
                     updateKey: 'id',
-                    callToAction: 'Reativar',
-                    innerLabel: 'Tem certeza que deseja reativar esse usuário?',
-                    successMessage: 'Usuário reativado com sucesso!',
-                    errorMessage: 'O usuário não pôde ser reativado!',
-                    outerLabel: 'Reativar usuário',
+                    callToAction: 'Reactivate',
+                    innerLabel: 'Are you sure you want to re-enable this user?',
+                    successMessage: 'User reactivated successfully!',
+                    errorMessage: 'User could not be reactivated!',
+                    outerLabel: 'Reactivate user',
                     forceValue: null,
                     model: models.user
                 }

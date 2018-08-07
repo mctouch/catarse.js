@@ -54,7 +54,7 @@ const adminInputAction = {
     },
     view: function(ctrl, args) {
         const data = args.data,
-            btnValue = (ctrl.l()) ? 'por favor, aguarde...' : data.callToAction;
+            btnValue = (ctrl.l()) ? 'please wait...' : data.callToAction;
 
         return m('.w-col.w-col-2', [
             m('button.btn.btn-small.btn-terciary', {
@@ -78,7 +78,7 @@ const adminInputAction = {
                     ])
                 ] : [
                     m('.w-form-error[style="display:block;"]', [
-                        m('p', `Houve um problema na requisição. ${data.errorMessage}`)
+                        m('p', `There was a problem with the request. ${data.errorMessage}`)
                     ])
                 ])
             ]) : ''

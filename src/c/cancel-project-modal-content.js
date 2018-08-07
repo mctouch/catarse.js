@@ -13,7 +13,7 @@ const cancelProjectModalContent = {
             check = m.prop(''),
             commentHtml = m.prop(''),
             showNextModal = () => {
-                if (check() === 'cancelar-projeto') {
+                if (check() === 'cancel-project') {
                     showRedactor(true);
                 } else {
                     checkError(true);
@@ -39,15 +39,15 @@ const cancelProjectModalContent = {
                 m("input[id='anchor'][name='anchor'][type='hidden'][value='posts']"),
                 m("input[id='cancel_project'][name='cancel_project'][type='hidden'][value='true']"),
                 m('.fontsize-smaller.u-marginbottom-20',
-                    'Conte porque você está cancelando sua campanha. Essa mensagem será enviada por email para os seus apoiadores e estará pública na aba "Novidades" do seu projeto no Catarse.'
+                    'Tell me why you're canceling your campaign. Essa mensagem será enviada por email para os seus apoiadores e estará pública na aba "News" do seu projeto no Catarse.'
                 ),
                 m('.w-form', [
                     m("label.string.required.field-label.field-label.fontweight-semibold[for='project_posts_attributes_0_title']",
-                        'Título'
+                        'Title'
                     ),
                     m("input.string.required.w-input.text-field.w-input.text-field.positive[id='project_posts_attributes_0_title'][name='project[posts_attributes][0][title]'][type='text']"),
                     m("label.string.optional.field-label.field-label.fontweight-semibold[for='project_posts_attributes_0_comment']",
-                        'Texto'
+                        'Text'
                     ),
                     h.redactor('project[posts_attributes][0][comment_html]', ctrl.commentHtml)
                 ]),
@@ -55,11 +55,11 @@ const cancelProjectModalContent = {
                     m('.w-row', [
                         m('.w-col.w-col-3'),
                         m('.u-text-center.w-col.w-col-6', [
-                            m("input.btn.btn-inactive.btn-large.u-marginbottom-20[name='commit'][type='submit'][value='Cancelar campanha']"),
+                            m("input.btn.btn-inactive.btn-large.u-marginbottom-20[name='commit'][type='submit'][value='Cancel campaign']"),
                             m(".fontsize-small.link-hidden-light[id='modal-close']", {
                                 onclick: args.displayModal.toggle
                             },
-                                'Cancelar'
+                                'Cancel'
                             )
                         ]),
                         m('.w-col.w-col-3')
@@ -67,25 +67,25 @@ const cancelProjectModalContent = {
                 )
             ] : [
                 m('.fontsize-small.u-marginbottom-20', [
-                    'Após o cancelamento, sua campanha será expirada e os seus apoiadores serão reembolsados dentro das próximas 24h horas.',
+                    'Upon cancellation, your campaign will expire and your supporters will be refunded within the next 24 hours.',
                     m('span.fontweight-semibold',
-                        'Essa ação não poderá ser desfeita!'
+                        'This action can not be undone!'
                     ),
                     m('br'),
                     m('span.fontweight-semibold')
                 ]),
                 m('.fontsize-small.u-marginbottom-10', [
-                    'Se você tem certeza que deseja cancelar seu projeto, confirme escrevendo ',
+                    'If you are sure you want to cancel your project, please confirm by writing ',
                     m('span.fontweight-semibold.text-error',
-                        'cancelar-projeto '
+                        'cancel-project '
                     ),
-                    'no campo abaixo. Em seguida lhe pediremos para escrever uma mensagem aos apoiadores e seu projeto será então cancelado.',
+                    'in the field below. Then we will ask you to write a message to the supporters and your project will then be canceled.',
                     m('span.fontweight-semibold.text-error')
                 ]),
                 m('.w-form', [
                     m('input.positive.text-field.u-marginbottom-40.w-input[maxlength=\'256\'][type=\'text\']', {
                         class: !ctrl.checkError() ? false : 'error',
-                        placeholder: 'cancelar-projeto',
+                        placeholder: 'cancel-project',
                         onchange: m.withAttr('value', ctrl.check)
                     })
                 ]),
@@ -95,11 +95,11 @@ const cancelProjectModalContent = {
                         m('.u-text-center.w-col.w-col-6', [
                             m('button.btn.btn-inactive.btn-large.u-marginbottom-20', {
                                 onclick: ctrl.showNextModal
-                            }, 'Próximo passo >'),
+                            }, 'Next step >'),
                             m('a.fontsize-small.link-hidden-light[href=\'#\']', {
                                 onclick: args.displayModal.toggle
                             },
-                                'Cancelar'
+                                'Cancel'
                             )
                         ]),
                         m('.w-col.w-col-3')
