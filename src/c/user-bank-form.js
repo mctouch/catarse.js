@@ -22,27 +22,27 @@ const userBankForm = {
             popularBanks = [{
                 id: '51',
                 code: '001',
-                name: 'Banco do Brasil S.A.'
+                name: 'Bank of Brazil SA.'
             }, {
                 id: '131',
                 code: '341',
-                name: 'Itaú Unibanco S.A.'
+                name: 'Itaú Unibanco SA.'
             }, {
                 id: '122',
                 code: '104',
-                name: 'Caixa Econômica Federal'
+                name: 'Federal Savings Bank'
             }, {
                 id: '104',
                 code: '033',
-                name: 'Banco Santander  (Brasil)  S.A.'
+                name: 'Banco Santander (Brasil) SA.'
             }, {
                 id: '127',
                 code: '399',
-                name: 'HSBC Bank Brasil S.A. - Banco Múltiplo'
+                name: 'HSBC Bank Brasil SA - Multiple Bank'
             }, {
                 id: '23',
                 code: '237',
-                name: 'Banco Bradesco S.A.'
+                name: 'Investments'
             }];
 
         userVM.getUserBankAccount(user.id).then((data) => {
@@ -57,7 +57,7 @@ const userBankForm = {
                 fields.bank_account_type(bankAccount().account_type);
                 args.bankCode(bankAccount().bank_id);
             } else {
-                fields.bank_account_type('conta_corrente');
+                fields.bank_account_type('account_current');
             }
         });
         banksLoader.load().then(banks);
@@ -83,7 +83,7 @@ const userBankForm = {
                 m(`.w-col.w-col-5.w-sub-col${ctrl.showOtherBanksInput() ? '.w-hidden' : ''}[id='bank_select']`,
                   m('.input.select.required.user_bank_account_bank_id', [
                       m('label.field-label.fontsize-smaller',
-                        'Banco'
+                        'Bank'
                        ),
                       m('select.select.required.w-input.text-field.bank-select.positive[id=\'user_bank_account_attributes_bank_id\']', {
                           name: 'user[bank_account_attributes][bank_id]',
@@ -112,7 +112,7 @@ const userBankForm = {
                            )
                       ]),
                       m('.fontsize-smaller.text-error.u-marginbottom-20.fa.fa-exclamation-triangle.w-hidden[data-error-for=\'user_bank_account_attributes_bank_id\']',
-                        ' Selecione um banco'
+                        ' Select a bank'
                        ),
                       ctrl.parsedErrors.inlineError('bank_id')
                   ])
@@ -123,7 +123,7 @@ const userBankForm = {
                      m('.w-col.w-col-12', [
                          m('.input.string.optional.user_bank_account_input_bank_number', [
                              m('label.field-label.fontsize-smaller',
-                               'Número do banco (3 números)'
+                               'Bank Number (3 numbers)'
                               ),
                              m('input.string.optional.w-input.text-field.bank_account_input_bank_number[id=\'user_bank_account_attributes_input_bank_number\'][maxlength=\'3\'][size=\'3\'][type=\'text\']', {
                                  name: 'user[bank_account_attributes][input_bank_number]',
@@ -132,20 +132,20 @@ const userBankForm = {
                              }),
                              m('.fontsize-smaller.text-error.u-marginbottom-20.fa.fa-exclamation-triangle.w-hidden[data-error-for=\'user_bank_account_attributes_input_bank_number\']',
 
-                               ' Número do banco inválido'
+                               ' Invalid bank number'
                               )
                          ]),
                          m('a.w-hidden-small.w-hidden-tiny.alt-link.fontsize-smaller[href=\'javascript:void(0);\'][id=\'show_bank_list\']', {
                              onclick: ctrl.showOtherBanks.toggle
                          }, [
-                             'Busca por nome  ',
+                             'Search by name  ',
                              m.trust('&nbsp;'),
                              m.trust('&gt;')
                          ]),
                          m('a.w-hidden-main.w-hidden-medium.alt-link.fontsize-smaller[href=\'javascript:void(0);\'][id=\'show_bank_list\']', {
                              onclick: ctrl.showOtherBanks.toggle
                          }, [
-                             'Busca por nome  ',
+                             'Search by name  ',
                              m.trust('&nbsp;'),
                              m.trust('&gt;')
                          ])
@@ -162,18 +162,18 @@ const userBankForm = {
                      },
                        m('.card.card-terciary', [
                            m('.fontsize-small.fontweight-semibold.u-marginbottom-10.u-text-center',
-                             'Selecione o seu banco abaixo'
+                             'Select your bank below'
                             ),
                            m('.fontsize-smaller', [
                                m('.w-row.card.card-secondary.fontweight-semibold', [
                                    m('.w-col.w-col-3.w-col-small-3.w-col-tiny-3',
                                      m('div',
-                                       'Número'
+                                       'Number'
                                       )
                                     ),
                                    m('.w-col.w-col-9.w-col-small-9.w-col-tiny-9',
                                      m('div',
-                                       'Nome'
+                                       'Name'
                                       )
                                     )
                                ]),
@@ -209,7 +209,7 @@ const userBankForm = {
                   m('.w-row', [
                       m('.w-col.w-col-7.w-col-small-7.w-col-tiny-7.w-sub-col-middle', [
                           m('label.text.required.field-label.field-label.fontweight-semibold.force-text-dark.fontsize-smaller[for=\'user_bank_account_attributes_agency\']',
-                            'Agência'
+                            'Agency'
                            ),
                           m('input.string.required.w-input.text-field.positive[id=\'user_bank_account_attributes_agency\'][type=\'text\']', {
                               value: fields.agency(),
@@ -221,7 +221,7 @@ const userBankForm = {
                       ]),
                       m('.w-col.w-col-5.w-col-small-5.w-col-tiny-5', [
                           m('label.text.optional.field-label.field-label.fontweight-semibold.force-text-dark.fontsize-smaller[for=\'user_bank_account_attributes_agency_digit\']',
-                            'Dígito agência'
+                            'Agency digit'
                            ),
                           m('input.string.optional.w-input.text-field.positive[id=\'user_bank_account_attributes_agency_digit\'][type=\'text\']', {
                               value: fields.agency_digit(),
@@ -237,7 +237,7 @@ const userBankForm = {
             m('.w-row', [
                 m('.w-col.w-col-5.w-sub-col', [
                     m('label.field-label.fontweight-semibold.fontsize-smaller',
-                      'Tipo de conta'
+                      'Account Type'
                      ),
                     m('.input.select.required.user_bank_account_account_type', [
                         m('select.select.required.w-input.text-field.bank-select.positive[id=\'user_bank_account_attributes_account_type\']', {
@@ -245,18 +245,18 @@ const userBankForm = {
                             class: ctrl.parsedErrors.hasError('account_type') ? 'error' : false,
                             onchange: m.withAttr('value', fields.bank_account_type)
                         }, [
-                            m('option[value=\'conta_corrente\']', {
-                                selected: fields.bank_account_type() === 'conta_corrente'
-                            }, 'Conta corrente'),
-                            m('option[value=\'conta_poupanca\']', {
-                                Selected: fields.bank_account_type() === 'conta_poupanca'
-                            }, 'Conta poupança'),
-                            m('option[value=\'conta_corrente_conjunta\']', {
-                                selected: fields.bank_account_type() === 'conta_corrente_conjunta'
-                            }, 'Conta corrente conjunta'),
-                            m('option[value=\'conta_poupanca_conjunta\']', {
-                                selected: fields.bank_account_type() === 'conta_poupanca_conjunta'
-                            }, 'Conta poupança conjunta'),
+                            m('option[value=\'account_current\']', {
+                                selected: fields.bank_account_type() === 'account_current'
+                            }, 'Current account'),
+                            m('option[value=\'savings account\']', {
+                                Selected: fields.bank_account_type() === 'savings account'
+                            }, 'Savings account'),
+                            m('option[value=\'account_current_content\']', {
+                                selected: fields.bank_account_type() === 'account_current_content'
+                            }, 'Joint checking account'),
+                            m('option[value=\'account_poupanca_conjunta\']', {
+                                selected: fields.bank_account_type() === 'account_poupanca_conjunta'
+                            }, 'Joint savings account'),
                         ]),
                         ctrl.parsedErrors.inlineError('account_type')
                     ])
@@ -265,7 +265,7 @@ const userBankForm = {
                   m('.w-row', [
                       m('.w-col.w-col-7.w-col-small-7.w-col-tiny-7.w-sub-col-middle', [
                           m('label.text.required.field-label.field-label.fontweight-semibold.force-text-dark.fontsize-smaller[for=\'user_bank_account_attributes_account\']',
-                            'No. da conta'
+                            'Account No.'
                            ),
                           m('input.string.required.w-input.text-field.positive[id=\'user_bank_account_attributes_account\'][type=\'text\']', {
                               value: fields.account(),
@@ -277,7 +277,7 @@ const userBankForm = {
                       ]),
                       m('.w-col.w-col-5.w-col-small-5.w-col-tiny-5', [
                           m('label.text.required.field-label.field-label.fontweight-semibold.force-text-dark.fontsize-smaller[for=\'user_bank_account_attributes_account_digit\']',
-                            'Dígito conta'
+                            'Account Digit'
                            ),
                           m('input.string.required.w-input.text-field.positive[id=\'user_bank_account_attributes_account_digit\'][type=\'text\']', {
                               value: fields.account_digit(),

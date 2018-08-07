@@ -204,7 +204,7 @@ const projectsSubscriptionCheckout = {
                                 `R$ ${formatedValue}`
                             ),
                             m(`a.alt-link.fontsize-smaller.u-right[href="/projects/${projectVM.currentProject().project_id}/subscriptions/start?${ctrl.reward().id ? `reward_id=${ctrl.reward().id}` : ''}${ctrl.isEdit() ? `&subscription_id=${ctrl.subscriptionId()}` : ''}${ctrl.subscriptionStatus ? `&subscription_status=${ctrl.subscriptionStatus}` : ''}"]`,
-                                'Editar'
+                                'Edit'
                             )
                         ]),
                         m('.divider.u-marginbottom-10.u-margintop-10'),
@@ -233,21 +233,21 @@ const projectsSubscriptionCheckout = {
                             ctrl.isLongDescription(ctrl.reward()) ? m('a[href="javascript:void(0);"].link-hidden.link-more.u-marginbottom-20', {
                                 onclick: ctrl.toggleDescription.toggle
                             }, [
-                                ctrl.toggleDescription() ? 'menos ' : 'mais ',
+                                ctrl.toggleDescription() ? 'less ' : 'more ',
                                 m('span.fa.fa-angle-down', {
                                     class: ctrl.toggleDescription() ? 'reversed' : ''
                                 })
                             ]) : '',
                             ctrl.reward().deliver_at ? m('.fontcolor-secondary.fontsize-smallest.u-margintop-10', [
                                 m('span.fontweight-semibold',
-                                    'Entrega prevista:'
+                                    'Expected delivery:'
                                 ),
                                 ` ${h.momentify(ctrl.reward().deliver_at, 'MMM/YYYY')}`
                             ]) : '',
                             (rewardVM.hasShippingOptions(ctrl.reward()) || ctrl.reward().shipping_options === 'presential') ?
                             m('.fontcolor-secondary.fontsize-smallest', [
                                 m('span.fontweight-semibold',
-                                    'Forma de envio: '
+                                    'Shipping method: '
                                 ),
                                 window.I18n.t(`shipping_options.${ctrl.reward().shipping_options}`, {
                                     scope: 'projects.contributions'
@@ -280,8 +280,8 @@ const projectsSubscriptionCheckout = {
                                             ]),
                                             m('.w-col.w-col-10.w-col-small-10.w-col-tiny-10', [
                                                 m('.fontcolor-secondary.fontsize-smallest.u-marginbottom-10', [
-                                                    (project ? 'Dados do apoiador ' : 'Dados do usuário '),
-                                                    m(`a.alt-link[href="/not-my-account?redirect_to=${encodeURIComponent(m.route())}"]`, 'Não é você?')
+                                                    (project ? 'Supporter data ' : 'User data '),
+                                                    m(`a.alt-link[href="/not-my-account?redirect_to=${encodeURIComponent(m.route())}"]`, 'No, and you?')
                                                 ]),
                                                 m('.fontsize-base.fontweight-semibold', user.name),
                                                 (user.owner_document ?
@@ -305,7 +305,7 @@ const projectsSubscriptionCheckout = {
                                                 type: 'text',
                                                 onchange: m.withAttr('value', ctrl.vm.fields.completeName),
                                                 value: ctrl.vm.fields.completeName(),
-                                                placeholder: 'Nome Completo'
+                                                placeholder: 'Full name'
                                             }),
                                             ctrl.fieldHasError('completeName')
                                         ]),
@@ -437,7 +437,7 @@ const projectsSubscriptionCheckout = {
                                 ctrl.isLongDescription(ctrl.reward()) ? m('a[href="javascript:void(0);"].link-hidden.link-more.u-marginbottom-20', {
                                     onclick: ctrl.toggleDescription.toggle
                                 }, [
-                                    ctrl.toggleDescription() ? 'menos ' : 'mais ',
+                                    ctrl.toggleDescription() ? 'less ' : 'more ',
                                     m('span.fa.fa-angle-down', {
                                         class: ctrl.toggleDescription() ? 'reversed' : ''
                                     })

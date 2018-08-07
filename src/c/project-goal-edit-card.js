@@ -40,7 +40,7 @@ const projectGoalEditCard = {
             return true;
         };
         const confirmDelete = () => {
-            const r = confirm('Você tem certeza?');
+            const r = confirm('Are you sure?');
             if (r) {
                 if (!goal.id()) {
                     destroyed(true);
@@ -131,12 +131,12 @@ const projectGoalEditCard = {
                     )
                 ]),
 
-                ctrl.valueError() ? inlineError('A meta deve ser igual ou superior a R$10') : '',
-                ctrl.currentError() ? inlineError('A meta deve ser igual ou superior a meta atual') : '',
+                ctrl.valueError() ? inlineError('Goal must be equal to or greater than R $ 10') : '',
+                ctrl.currentError() ? inlineError('Goal must be equal to or greater than current goal') : '',
                 m('.w-row', [
                     m('.w-col.w-col-6',
                         m('.fontsize-small',
-                            'Título:'
+                            'Title:'
                         )
                     ),
                     m('.w-col.w-col-6',
@@ -147,27 +147,27 @@ const projectGoalEditCard = {
                         })
                     )
                 ]),
-                ctrl.titleError() ? inlineError('Título não pode ficar em branco.') : '',
+                ctrl.titleError() ? inlineError('Title can not be empty.') : '',
                 m('.w-row', [
                     m('.w-col.w-col-6',
                         m('.fontsize-small',
-                            'Descrição da meta:'
+                            'Goal Description:'
                         )
                     ),
                     m('.w-col.w-col-6',
-                        m("textarea.height-medium.positive.text-field.w-input[placeholder='O que você vai fazer se atingir essa meta?']", {
+                        m("textarea.height-medium.positive.text-field.w-input[placeholder='What will you do if you reach this goal??']", {
                             value: goal.description(),
                             class: ctrl.descriptionError() ? 'error' : false,
                             onchange: m.withAttr('value', goal.description)
                         })
                     )
                 ]),
-                ctrl.descriptionError() ? inlineError('Descrição não pode ficar em branco.') : '',
+                ctrl.descriptionError() ? inlineError('Description can not be empty.') : '',
                 m('.u-margintop-30.w-row', [
                     m('.w-sub-col.w-col.w-col-5',
                         m('button.btn.btn-small.w-button', {
                             onclick: ctrl.saveGoal
-                        }, 'Salvar')
+                        }, 'To save')
                     ),
                     (args.goal().id() ?
                         m('.w-sub-col.w-col.w-col-6',
@@ -175,7 +175,7 @@ const projectGoalEditCard = {
                                 onclick: () => {
                                     args.goal().editing.toggle();
                                 }
-                            }, 'Cancelar')
+                            }, 'Cancel')
                         ) : ''),
                     m('.w-col.w-col-1',
                         m('button.btn.btn-inline.btn-no-border.btn-small.btn-terciary.fa.fa-lg.fa-trash', {

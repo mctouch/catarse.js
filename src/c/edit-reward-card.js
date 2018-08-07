@@ -17,7 +17,7 @@ const editRewardCard = {
                 return true;
             },
             confirmDelete = () => {
-                const r = confirm('Você tem certeza?');
+                const r = confirm('Are you sure?');
                 if (r) {
                     if (reward.newReward) {
                         destroyed(true);
@@ -42,7 +42,7 @@ const editRewardCard = {
             statesLoader = rewardVM.statesLoader,
             validate = () => {
                 args.error(false);
-                args.errors('Erro ao salvar informações. Confira os dados informados.');
+                args.errors('Error saving information. Check the data reported.');
                 descriptionError(false);
                 minimumValueError(false);
                 deliverAtError(false);
@@ -134,7 +134,7 @@ const editRewardCard = {
             states(data);
             states().unshift({
                 acronym: null,
-                name: 'Estado'
+                name: 'State'
             });
 
             if (!reward.newReward) {
@@ -190,7 +190,7 @@ const editRewardCard = {
                     m('.w-row', [
                         m('.w-col.w-col-5',
                             m('label.fontsize-smaller',
-                                'Título:'
+                                'Title:'
                             )
                         ),
                         m('.w-col.w-col-7',
@@ -203,7 +203,7 @@ const editRewardCard = {
                     m('.w-row.u-marginbottom-20', [
                         m('.w-col.w-col-5',
                             m('label.fontsize-smaller',
-                                'Valor mínimo:'
+                                'Minimum value:'
                             )
                         ),
                         m('.w-col.w-col-7', [
@@ -222,17 +222,17 @@ const editRewardCard = {
                                     })
                                 )
                             ]),
-                            ctrl.minimumValueError() ? inlineError(`Valor deve ser igual ou superior a R$${ctrl.minimumValue}.`) : '',
+                            ctrl.minimumValueError() ? inlineError(`Amount must be equal to or greater than R $${ctrl.minimumValue}.`) : '',
 
                             m(".fontsize-smaller.text-error.u-marginbottom-20.fa.fa-exclamation-triangle.w-hidden[data-error-for='reward_minimum_value']",
-                                'Informe um valor mínimo maior ou igual a 10'
+                                'Enter a minimum value greater than or equal to 10'
                             )
                         ])
                     ]),
                     ctrl.project.mode === 'sub' ? null : m('.w-row', [
                         m('.w-col.w-col-5',
                             m('label.fontsize-smaller',
-                                'Previsão de entrega:'
+                                'Delivery forecast:'
                             )
                         ),
                         m('.w-col.w-col-7',
@@ -271,12 +271,12 @@ const editRewardCard = {
                                     ])
                                 )
                             ),
-                            ctrl.deliverAtError() ? inlineError('Data de entrega não pode ser no passado.') : '',
+                            ctrl.deliverAtError() ? inlineError('Delivery date can not be in the past.') : '',
                         )
                     ]),
                     m('.w-row',
                         m('label.fontsize-smaller',
-                            'Descrição:'
+                            'description:'
                         )
                     ),
                     m('.w-row', [
@@ -286,14 +286,14 @@ const editRewardCard = {
                             oninput: m.withAttr('value', ctrl.reward.description)
                         }),
                         m(".fontsize-smaller.text-error.u-marginbottom-20.fa.fa-exclamation-triangle.w-hidden[data-error-for='reward_description']",
-                            'Descrição não pode ficar em branco'
+                            'Description can not be empty'
                         )
                     ]),
-                    ctrl.descriptionError() ? inlineError('Descrição não pode ficar em branco.') : '',
+                    ctrl.descriptionError() ? inlineError('Description can not be empty.') : '',
                     ctrl.project.mode === 'sub' ? null : m('.u-marginbottom-30.w-row', [
                         m('.w-col.w-col-3',
                             m("label.fontsize-smaller[for='field-2']",
-                                'Tipo de entrega'
+                                'Type of delivery'
                             )
                         ),
                         m('.w-col.w-col-9', [
@@ -305,16 +305,16 @@ const editRewardCard = {
                                 }
                             }, [
                                 m('option[value=\'international\']',
-                                    'Frete Nacional e Internacional'
+                                    'National and International Freight'
                                 ),
                                 m('option[value=\'national\']',
-                                    'Frete Nacional'
+                                    'National Freight'
                                 ),
                                 m('option[value=\'free\']',
-                                    'Sem frete envolvido'
+                                    'No freight involved'
                                 ),
                                 m('option[value=\'presential\']',
-                                    'Retirada presencial'
+                                    'Face-off'
                                 )
                             ]),
 
@@ -337,7 +337,7 @@ const editRewardCard = {
                                                 return false;
                                             }
                                         },
-                                            'Adicionar destino'
+                                            'Add destination'
                                         )
                                     )
                                 ]) : '')
@@ -349,7 +349,7 @@ const editRewardCard = {
                                 onclick: () => {
                                     ctrl.saveReward();
                                 }
-                            }, 'Salvar')
+                            }, 'To save')
                         ),
                         (reward.newReward ? '' :
                             m('.w-col.w-col-5.w-col-small-5.w-col-tiny-5.w-sub-col-middle',
@@ -357,7 +357,7 @@ const editRewardCard = {
                                     onclick: () => {
                                         reward.edit.toggle();
                                     }
-                                }, 'Cancelar')
+                                }, 'Cancel')
                             )),
                         m('.w-col.w-col-1.w-col-small-1.w-col-tiny-1', [
                             m('input[type=\'hidden\'][value=\'false\']'),

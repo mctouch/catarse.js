@@ -82,8 +82,8 @@ const projectGoalEdit = {
                                 children: [
                                     m('.flex-row.u-marginbottom-30', [
                                         m('a.choose-mode.choose-aon.w-inline-block.btn-select.flex-column.u-text-center[data-mode="aon"][href="javascript:void(0);"]', {
-                                            onclick: vm.genClickChangeMode('aon'),
-                                            class: vm.fields.mode() == 'aon' ? 'selected' : false
+                                            onclick: vm.genClickChangeMode('one'),
+                                            class: vm.fields.mode() == 'one' ? 'selected' : false
                                         }, [
                                             m('img[alt="Badge aon"][src="/assets/catarse_bootstrap/badge-aon.png"]')
                                         ]),
@@ -96,7 +96,7 @@ const projectGoalEdit = {
                                     ]),
                                     m('.u-text-center.fontsize-smaller', [
                                         m('a.mode-diff-toggle.link-hidden-light.fontweight-semibold[href="javascript:void(0);"]', { onclick: ctrl.showModeDiff.toggle }, [
-                                            'Veja a diferença entre os modelos ',
+                                            'See the difference between the models ',
                                             m('span.fa.fa-chevron-down')
                                         ])
                                     ]),
@@ -182,7 +182,7 @@ const projectGoalEdit = {
                                                 ]),
                                                 m('.w-col.w-col-4', [
                                                     m('.text-field.medium.prefix-permalink.u-text-center', [
-                                                        m('', 'dias')])
+                                                        m('', 'days')])
                                                 ])
                                             ]),
                                             vm.e.inlineError('online_days')

@@ -9,35 +9,35 @@ const slice = [].slice,
 
 const cards = [
     {
-        type: 'elo',
+        type: 'link',
         patterns: [401178, 401179, 431274, 438935, 451416, 457393, 457631, 457632, 504175, 506699, 5067, 509, 627780, 636297, 636368, 650, 6516, 6550],
         format: defaultFormat,
         length: [16],
         cvvLength: [3],
         luhn: true
     }, {
-        type: 'maestro',
+        type: 'teacher',
         patterns: [5018, 502, 503, 506, 56, 58, 639, 6220, 67],
         format: defaultFormat,
         length: [12, 13, 14, 15, 16, 17, 18, 19],
         cvvLength: [3],
         luhn: true
     }, {
-        type: 'forbrugsforeningen',
+        type: 'consumer association',
         patterns: [600],
         format: defaultFormat,
         length: [16],
         cvvLength: [3],
         luhn: true
     }, {
-        type: 'dankort',
+        type: 'credit card',
         patterns: [5019],
         format: defaultFormat,
         length: [16],
         cvvLength: [3],
         luhn: true
     }, {
-        type: 'visa',
+        type: 'show',
         patterns: [4],
         format: defaultFormat,
         length: [13, 16],

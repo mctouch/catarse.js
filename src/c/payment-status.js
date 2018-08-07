@@ -33,9 +33,9 @@ const paymentStatus = {
 
         displayPaymentMethod = () => {
             switch (payment.payment_method.toLowerCase()) {
-            case 'boletobancario':
-                return m('span#boleto-detail', '');
-            case 'cartaodecredito':
+            case 'Bank slip':
+                return m('span#ticket-detail', '');
+            case 'credit card':
                 var cardData = card();
                 if (cardData) {
                     return m('#creditcard-detail.fontsize-smallest.fontcolor-secondary.lineheight-tight', [
@@ -50,9 +50,9 @@ const paymentStatus = {
 
         paymentMethodClass = () => {
             switch (payment.payment_method.toLowerCase()) {
-            case 'boletobancario':
-                return '.fa-barcode';
-            case 'cartaodecredito':
+            case 'Bank slip':
+                return '.Fa-barcode';
+            case 'credit card':
                 return '.fa-credit-card';
             default:
                 return '.fa-question';

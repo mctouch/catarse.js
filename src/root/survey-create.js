@@ -44,11 +44,11 @@ const surveyCreate = {
         const choice = {
             multiple: [
                 m('span.fa.fa-dot-circle-o'),
-                '  Múltipla escolha'
+                '  Multiple choice'
             ],
             open: [
                 m('span.fa.fa-align-left'),
-                '  Resposta aberta'
+                '  Open answer'
             ]
         };
 
@@ -140,7 +140,7 @@ const surveyCreate = {
                             m('.w-col.w-col-8.w-col-push-2',
                                 m('div', [
                                     m('.fontsize-small.fontweight-semibold.u-marginbottom-20',
-                                        `Questionário para os ${reward.paid_count} apoiadores da recompensa`
+                                        `Questionnaire for ${reward.paid_count} reward supporters`
                                     ),
                                     m(rewardCardBig, { reward })
                                 ])
@@ -156,7 +156,7 @@ const surveyCreate = {
                         m('.card.card-terciary.medium.u-marginbottom-20.u-text-center', [
                             m('.u-marginbottom-20', [
                                 m('.fontsize-base.fontweight-semibold.u-marginbottom-10',
-                                    'Confirmar endereço de entrega?'
+                                    'Confirm shipping address?'
                                 ),
                                 m('a.toggle.w-clearfix.w-inline-block', {
                                     class: ctrl.confirmAddress() ? 'toggle-on' : 'toggle-off',
@@ -175,7 +175,7 @@ const surveyCreate = {
                             m('.w-row', [
                                 m('.w-col.w-col-8.w-col-push-2',
                                     m('p.fontcolor-secondary.fontsize-small',
-                                        'Se essa recompensa será entregue na casa dos apoiadores, deixe essa opção como "SIM". Dessa forma, incluíremos uma pergunta no questionário para que eles confirmem o endereço de entrega.'
+                                        /'If this reward will be delivered to the supporters' house, leave this option as "YES". That way, we will include a question in the questionnaire so that they confirm the delivery address.'/
                                     )
                                 )
                             ])
@@ -197,7 +197,7 @@ const surveyCreate = {
                             onclick: ctrl.addDashboardQuestion
                         }, [
                             m('span.fa.fa-plus-circle'),
-                            '  Adicionar pergunta'
+                            '  Add Question'
                         ])
                     ])
                 ])
@@ -209,10 +209,10 @@ const surveyCreate = {
                             m('a.btn.btn-large[href=\'javascript:void(0);\']', {
                                 onclick: ctrl.toggleShowPreview
                             },
-                                'Pré-visualizar'
+                                'Preview'
                             ),
                             ctrl.showError()
-                                ? m('.u-text-center.u-margintop-10', m(inlineError, { message: 'Erro ao salvar formulário.' }))
+                                ? m('.u-text-center.u-margintop-10', m(inlineError, { message: 'Error saving form.' }))
                                 : null
                         )
                     ])

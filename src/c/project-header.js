@@ -43,10 +43,10 @@ const projectHeader = {
             m(`.card.card-terciary.u-radius.u-marginbottom-40${projectVM.isSubscription(project) ? '.fontcolor-primary' : ''}`, [
                 m('.fontsize-small.u-text-center', [
                     m('span.fa.fa-thumbs-up'),
-                    m('span.fontweight-semibold', (!projectVM.isSubscription(project) ? ' Você é apoiador deste projeto! ' : ' Você tem uma assinatura neste projeto! ')),
+                    m('span.fontweight-semibold', (!projectVM.isSubscription(project) ? ' You are a supporter of this project! ':' You have a signature on this project! ')),
                     m('a.alt-link[href=\'javascript:void(0);\']', {
                         onclick: ctrl.showContributions.toggle
-                    }, 'Detalhes')
+                    }, 'Details')
                 ]),
                 ctrl.showContributions() ? m('.u-margintop-20.w-row',
                     (!projectVM.isSubscription(project) ?

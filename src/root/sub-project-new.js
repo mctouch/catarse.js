@@ -41,7 +41,7 @@ const subProjectNew = {
             m('.w-container', [
                 m("img[src='https://daks2k3a4ib2z.cloudfront.net/57ba58b4846cc19e60acdd5b/59cd4be2c67c8d0001764fbe_logo-ass.png']"),
                 m('.fontcolor-negative.fontsize-large.fontweight-semibold.u-marginbottom-60',
-                    'Viva do que você ama fazer'
+                    'Live what you love to do'
                 ),
                 m('.w-row', [
                     m('.w-col.w-col-2'),
@@ -52,7 +52,7 @@ const subProjectNew = {
                                     onsubmit: e => ctrl.validateProjectForm()
                                 }, [
                                     m('.fontcolor-negative.fontsize-larger.u-marginbottom-10',
-                                        'Quero iniciar uma campanha chamada'
+                                        'I want to start a campaign called'
                                     ),
                                     m('input[name="utf8"][type="hidden"][value="✓"]'),
                                     m(`input[name="authenticity_token"][type="hidden"][value="${h.authenticityToken()}"]`),
@@ -69,7 +69,7 @@ const subProjectNew = {
                                         }
                                     }),
                                     m('.fontcolor-negative.fontsize-larger.u-marginbottom-10',
-                                        'na categoria'
+                                        'in category'
                                     ),
                                     m('select.w-select.text-field.medium.u-marginbottom-40', {
                                         name: 'project[category_id]',
@@ -101,7 +101,7 @@ const subProjectNew = {
                     m('.w-col.w-col-2')
                 ]),
                 m('.w-row.u-marginbottom-80', (ctrl.projectNameError() || ctrl.projectCategoryError()) ? m.component(inlineError, {
-                    message: 'Por favor, verifique novamente os campos acima!'
+                    message: 'Please double-check the above fields!'
                 }) : ''),
 
             ])

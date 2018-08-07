@@ -90,10 +90,10 @@ const paymentCreditCard = {
 
             if (document.length > 14) {
                 isValid = h.validateCnpj(document);
-                errorMessage = 'CNPJ inválido.';
+                errorMessage = 'Invalid CNPJ.';
             } else {
                 isValid = h.validateCpf(striped);
-                errorMessage = 'CPF inválido.';
+                errorMessage = 'Invalid CPF.';
             }
 
             handleValidity(isValid, { field: 'cardOwnerDocument', message: errorMessage });

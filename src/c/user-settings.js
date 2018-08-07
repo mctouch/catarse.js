@@ -82,7 +82,7 @@ const userSettings = {
                         parsedErrors.resetFieldErrors();
                     }
                     parsedErrors = userSettingsVM.mapRailsErrors(err.errors_json);
-                    error('Erro ao atualizar informações.');
+                    error('Error updating information.');
                     loading(false);
                     if (showSuccess()) {
                         showSuccess.toggle();

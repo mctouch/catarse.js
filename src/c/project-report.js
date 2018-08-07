@@ -116,14 +116,14 @@ const projectReport = {
     view: function(ctrl, args) {
         return m('.card.card-terciary.u-radius', [
             ctrl.sendSuccess() ?
-                    m('.w-form', m('p', 'Obrigado! A sua denúncia foi recebida.'))
+                    m('.w-form', m('p', 'Thank you! Your complaint has been received.'))
                 :
             [
                 m('button.btn.btn-terciary.btn-inline.btn-medium.w-button',
                     {
                         onclick: ctrl.checkLogin
                     },
-                          'Denunciar este projeto ao Catarse'
+                          'Report this project to Trend'
                         ),
                 ctrl.displayForm() ?
                             m('div', [

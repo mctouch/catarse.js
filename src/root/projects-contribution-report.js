@@ -27,47 +27,47 @@ const projectContributionReport = {
             reloadSelectOptions = (projectState) => {
                 let opts = [{
                     value: '',
-                    option: 'Todos'
+                    option: 'Everybody'
                 }];
 
                 const optionsMap = {
                     online: [{
                         value: 'paid',
-                        option: 'Confirmado'
+                        option: 'Confirmed'
                     },
                     {
                         value: 'pending',
-                        option: 'Iniciado'
+                        option: 'Initiated'
                     },
                     {
                         value: 'refunded,chargeback,deleted,pending_refund',
-                        option: 'Contestado'
+                        option: 'Answered'
                     },
                     ],
                     waiting_funds: [{
                         value: 'paid',
-                        option: 'Confirmado'
+                        option: 'Confirmed'
                     },
                     {
                         value: 'pending',
-                        option: 'Iniciado'
+                        option: 'Initiated'
                     },
                     {
                         value: 'refunded,chargeback,deleted,pending_refund',
-                        option: 'Contestado'
+                        option: 'Answered'
                     },
                     ],
                     failed: [{
                         value: 'refunded',
-                        option: 'Reembolsado'
+                        option: 'Refunded'
                     }],
                     successful: [{
                         value: 'paid',
-                        option: 'Confirmado'
+                        option: 'Confirmed'
                     },
                     {
                         value: 'refunded,chargeback,deleted,pending_refund',
-                        option: 'Contestado'
+                        option: 'Answered'
                     },
                     ]
                 };
@@ -91,14 +91,14 @@ const projectContributionReport = {
                     inputWrapperClass: '.w-input.text-field',
                     btnClass: '.btn.btn-medium',
                     vm: filterVM.full_text_index,
-                    placeholder: 'Busque por nome ou email do apoiador'
+                    placeholder: 'Search by name or email of the supporter'
                 }
             },
             {
                 label: 'reward_filter',
                 component: FilterDropdown,
                 data: {
-                    label: 'Recompensa',
+                    label: 'Reward',
                     onchange: submit,
                     name: 'reward_id',
                     vm: filterVM.reward_id,
@@ -112,7 +112,7 @@ const projectContributionReport = {
                 data: {
                     custom_label: [InfoProjectContributionLegend, {
                         content: [ProjectContributionDeliveryLegendModal],
-                        text: 'Status da entrega'
+                        text: 'Status from entrega'
                     }],
                     onchange: submit,
                     name: 'delivery_status',
@@ -120,23 +120,23 @@ const projectContributionReport = {
                     wrapper_class: '.w-sub-col.w-col.w-col-3',
                     options: [{
                         value: '',
-                        option: 'Todos'
+                        option: 'Everybody'
                     },
                     {
                         value: 'undelivered',
-                        option: 'Não entregue'
+                        option: 'Not delivered'
                     },
                     {
                         value: 'delivered',
-                        option: 'Entregue'
+                        option: 'Delivered'
                     },
                     {
                         value: 'error',
-                        option: 'Erro no envio'
+                        option: 'Sending error'
                     },
                     {
                         value: 'received',
-                        option: 'Recebida'
+                        option: 'Received'
                     }
                     ]
                 }
@@ -145,30 +145,30 @@ const projectContributionReport = {
                 label: 'survey_filter',
                 component: FilterDropdown,
                 data: {
-                    label: 'Status do questionário',
+                    label: 'Questionnaire Status',
                     onchange: submit,
                     name: 'survey_status',
                     vm: filterVM.survey_status,
                     wrapper_class: '.w-col.w-col-3',
                     options: [{
                         value: '',
-                        option: 'Todos'
+                        option: 'Everybody'
                     },
                     {
                         value: 'not_sent',
-                        option: 'Não enviado'
+                        option: 'Not sent'
                     },
                     {
                         value: 'sent,answered',
-                        option: 'Enviado'
+                        option: 'Sent'
                     },
                     {
                         value: 'sent',
-                        option: 'Não Respondido'
+                        option: 'Not answered'
                     },
                     {
                         value: 'answered',
-                        option: 'Respondido'
+                        option: 'Answered'
                     }
                     ]
                 }
@@ -178,7 +178,7 @@ const projectContributionReport = {
                 component: FilterDropdown,
                 data: {
                     custom_label: [InfoProjectContributionLegend, {
-                        text: 'Status do apoio',
+                        text: 'Support Status',
                         content: [ProjectContributionStateLegendModal, {
                             project
                         }]
@@ -218,12 +218,12 @@ const projectContributionReport = {
 
             options.unshift({
                 value: null,
-                option: 'Sem recompensa'
+                option: 'No reward'
             });
 
             options.unshift({
                 value: '',
-                option: 'Todas'
+                option: 'All'
             });
 
             return options;

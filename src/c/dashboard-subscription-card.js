@@ -90,7 +90,7 @@ const dashboardSubscriptionCard = {
                             `R$${h.formatNumber(subscription.total_paid / 100, 0, 3)}`
                         ),
                         m('.fontcolor-secondary.fontsize-mini.fontweight-semibold.lineheight-tightest',
-                            `${subscription.paid_count} meses`
+                            `${subscription.paid_count} months`
                         )
                     ]),
                     m('.w-col.w-col-2.u-text-center',

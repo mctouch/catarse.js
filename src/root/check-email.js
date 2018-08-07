@@ -57,7 +57,7 @@ const CheckEmail = {
                             }, 'Sim!')
                         ]),
                         m('.w-col.w-col-3', [
-                            m(`a.btn.btn-medium.w-button[href="/users/${user.id}/edit#about_me"]`, 'Editar o email')
+                            m(`a.btn.btn-medium.w-button[href="/users/${user.id}/edit#about_me"]`, 'Edit email')
                         ]),
                         m('.w-col.w-col-3')
                     ])

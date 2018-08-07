@@ -139,7 +139,7 @@ const locationOptions = (reward, destination) => {
         _.union(
             [{
                 value: '',
-                name: 'Selecione Opção',
+                name: 'Select Option',
                 fee: 0
             }],
             options()

@@ -38,25 +38,25 @@ const cancelSubscriptionContent = {
               '🙁'
              ),
                 m('.fontsize-base.u-marginbottom-20', [
-                    'Sua assinatura de ',
+                    'Your subscription to ',
                     m('span.fontweight-semibold',
                   `R$${args.subscription.amount / 100}`
                  ),
-                    ' para o projeto ',
+                    ' for the project ',
                     m('span.fontweight-semibold',
                   args.subscription.project.project_name
                  ),
-                    ` foi cancelada. Como sua próxima data de vencimento é no dia ${h.momentify(args.subscription.next_charge_at, 'DD/MM/YYYY')}, sua assinatura ainda estará ativa até este dia. Mas não se preocupe, que você não terá mais nenhuma cobrança em seu nome daqui pra frente.`,
+                    ` Was canceled. Since your next expiration date is $ {h.momentify (args.subscription.next_charge_at, 'DD / MM / YYYY')}, your signature will still be active to this day. But do not worry, you will not have any more charges on your behalf from now on..`,
                     m('br'),
                     m('br'),
-                    'Se por algum motivo você quiser um reembolso de seu apoio mensal, entre em contato direto com ',
+                    'If for any reason you want a refund of your monthly support, please contact ',
                     m(`a.alt-link[href='/users/${args.subscription.project.project_user_id}#about']`,
                   args.subscription.project.owner_name
                  ),
                     '.',
                     m('br'),
                     m('br'),
-                    'Até logo!'
+                    'See you later!'
                 ])
             ]),
             contactForm = [
@@ -68,25 +68,25 @@ const cancelSubscriptionContent = {
                                 m('a.btn.btn-large.u-marginbottom-20', {
                                     onclick: ctrl.cancelSubscription
                                 },
-                                    'Cancelar assinatura'
+                                    'Cancel subscription'
                                 )
                             ),
                             m('.w-col.w-col-3',
                                 m('a.btn.btn-large.u-marginbottom-20.btn-terciary.btn-no-border', {
                                     onclick: args.displayModal.toggle
                                 },
-                                    'Voltar'
+                                    'Come back'
                                 )
                             ),
                             m('.w-col.w-col-2')
                         ])
                     ),
                     m('.fontsize-base', [
-                        'Tem certeza que você quer solicitar o cancelamento de sua assinatura de ',
+                        'Are you sure you want to request the cancellation of your subscription ',
                         m('span.fontweight-semibold',
                             `R$${args.subscription.amount / 100}`
                         ),
-                        ' para o projeto ',
+                        ' for the project ',
                         m('span.fontweight-semibold',
                             args.subscription.project.project_name
                         ),
@@ -97,7 +97,7 @@ const cancelSubscriptionContent = {
 
         return m('div', [
             m('.modal-dialog-header',
-                m('.fontsize-large.u-text-center', 'Cancelar sua assinatura')
+                m('.fontsize-large.u-text-center', 'Cancel your subscription')
             ),
             ctrl.canceling() ? successMessage : contactForm
         ]);

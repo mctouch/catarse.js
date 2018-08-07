@@ -48,7 +48,7 @@ const publish = {
             account = _.first(ctrl.projectAccount());
 
         const terms = project.mode === 'flex' ? publishVM.flexTerms(project) :
-          project.mode === 'aon' ? publishVM.aonTerms(project, ctrl.expiresAt()) :
+          project.mode === 'one' ? publishVM.aonTerms(project, ctrl.expiresAt()) :
                                    publishVM.subTerms(project);
 
         return [project && account ? [
@@ -64,8 +64,8 @@ const publish = {
                         m('.w-col.w-col-6', [
                             m('.u-text-center', [
                                 m('img.u-marginbottom-20[src=\'/assets/catarse_bootstrap/launch-icon.png\'][width=\'94\']'),
-                                m('.fontsize-large.fontweight-semibold.u-marginbottom-20', 'Pronto para lançar sua campanha?'),
-                                m('.fontsize-base.u-marginbottom-30', 'Preparamos uma lista com informações importantes para você checar antes de colocar seu projeto no ar!')
+                                m('.fontsize-large.fontweight-semibold.u-marginbottom-20', 'Ready to launch your campaign?'),
+                                m('.fontsize-base.u-marginbottom-30', /'We've prepared a list with important information for you to check before putting your project in the air.!'/)
                             ])
                         ]),
                         m('.w-col.w-col-3')
@@ -84,12 +84,12 @@ const publish = {
                                 m('.u-marginbottom-30.fontsize-base', [
                                     m('div', [m('span.fontweight-semibold', 'Título: '), project.name]),
                                     m('div', [m('span.fontweight-semibold', 'Link: '), `www.catarse.me/${project.permalink}`]),
-                                    m('div', [m('span.fontweight-semibold', 'Modalidade de financiamento: '), window.I18n.t(project.mode, I18nScope())]),
+                                    m('div', [m('span.fontweight-semibold', 'Financing method: '), window.I18n.t(project.mode, I18nScope())]),
                                     (project.mode !== 'sub' ?
-                                        m('div', [m('span.fontweight-semibold', 'Meta de arrecadação: '), `R$ ${h.formatNumber(project.goal, 2, 3)}`]) :
+                                        m('div', [m('span.fontweight-semibold', 'Goal of collection: '), `R$ ${h.formatNumber(project.goal, 2, 3)}`]) :
                                         ''),
-                                    (project.online_days !== null) ? m('div', [m('span.fontweight-semibold', `Prazo: ${project.online_days} ${(project.online_days > 1) ? 'dias' : 'dia'}`)]) : '',
-                                    m('div', [m('span.fontweight-semibold', 'Responsável: '), account.owner_name]),
+                                    (project.online_days !== null) ? m('div', [m('span.fontweight-semibold', `Deadline: ${project.online_days} ${(project.online_days > 1) ? 'days' : 'day'}`)]) : '',
+                                    m('div', [m('span.fontweight-semibold', 'Responsible: '), account.owner_name]),
                                     m('div', [m('span.fontweight-semibold', 'CPF/CNPJ: '), account.owner_document])
                                 ])
                             ])
@@ -99,7 +99,7 @@ const publish = {
                                 m('.w-col.w-col-1'),
                                 m('.w-col.w-col-10', [
                                     m('.divider.u-marginbottom-10'),
-                                    m('.fontsize-small.fontcolor-secondary', 'Os dados acima não podem ser alterados após o projeto entrar no ar. Se você precisa fazer mudanças, navegue na barra lateral e volte aqui quando estiver tudo pronto!')
+                                    m('.fontsize-small.fontcolor-secondary', /'The above data can not be changed after the project goes live. If you need to make changes, navigate to the sidebar and come back here when you're all set!'/)
                                 ]),
                                 m('.w-col.w-col-1')
                             ])
@@ -107,11 +107,11 @@ const publish = {
                     ]),
                     m('.card.medium.u-radius.u-marginbottom-60', [
                         m('.u-text-center.u-marginbottom-60', [
-                            m('.fontsize-large.fontweight-semibold', 'Relembre nossas regras'),
+                            m('.fontsize-large.fontweight-semibold', 'Remember our rules'),
                             m('.w-row', [
                                 m('.w-col.w-col-2'),
                                 m('.w-col.w-col-8', [
-                                    m('.fontsize-small', ['Antes de publicar, clique nos círculos abaixo e confirme que você está ciente de como funciona o Catarse. Qualquer dúvida, ', m('a.alt-link[href="http://suporte.catarse.me/hc/pt-br/requests/new"][target="_blank"]', 'entre em contato'), '!'])
+                                    m('.fontsize-small', ['Before posting, click on the circles below and confirm that you are aware of how Catarse works. Any questions, ', m (' a.alt-link [href = "http://suporte.catarse.me/hc/en-us/requests/new"] [target = "_blank"] ',' sign in contact'), '!'])
                                 ]),
                                 m('.w-col.w-col-2')
                             ])
@@ -141,10 +141,10 @@ const publish = {
                         m('.w-col.w-col-4', [
                             m(`a.btn.btn-large.u-marginbottom-20[href=/${project.mode === 'flex' ? 'flexible_projects' : 'projects'}/${project.project_id}/push_to_online]`, 'Publicar agora!'),
                             m('.u-text-center.fontsize-smaller', [
-                                'Ao publicar o seu projeto, você está aceitando os ',
-                                m('a.alt-link[href=\'/terms-of-use\'][target=\'_blank\']', 'Termos de Uso'),
+                                'When you publish your project, you are accepting ',
+                                m('a.alt-link[href=\'/terms-of-use\'][target=\'_blank\']', 'Terms of use'),
                                 ' e ',
-                                m('a.alt-link[href=\'/privacy-policy\'][target=\'_blank\']', 'Politica de Privacidade')
+                                m('a.alt-link[href=\'/privacy-policy\'][target=\'_blank\']', 'Privacy policy')
                             ])
                         ]),
                         m('.w-col.w-col-4')

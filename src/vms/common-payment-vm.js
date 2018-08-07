@@ -254,7 +254,7 @@ const sendSlipPayment = (fields, commonData) => {
         user_id: commonData.userCommonId,
         project_id: commonData.projectCommonId,
         amount: commonData.amount,
-        payment_method: 'boleto',
+        payment_method: 'ticket',
         customer: {
             name: customer.completeName(),
             document_number: customer.ownerDocument(),
@@ -264,7 +264,7 @@ const sendSlipPayment = (fields, commonData) => {
                 street_number: address.address_number,
                 zipcode: address.address_zip_code,
                 // TOdO: remove hard-coded country when international support is added on the back-end
-                country: 'Brasil',
+                country: 'Brazil',
                 state: addressState.acronym,
                 city: address.address_city,
                 complementary: address.address_complement

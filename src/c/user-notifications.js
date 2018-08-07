@@ -85,7 +85,7 @@ const userNotifications = {
             marketing_lists = ctrl.mailMarketingLists();
 
         return m('[id=\'notifications-tab\']', ctrl.error() ? m.component(inlineError, {
-            message: 'Erro ao carregar a página.'
+            message: 'Error loading page.'
         }) :
             m(`form.simple_form.edit_user[accept-charset='UTF-8'][action='/pt/users/${user.id}'][method='post'][novalidate='novalidate']`, [
                 m('input[name=\'utf8\'][type=\'hidden\'][value=\'✓\']'),
@@ -143,7 +143,7 @@ const userNotifications = {
                                                                         _item.hovering(false);
                                                                     }
                                                                 },
-                                                                _item.in_list ? _item.hovering() ? 'Descadastrar' : 'Assinado' : 'Assinar'
+                                                                _item.in_list ? _item.hovering() ? 'Describe' : 'Signed' : 'Sign'
                                                             )
                                                         ]
                                                     )
@@ -155,7 +155,7 @@ const userNotifications = {
                                 m('.w-row.u-marginbottom-20', [
                                     m('.w-col.w-col-4',
                                         m('.fontweight-semibold.fontsize-small.u-marginbottom-10',
-                                            'Projetos que você apoiou:'
+                                            'Projects you have supported:'
                                         )
                                     ),
                                     m('.w-col.w-col-8',
@@ -163,13 +163,13 @@ const userNotifications = {
                                             m('input[name=user[subscribed_to_project_posts]][type=\'hidden\'][value=\'0\']'),
                                             m(`input.w-checkbox-input${user.subscribed_to_project_posts ? '[checked=\'checked\']' : ''}[id='user_subscribed_to_project_posts'][name=user[subscribed_to_project_posts]][type='checkbox'][value='1']`),
                                             m('label.w-form-label.fontsize-base.fontweight-semibold',
-                                                ' Quero receber atualizações dos projetos'
+                                                ' I want to receive project updates'
                                             ),
                                             m('.u-marginbottom-20',
                                                 m('a.alt-link[href=\'javascript:void(0);\']', {
                                                     onclick: ctrl.showNotifications.toggle
                                                 },
-                                                    ` Gerenciar as notificações de ${user.total_contributed_projects} projetos`
+                                                    ` Manage notifications from ${user.total_contributed_projects} home`
                                                 )
                                             ),
                                             (ctrl.showNotifications() ?
@@ -203,7 +203,7 @@ const userNotifications = {
                                             m('input[name=user[subscribed_to_friends_contributions]][type=\'hidden\'][value=\'0\']'),
                                             m(`input.w-checkbox-input${user.subscribed_to_friends_contributions ? '[checked=\'checked\']' : ''}[id='user_subscribed_to_friends_contributions'][name=user[subscribed_to_friends_contributions]][type='checkbox'][value='1']`),
                                             m('label.w-form-label.fontsize-small',
-                                                'Um amigo apoiou ou lançou um projeto'
+                                                'A friend supported or launched a project'
                                             )
                                         ])
                                     ),
@@ -212,7 +212,7 @@ const userNotifications = {
                                             m('input[name=user[subscribed_to_new_followers]][type=\'hidden\'][value=\'0\']'),
                                             m(`input.w-checkbox-input${user.subscribed_to_new_followers ? '[checked=\'checked\']' : ''}[id='user_subscribed_to_new_followers'][name=user[subscribed_to_new_followers]][type='checkbox'][value='1']`),
                                             m('label.w-form-label.fontsize-small',
-                                                'Um amigo começou a me seguir'
+                                                'A friend started to follow me.'
                                             )
                                         ])
                                     )
@@ -220,7 +220,7 @@ const userNotifications = {
                                 m('.w-row.u-marginbottom-20', [
                                     m('.w-col.w-col-4',
                                         m('.fontweight-semibold.fontsize-small.u-marginbottom-10',
-                                            'Lembretes de projetos:'
+                                            'Project Reminders:'
                                         )
                                     ),
                                     m('.w-col.w-col-8', [

@@ -101,7 +101,7 @@ const ProjectsSubscriptionThankYou = {
                                     )
                                 ),
                                 m('.fontsize-base.fontweight-semibold.u-marginbottom-20',
-                                    'Compartilhe com seus amigos e ajude esse projeto a bater a meta!'
+                                    'Share with your friends and help this project hit the goal!'
                                 )
                             ]),
                             m('.w-row', [
@@ -122,7 +122,7 @@ const ProjectsSubscriptionThankYou = {
                                 m('.w-hidden-main.w-hidden-medium', [
                                     m('.u-marginbottom-30.u-text-center-small-only', m('button.btn.btn-large.btn-terciary.u-marginbottom-40', {
                                         onclick: ctrl.displayShareBox.toggle
-                                    }, 'Compartilhe')),
+                                    }, 'Share')),
                                     ctrl.displayShareBox() ? m(projectShareBox, {
                                         project: m.prop({
                                             permalink: project.permalink,

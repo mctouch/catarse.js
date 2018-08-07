@@ -16,7 +16,7 @@ import projectsContributionReportVM from '../vms/projects-contribution-report-vm
 
 const statusCustomFilter = {
     view: () => m('span', [
-        'Status da assinatura ',
+        'Subscription Status ',
         m('a.fontsize-smallest.tooltip-wrapper.fa.fa-question-circle.fontcolor-secondary', {
             href: 'https://suporte.catarse.me/hc/pt-br/articles/115005632746-Catarse-Assinaturas-FAQ-Realizadores#status',
             target: '_blank'
@@ -47,20 +47,20 @@ const projectSubscriptionReport = {
                 component: filterMain,
                 label: 'text_filter',
                 data: {
-                    label: 'Busca',
+                    label: 'Search',
                     vm: filterVM.search_index,
                     onchange: submit,
                     wrapper_class: '.w-sub-col.w-col.w-col-5.u-margintop-20',
                     inputWrapperClass: '.w-input.text-field.positive',
                     btnClass: '.btn.btn-medium.u-marginbottom-10',
-                    placeholder: 'Busque por nome ou email do assinante...'
+                    placeholder: 'Search by name or email of subscriber ...'
                 }
             },
             {
                 label: 'reward_filter',
                 component: FilterDropdown,
                 data: {
-                    label: 'Recompensa',
+                    label: 'Reward',
                     onchange: submit,
                     name: 'reward_external_id',
                     vm: filterVM.reward_external_id,
@@ -82,27 +82,27 @@ const projectSubscriptionReport = {
                     wrapper_class: '.w-sub-col.w-col.w-col-3',
                     options: [{
                         value: '',
-                        option: 'Todos'
+                        option: 'Everybody'
                     },
                     {
                         value: 'active',
-                        option: 'Ativa'
+                        option: 'Active'
                     },
                     {
                         value: 'started',
-                        option: 'Iniciada'
+                        option: 'Started'
                     },
                     {
                         value: 'canceling',
-                        option: 'Cancelamento solicitado'
+                        option: 'Cancellation requested'
                     },
                     {
                         value: 'canceled',
-                        option: 'Cancelada'
+                        option: 'Canceled'
                     },
                     {
                         value: 'inactive',
-                        option: 'Inativa'
+                        option: 'Inactive'
                     }
                     ]
                 }
@@ -111,22 +111,22 @@ const projectSubscriptionReport = {
                 label: 'payment_filter',
                 component: FilterDropdown,
                 data: {
-                    label: 'Meio de pagamento',
+                    label: 'Means of payment',
                     onchange: submit,
                     name: 'payment_method',
                     vm: filterVM.payment_method,
                     wrapper_class: '.w-sub-col.w-col.w-col-2',
                     options: [{
                         value: '',
-                        option: 'Todos'
+                        option: 'Everybody'
                     },
                     {
                         value: 'credit_card',
-                        option: 'Cartão de crédito'
+                        option: 'Credit card'
                     },
                     {
-                        value: 'boleto',
-                        option: 'Boleto'
+                        value: 'ticket',
+                        option: 'Ticket'
                     }
                     ]
                 }
@@ -158,12 +158,12 @@ const projectSubscriptionReport = {
 
             options.unshift({
                 value: null,
-                option: 'Sem recompensa'
+                option: 'No reward'
             });
 
             options.unshift({
                 value: '',
-                option: 'Todas'
+                option: 'All'
             });
 
             return options;
@@ -218,7 +218,7 @@ const projectSubscriptionReport = {
                             m('.w-col.w-col-3'),
                             m('.w-col.w-col-6',
                                 m('.fontsize-larger.fontweight-semibold.lineheight-looser.u-marginbottom-30.u-text-center',
-                                    'Base de assinantes'
+                                    'Subscriber Base'
                                 )
                             ),
                             m('.w-col.w-col-3')
@@ -255,7 +255,7 @@ const projectSubscriptionReport = {
                                         m('span.fontweight-semibold',
                                             ctrl.subscriptions.total()
                                         ),
-                                        ' pessoas',
+                                        ' people',
                                         m.trust('&nbsp;')
                                     ])
                                 ),
@@ -266,7 +266,7 @@ const projectSubscriptionReport = {
                                         m('span.fa.fa-download',
                                             m.trust('&nbsp;')
                                         ),
-                                        'Baixar relatórios'
+                                        'Download reports'
                                     ])
                                 )
                             ])
@@ -276,32 +276,32 @@ const projectSubscriptionReport = {
                                 m('.w-row', [
                                     m('.table-col.w-col.w-col-3',
                                         m('div',
-                                            'Assinante'
+                                            'Subscriber'
                                         )
                                     ),
                                     m('.table-col.w-col.w-col-2',
                                         m('div',
-                                            'Recompensa'
+                                            'Reward'
                                         )
                                     ),
                                     m('.table-col.w-col.w-col-1.u-text-center',
                                         m('div',
-                                            'Apoio mensal'
+                                            'Monthly support'
                                         )
                                     ),
                                     m('.table-col.w-col.w-col-2.u-text-center',
                                         m('div',
-                                            'Total apoiado'
+                                            'Total supported'
                                         )
                                     ),
                                     m('.table-col.w-col.w-col-2.u-text-center',
                                         m('div',
-                                            'Último pagamento'
+                                            'Last payment'
                                         )
                                     ),
                                     m('.table-col.w-col.w-col-2.u-text-center',
                                         m('div',
-                                            'Status da Assinatura'
+                                            'Signature Status'
                                         )
                                     )
                                 ])

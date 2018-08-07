@@ -178,19 +178,19 @@ const surveysShow = {
                                 ),
                                 m('.u-text-center',
                                     m('.fontsize-larger.u-marginbottom-10',
-                                        'Valeu!'
+                                        'Thanks!'
                                     )
                                 ),
                                 m('.fontsize-base.u-text-center', [
-                                    `As respostas abaixo foram enviadas para ${project.user.name}! Qualquer dúvida sobre o andamento do projeto, visite a `,
+                                    `The answers below were sent to ${project.user.name}! Any doubts about the progress of the project, visit the `,
                                     m(`a.alt-link[href='/${project.permalink}#posts'][target='_blank']`,
-                                        'aba de novidades da campanha'
+                                        'campaign news tab'
                                     ),
                                     ' ou ',
                                     m('a.alt-link[href=\'javascript:void(0);\']', {
                                         onclick: ctrl.sendMessage
                                     },
-                                        'envie uma mensagem'
+                                        'send a message'
                                     ),
                                     '.'
                                 ])
@@ -218,7 +218,7 @@ const surveysShow = {
                                 ),
                                 m('.u-text-center',
                                     m('.fontsize-larger',
-                                        'Você confirma as respostas abaixo?'
+                                        'You confirm the answers below?'
                                     )
                                 )
                             ]),
@@ -244,7 +244,7 @@ const surveysShow = {
                                         m('a.btn.btn-large.btn-terciary', {
                                             onclick: ctrl.showPreview.toggle
                                         },
-                                            'Não'
+                                            'No'
                                         )
                                     ),
                                     m('.w-col.w-col-6.w-col-small-6.w-col-tiny-6',
@@ -269,10 +269,10 @@ const surveysShow = {
                             m('.w-col.w-col-8', [
                                 m(`img.big.thumb.u-marginbottom-20.u-round[src='${profileImage}']`),
                                 m('.fontsize-larger.u-marginbottom-10',
-                                    `Oi, ${userVM.displayName(user)}`
+                                    `Hi, ${userVM.displayName(user)}`
                                 ),
                                 m('.fontsize-base.u-marginbottom-20',
-                                    `${project.user.name}, do projeto ${project.name}, enviou algumas perguntas para que possa seguir com a produção e entrega da recompensa que você apoiou com R$${reward.minimum_value}:`
+                                    `${project.user.name}, from the project ${project.name}, sent some questions so that you can continue with the production and delivery of the reward you have supported with R$${reward.minimum_value}:`
                                 ),
                                 m(rewardCardBig, {
                                     reward
@@ -295,21 +295,21 @@ const surveysShow = {
                                                         ''
                                                     ),
                                                     (ctrl.answeredAt() ?
-                                                        m('span', ` Esse questionário não está mais aberto para receber respostas. Segue abaixo as respostas que você enviou no dia ${h.momentify(ctrl.answeredAt(), 'DD/MM/YYYY')}. Qualquer dúvida, `,
+                                                        m('span', ` This questionnaire is no longer open for answers. Below are the answers you submitted on the day ${h.momentify(ctrl.answeredAt(), 'DD/MM/YYYY')}. Any doubt, `,
                                                             m('a.alt-link[href=\'javascript:void(0);\']', {
                                                                 onclick: ctrl.sendMessage
                                                             },
-                                                                `envie uma mensagem para ${project.user.name}`
+                                                                `send a message to ${project.user.name}`
                                                             )
                                                         ) :
                                                         m('span',
-                                                            ` Oooops! Esse questionário não está mais aberto para respostas desde o dia ${h.momentify(ctrl.survey().finished_at, 'DD/MM/YYYY')}. Nossa recomendação é que você `,
+                                                            ` Oooops! This questionnaire is no longer open for answers since the day ${h.momentify(ctrl.survey().finished_at, 'DD/MM/YYYY')}. Our recommendation is that you `,
                                                             m('a.alt-link[href=\'javascript:void(0);\']', {
                                                                 onclick: ctrl.sendMessage
                                                             },
-                                                                `envie uma mensagem para ${project.user.name}`
+                                                                `send a message to ${project.user.name}`
                                                             ),
-                                                            ' para saber como é possível resolver o seu caso! ')
+                                                            ' to find out how you can solve your case! ')
                                                     )
                                                 ])
                                             )
@@ -344,7 +344,7 @@ const surveysShow = {
                                                         m('span.fa.fa-exclamation-circle',
                                                             ''
                                                         ),
-                                                        ` Você já enviou as respostas abaixo no dia ${h.momentify(ctrl.answeredAt(), 'DD/MM/YYYY')}. Se notou algo errado, não tem problema: basta alterar as informações necessárias abaixo e reenviar as respostas.`
+                                                        ` You have already submitted the answers below on the day ${h.momentify(ctrl.answeredAt(), 'DD/MM/YYYY')}. If you noticed something wrong, no problem: just change the information required below and resend the answers.`
                                                     ])
                                                 ) : ''),
                                             (survey.confirm_address ? [
@@ -388,7 +388,7 @@ const surveysShow = {
                                                     m('.fontcolor-secondary.fontsize-smaller.u-marginbottom-20',
                                                         item.question.description
                                                     ),
-                                                    m("input.positive.text-field.w-input[maxlength='256'][placeholder='Sua resposta'][required='required'][type='text']", {
+                                                    m("input.positive.text-field.w-input[maxlength='256'][placeholder='Your answer'][required='required'][type='text']", {
                                                         value: item.value(),
                                                         onchange: m.withAttr('value', item.value)
                                                     })
@@ -409,7 +409,7 @@ const surveysShow = {
                                                 ctrl.preview();
                                             }
                                         },
-                                            'Enviar'
+                                            'Submit'
                                         )
                                     ),
                                     m('.w-col.w-col-4')

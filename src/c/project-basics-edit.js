@@ -234,13 +234,13 @@ const projectBasicsEdit = {
                                     }),
                                     ctrl.isEditingTags() ? m('.options-list.table-outer',
                                          ctrl.tagEditingLoading()
-                                            ? m('.dropdown-link', m('.fontsize-smallest', 'Carregando...'))
+                                            ? m('.dropdown-link', m('.fontsize-smallest', 'Loading...'))
                                             : ctrl.tagOptions().length
                                                 ? _.map(ctrl.tagOptions(), tag => m('.dropdown-link',
                                                     { onclick: ctrl.addTag(tag) },
                                                     m('.fontsize-smaller', tag.name)
                                                 ))
-                                                : m('.dropdown-link', m('.fontsize-smallest', 'Nenhuma tag relacionada...'))
+                                                : m('.dropdown-link', m('.fontsize-smallest', 'No related tags...'))
                                     ) : '',
                                     vm.e.inlineError('public_tags'),
                                     m('div.tag-choices',
@@ -261,7 +261,7 @@ const projectBasicsEdit = {
                                         m('.w-col.w-col-4.w-col-small-6.w-col-tiny6.text-field.prefix.no-hover.medium.prefix-permalink', {
                                             class: vm.e.hasError('permalink') ? 'error' : ''
                                         },
-                                          m('.fontcolor-secondary.u-text-center.fontcolor-secondary.u-text-center.fontsize-smallest', 'www.catarse.me/')),
+                                          m('.fontcolor-secondary.u-text-center.fontcolor-secondary.u-text-center.fontsize-smallest', 'www.trendnotion.com/')),
                                         m('.w-col.w-col-8.w-col-small-6.w-col-tiny-6', [
                                             m('input.string.required.w-input.text-field.postfix.positive.medium[type="text"]', {
                                                 value: vm.fields.permalink(),

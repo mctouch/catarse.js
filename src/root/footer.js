@@ -14,32 +14,32 @@ const footer = {
                                         m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4.w-hidden-tiny',
                                             [
                                                 m('.footer-full-signature-text.fontsize-small',
-                                                    'Bem-vindo'
+                                                    'Welcome'
                                                 ),
                                                 m('a.link-footer[href=\'http://crowdfunding.catarse.me/quem-somos?ref=ctrse_footer\']',
-                                                    ' Quem Somos'
+                                                    ' Who we are'
                                                 ),
                                                 m('a.link-footer[href=\'http://crowdfunding.catarse.me/paratodos?ref=ctrse_footer\']',
-                                                    ' Como funciona'
+                                                    ' How does it work'
                                                 ),
                                                 m('a.link-footer[href=\'http://blog.catarse.me\']',
                                                     ' Blog'
                                                 ),
                                                 m('a.link-footer[href=\'https://www.catarse.me/pt/team?ref=ctrse_footer\']',
                                                     [
-                                                        ' Nosso time ',
+                                                        ' Our team ',
                                                         m.trust('&lt;'),
                                                         '3'
                                                     ]
                                                 ),
                                                 m('a.link-footer[href=\'https://www.catarse.me/pt/press?ref=ctrse_footer\']',
-                                                    ' Imprensa'
+                                                    ' Press'
                                                 ),
                                                 m('a.u-marginbottom-30.link-footer[href=\'http://ano.catarse.me/2017?ref=ctrse_footer\']',
-                                                    ' Retrospectiva 2017'
+                                                    ' 2017 Retrospective'
                                                 ),
                                                 m('.footer-full-signature-text.fontsize-small',
-                                                    'Redes Sociais'
+                                                    'Social networks'
                                                 ),
                                                 m('a.link-footer[href=\'http://facebook.com/catarse.me\']',
                                                     [
@@ -74,82 +74,82 @@ const footer = {
                                         m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4.footer-full-firstcolumn',
                                             [
                                                 m('.footer-full-signature-text.fontsize-small',
-                                                    'Ajuda'
+                                                    'Help'
                                                 ),
                                                 m('a.link-footer[href=\'http://suporte.catarse.me?ref=ctrse_footer/\']',
-                                                    ' Central de Suporte'
+                                                    ' Support Center'
                                                 ),
                                                 h.getUser() ?
                                                     m('a.link-footer[href=\'https://suporte.catarse.me/hc/pt-br/signin?return_to=https%3A%2F%2Fsuporte.catarse.me%2Fhc%2Fpt-br%2Frequests%2Fnew&locale=19\'][target="_BLANK"]',
-                                                      ' Contato'
+                                                      ' Contact'
                                                      )
                                                     :
                                                     m('a.link-footer[href=\'http://suporte.catarse.me/hc/pt-br/requests/new\'][target="_BLANK"]',
-                                                      ' Contato'
+                                                      ' Contact'
                                                      ),
                                                 m('a.link-footer[href=\'https://www.ofinanciamentocoletivo.com.br/?ref=ctrse_footer\']',
-                                                  ' Escola Catarse'
+                                                  ' School Catarse'
                                                  ),
                                                 m('a.link-footer[href=\'http://crowdfunding.catarse.me/nossa-taxa?ref=ctrse_footer\']',
-                                                  ' Nossa Taxa'
+                                                  ' Our Rate'
                                                  ),
                                                 m('a.link-footer[href=\'http://pesquisa.catarse.me/\']',
-                                                  ' Retrato FC Brasil 2013/2014'
+                                                  ' Portrait FC Brazil 2013/2014'
                                                  ),
                                                 m('a.link-footer[href=\'http://suporte.catarse.me/hc/pt-br/articles/115002214043-Responsabilidades-e-Seguran%C3%A7a?ref=ctrse_footer\']',
-                                                  ' Responsabilidades e Segurança'
+                                                  ' Responsibilities and Security'
                                                  ),
                                                 m('a.link-footer[href=\'https://crowdfunding.catarse.me/legal/termos-de-uso\'][target="_BLANK"]',
-                                                  ' Termos de uso'
+                                                  ' Terms of use'
                                                  ),
                                                 m('a.link-footer[href=\'https://crowdfunding.catarse.me/legal/politica-de-privacidade\'][target="_BLANK"]',
-                                                  ' Política de privacidade'
+                                                  ' Privacy policy'
                                                  )
                                             ]
                                         ),
                                         m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4.footer-full-lastcolumn',
                                             [
                                                 m('.footer-full-signature-text.fontsize-small',
-                                                    'Faça uma campanha'
+                                                    'Make a campaign'
                                                 ),
                                                 m('a.link-footer[href=\'/pt/start?ref=ctrse_footer\']',
-                                                    ' Comece seu projeto'
+                                                    ' Start your project'
                                                 ),
                                                 m('a.link-footer[href=\'http://crowdfunding.catarse.me/financiamento-coletivo-musica-independente?ref=ctrse_footer\']',
-                                                    ' Música no Catarse'
+                                                    ' Music not Catarse'
                                                 ),
                                                 m('a.link-footer[href=\'https://crowdfunding.catarse.me/publicacoes-independentes-financiamento-coletivo?ref=ctrse_footer\']',
-                                                    ' Publicações Independentes'
+                                                    ' Independent Publications'
                                                 ),
                                                 m('a.u-marginbottom-30.link-footer[href=\'https://crowdfunding.catarse.me/assinaturas?ref=ctrse_footer\']',
                                                     [
-                                                        'Catarse Assinaturas',
+                                                        'Signature Subscriptions',
                                                         m.trust('&nbsp;'),
                                                         m('span.badge.badge-success',
-                                                        'Novidade‍'
+                                                        'Novelty‍'
                                                        )
                                                     ]
                                                  ),
                                                 m('.footer-full-signature-text.fontsize-small',
-                                                    'Apoie projetos no Catarse'
+                                                    'Support projects in Trend'
                                                 ),
                                                 m('a.link-footer[href=\'/pt/explore?ref=ctrse_footer\']',
-                                                    ' Explore projetos'
+                                                    ' Explore projects'
                                                 ),
                                                 m('a.w-hidden-main.w-hidden-medium.w-hidden-small.link-footer[href=\'http://blog.catarse.me?ref=ctrse_footer\']',
                                                     ' Blog'
                                                 ),
                                                 m('a.w-hidden-main.w-hidden-medium.w-hidden-small.link-footer[href=\'http://suporte.catarse.me/hc/pt-br/requests/new\']',
-                                                    ' Contato'
+                                                    ' Contact'
                                                 ),
                                                 m('a.w-hidden-tiny.link-footer[href=\'/pt/explore?filter=score&ref=ctrse_footer\']',
-                                                    ' Populares'
+                                                    ' Popular'
                                                 ),
                                                 m('a.w-hidden-tiny.link-footer[href=\'/pt/explore?filter=online&ref=ctrse_footer\']',
                                                     ' No ar'
                                                 ),
                                                 m('a.w-hidden-tiny.link-footer[href=\'/pt/explore?filter=finished&ref=ctrse_footer\']',
-                                                    ' Finalizados'
+                                                    ' Finalized'
                                                 )
                                             ]
                                         )
@@ -159,7 +159,7 @@ const footer = {
                             m('.w-col.w-col-3.column-social-media-footer',
                                 [
                                     m('.footer-full-signature-text.fontsize-small',
-                                        'Assine nossa news'
+                                        'Subscribe to our news'
                                     ),
                                     m('.w-form',
                                         m(`form[accept-charset='UTF-8'][action='${h.getNewsletterUrl()}'][id='mailee-form'][method='post']`,
@@ -188,7 +188,7 @@ const footer = {
                             m('img.u-marginbottom-20[alt=\'Logo footer\'][src=\'/assets/logo-footer.png\']'),
                             m('.lineheight-loose',
                                 m('a.link-footer-inline[href=\'http://github.com/catarse/catarse\']',
-                                   ` Feito com amor | ${new Date().getFullYear()} | Open source`
+                                   ` Made with love | ${new Date().getFullYear()} | Open source`
                                 )
                             )
                         ]

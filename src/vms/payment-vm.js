@@ -53,18 +53,18 @@ const paymentVM = () => {
 
     const expMonthOptions = () => [
             [null, 'Mês'],
-            [1, '01 - Janeiro'],
-            [2, '02 - Fevereiro'],
-            [3, '03 - Março'],
-            [4, '04 - Abril'],
-            [5, '05 - Maio'],
-            [6, '06 - Junho'],
-            [7, '07 - Julho'],
-            [8, '08 - Agosto'],
-            [9, '09 - Setembro'],
-            [10, '10 - Outubro'],
-            [11, '11 - Novembro'],
-            [12, '12 - Dezembro']
+            [1, '01 - January'],
+            [2, '02 - February'],
+            [3, '03 - March'],
+            [4, '04 - April'],
+            [5, '05 - May'],
+            [6, '06 - June'],
+            [7, '07 - July'],
+            [8, '08 - August'],
+            [9, '09 - September'],
+            [10, '10 - October'],
+            [11, '11 - November'],
+            [12, '12 - December']
     ];
 
     const expYearOptions = () => {
@@ -84,7 +84,7 @@ const paymentVM = () => {
             ? { locale: 'en' }
             : { locale: 'pt' };
 
-    const faq = (mode = 'aon') => window.I18n.translations[window.I18n.currentLocale()].projects.faq[mode],
+    const faq = (mode = 'one') => window.I18n.translations[window.I18n.currentLocale()].projects.faq[mode],
         currentUser = h.getUser() || {};
 
     const checkEmptyFields = checkedFields => _.map(checkedFields, (field) => {

@@ -11,7 +11,7 @@ const fields = {
 };
 
 const fillFields = (data) => {
-    fields.mode(data.mode || 'aon');
+    fields.mode(data.mode || 'one');
     fields.online_days(data.online_days || '');
     fields.goal(data.goal);
 };

@@ -17,41 +17,41 @@ const subscriptionsPerMonthTable = {
 
     view: function(ctrl, args) {
         return m('div', [
-            m(".fontsize-large.fontweight-semibold.u-text-center.u-marginbottom-30[id='origem']",
-                'Crescimento mensal das assinaturas'
+            m(".fontsize-large.fontweight-semibold.u-text-center.u-marginbottom-30[id='source']",
+                'Monthly subscription growth'
             ),
             m('.table-outer.u-marginbottom-60', [
                 m('.table-row.fontweight-semibold.fontsize-smaller.header.lineheight-tighter.w-row', [
                     m('.table-col.w-col.w-col-4.w-col-small-4.w-col-tiny-4',
                         m('div',
-                            'Mês'
+                            'Month'
                         )
                     ),
                     m('.table-col.w-hidden-small.w-hidden-tiny.w-col.w-col-2.w-col-small-2.w-col-tiny-2',
                         m('div', [
-                            'Novos assinantes',
+                            'New subscribers',
                             m.trust('&nbsp;')
                         ])
                     ),
                     m('.table-col.w-hidden-small.w-hidden-tiny.w-col.w-col-2.w-col-small-2.w-col-tiny-2',
                         m('div',
-                            'Receita com novos assinantes'
+                            'Revenue with new subscribers'
                         )
                     ),
                     m('.w-col.w-col-2.w-col-small-2.w-col-tiny-2',
                         m('div',
-                            'Assinantes totais'
+                            'Total Subscribers'
                         )
                     ),
                     m('.w-col.w-col-2.w-col-small-2.w-col-tiny-2',
                         m('div',
-                            'Receita total'
+                            'Total revenue'
                         )
                     )
                 ]),
                 m('.table-inner.fontsize-small', [!args.data ? '' :
                     _.map(_.groupBy(args.data, 'month'), (subscription) => {
-                        const slip = _.filter(subscription, sub => sub.payment_method === 'boleto')[0] || ctrl.emptyRow;
+                        const slip = _.filter(subscription, sub => sub.payment_method === 'ticket')[0] || ctrl.emptyRow;
                         const credit_card = _.filter(subscription, sub => sub.payment_method === 'credit_card')[0] || ctrl.emptyRow;
 
                         return m('.table-row.w-row', [
@@ -60,10 +60,10 @@ const subscriptionsPerMonthTable = {
                                   moment(subscription[0].month).format('MMMM YYYY')
                                 ),
                                 m('.fontsize-smallest.fontcolor-secondary',
-                                    'Cartão de crédito'
+                                    'Credit card'
                                 ),
                                 m('.fontsize-smallest.fontcolor-secondary',
-                                    'Boleto bancário'
+                                    'Bank slip'
                                 )
                             ]),
                             m('.table-col.w-hidden-small.w-hidden-tiny.w-col.w-col-2.w-col-small-2.w-col-stack.w-col-tiny-2', [

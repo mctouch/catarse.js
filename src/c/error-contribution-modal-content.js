@@ -14,22 +14,22 @@ const errorContributionModalContent = {
                     m('span.fa.fa-exclamation-triangle',
                         ''
                     ),
-                    ' Ops. Erro no envio!'
+                    ' Ops. Sending error!'
                 ])
             ),
             m('.modal-dialog-content', [
                 m('p.fontsize-small.u-marginbottom-30', [
                     m('span.fontweight-semibold',
-                        `Você selecionou ${args.amount} apoios.`
+                        `You have selected ${args.amount} supports.`
                     ),
-                    ' Após sua confirmação, os apoiadores que efetuaram esses apoios ao seu projeto serão notificados de que houve um problema com o envio de suas recompensas.'
+                    ' Upon your confirmation, the supporters who made these supports for your project will be notified that there was a problem with sending your rewards.'
                 ]),
                 m('.w-form', [
                     m('form', [
                         m('.fontsize-smaller',
-                            'Se quiser adicionar alguma informação nessa mensagem, use o espaço abaixo (ex: você pode pedir confirmação de endereço de entrega ou explicar motivos do erro)'
+                            'If you want to add some information in this message, use the space below (ex: you can ask for confirmation of delivery address or explain reasons for the error)'
                         ),
-                        m("textarea.height-mini.text-field.w-input[placeholder='Digite sua mensagem (opcional)']", {
+                        m("textarea.height-mini.text-field.w-input[placeholder='Enter your message (optional)']", {
                             value: args.message(),
                             onchange: m.withAttr('value', args.message)
                         })
@@ -39,7 +39,7 @@ const errorContributionModalContent = {
                     m('.w-col.w-col-1'),
                     m('.w-col.w-col-10',
                         m('.fontsize-small.fontweight-semibold.u-marginbottom-20.u-text-center',
-                            'Você confirma que houve um erro no envio das recompensas dos apoios selecionados?'
+                            'You confirm that there was an error in sending the rewards for the selected backups?'
                         )
                     ),
                     m('.w-col.w-col-1')
@@ -57,7 +57,7 @@ const errorContributionModalContent = {
                         m('a.btn.btn-medium.btn-terciary.w-button', {
                             onclick: args.displayModal.toggle
                         },
-                            'Voltar'
+                            'Come back'
                         )
                     ),
                     m('.w-col.w-col-1')

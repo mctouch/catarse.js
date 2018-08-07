@@ -16,7 +16,7 @@ const insightsInfoBox = {
               args.label
              ),
             m('.fontsize-smallest.fontcolor-secondary.lineheight-tighter',
-              'Últimos 7 dias'
+              'Last 7 days'
              ),
             m('.fontsize-largest.fontweight-semibold',
               args.info
@@ -29,7 +29,7 @@ const insightsInfoBox = {
                 m(countIncrease === 0 ? 'span.fontcolor-secondary' : 'span', countIncrease)
             ]),
             m('.fontsize-mini.fontweight-semibold.fontcolor-secondary.lineheight-tighter',
-              'Comparado ao período anterior'
+              'Compared to the previous period'
              )
         ]);
     }

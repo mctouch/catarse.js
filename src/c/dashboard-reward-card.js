@@ -24,7 +24,7 @@ const dashboardRewardCard = {
             validate = () => {
                 limitError(false);
                 args.error(false);
-                args.errors('Erro ao salvar informações.');
+                args.errors('Error saving information.');
                 if (reward.maximum_contributions() && reward.paid_count() > reward.maximum_contributions()) {
                     limitError(true);
                     args.error(true);
@@ -136,7 +136,7 @@ const dashboardRewardCard = {
                         m('.w-col.w-col-4', [
                             m('button.btn.btn-small.btn-terciary.w-button', {
                                 onclick: ctrl.toggleShowLimit
-                            }, 'Alterar limite'),
+                            }, 'Change limit'),
 
                         ])),
                     m('.w-col.w-col-8')
@@ -173,13 +173,13 @@ const dashboardRewardCard = {
                                     m('.w-sub-col.w-col.w-col-4',
                                         m('button.btn.btn-small.w-button', {
                                             onclick: ctrl.saveReward
-                                        }, 'Salvar')
+                                        }, 'To save')
                                     ),
                                     m('.w-sub-col.w-col.w-col-4',
                                         m('button.btn.btn-small.btn-terciary.w-button', {
                                             onclick: ctrl.toggleShowLimit
                                         },
-                                            'Cancelar'
+                                            'Cancel'
                                         )
                                     ),
                                     m('.w-clearfix.w-col.w-col-4')
@@ -190,7 +190,7 @@ const dashboardRewardCard = {
 
                 ),
                 ctrl.limitError() ? m(inlineError, {
-                    message: 'Limite deve ser maior que quantidade de apoios.'
+                    message: 'Limit must be greater than amount of supports.'
                 }) : '', ,
             ]),
             m('.u-margintop-20', [

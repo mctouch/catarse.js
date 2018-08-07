@@ -10,12 +10,12 @@ const aonTerms = (project, expiresAt) => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'O que pode e não pode alterar na página do projeto a partir da publicação?')
+            }, 'What you can and can not change on the project page as of the post?')
         ]),
         m('div', [
-            m('span.fontweight-semibold', 'Você não poderá alterar'), ': a identidade do responsável pelo projeto (Nome / CPF ou Razão Social / CNPJ), a Modalidade de financiamento, o título do projeto, a URL (link) do projeto, a categoria do projeto, a meta de arrecadação, prazo escolhido e as recompensas onde existirem apoios já efetuados. ',
+            m('span.fontweight-semibold', 'You can not change'), ': the name of the person responsible for the project (Name / CPF or Social Reason / CNPJ), the funding modality, the project title, the URL of the project, the project category, the collection goal, the term chosen and the rewards where there are support already made. ',
             m('br'), m('br'),
-            m('span.fontweight-semibold', 'Você poderá alterar'), ': o vídeo principal da campanha, o conteúdo da descrição, a imagem do projeto, a frase de efeito, as recompensas onde não existirem apoios efetuados, além de adicionar novas recompensas durante a arrecadação'
+            m('span.fontweight-semibold', 'You can change'), ': the main video of the campaign, the content of the description, the project image, the phrase of effect, the rewards where there are no supports made, in addition to adding new rewards during the collection'
         ])
     ]),
 
@@ -23,9 +23,9 @@ const aonTerms = (project, expiresAt) => [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '2/9'),
             ' ',
-            m('span.fontweight-semibold', ' Regras da modalidade Tudo-ou-nada')
+            m('span.fontweight-semibold', ' All-or-nothing rules')
         ]),
-        m('div', ['Você escolheu a campanha tudo-ou-nada. Dessa maneira, você só irá receber os recursos arrecadados ', m('span.fontweight-semibold', 'caso atinja ou supere a meta de arrecadação'), '. Caso contrário, todos seus apoiadores serão reembolsados. Você será responsável pela entrega das recompensas oferecidas se seu projeto alcançar a meta de arrecadação.'])
+        m('div', ['You chose the all-or-nothing campaign. In this way, you will only receive the funds collected ', m('span.fontweight-semibold', 'if it reaches or exceeds the collection goal'), '. Otherwise, all of your supporters will be reimbursed. You will be responsible for delivering the rewards offered if your project reaches the collection goal.'])
     ]),
 
     m('.w-col.w-col-11', [
@@ -36,9 +36,9 @@ const aonTerms = (project, expiresAt) => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'Meta de arrecadação')
+            }, 'Goal of collection')
         ]),
-        m('div', 'A meta não poderá ser alterada após o publicação do projeto.'),
+        m('div', 'The goal can not be changed after the project has been published.'),
 
     ]),
 
@@ -50,12 +50,12 @@ const aonTerms = (project, expiresAt) => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'Taxas')
+            }, 'Rates')
         ]),
         m('div', [
-            'Cobramos 13% sobre o ',
-            m('span.fontweight-semibold', 'valor total arrecadado'),
-            ' pelo seu projeto caso ele atinja ou supere a meta dentro do prazo da campanha. Se o projeto não atingir a meta, nenhuma taxa será cobrada.',
+            'We charge 13% ',
+            m('span.fontweight-semibold', 'total amount collected'),
+            ' by your project if it reaches or exceeds the target within the campaign deadline. If the project does not reach the goal, no fee will be charged.',
             m('span.fontweight-semibold')
         ])
     ]),
@@ -70,7 +70,7 @@ const aonTerms = (project, expiresAt) => [
                 }
             }, 'Prazo da campanha')
         ]),
-        m('div', `Seu projeto estará em arrecadação no Catarse até o dia ${h.momentify(expiresAt)} às 23h59min59s. Este prazo não poderá ser alterado após a publicação do projeto.`)
+        m('div', `Your project will be in collection in the Trend until the day ${h.momentify(expiresAt)} at 11:50 p.m. This deadline can not be changed after the publication of the project.`)
     ]),
 
     m('.w-col.w-col-11', [
@@ -81,9 +81,9 @@ const aonTerms = (project, expiresAt) => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'Regras do repasse e reembolso'),
+            }, 'Transfer and refund rules'),
             m('div', [
-                m.trust('Quando o prazo do seu projeto chegar ao fim, você deverá inscrever e confirmar seus dados bancários. Você poderá alterar o Banco, Conta e a Agência <strong>somente se a nova conta cadastrada for de sua titularidade</strong>. Após essa confirmação, o Catarse depositará o valor arrecadado, já descontada a taxa, na sua conta em 10 dias úteis. Caso o projeto não atinja 100% da meta dentro do prazo, o Catarse irá reembolsar os apoiadores. <a href="http://suporte.catarse.me/hc/pt-br/articles/202365507" target="blank">Saiba mais sobre o processo de reembolso</a>')
+                m.trust('When the deadline for your project comes to an end, you must enter and confirm your bank details. You may change the Bank, Account and the Agency <strong>only if the new registered account is owned by you</strong> . After this confirmation, Trend will deposit the amount collected, already discounted the fee, into your account in 10 business days. If the project does not reach 100% of the target by the deadline, the Trend will reimburse the supporters. <a href="http://suporte.catarse.me/hc/pt-br/articles/202365507" target="blank">Learn more about the repayment process</a>')
             ])
         ]),
         m('div', '')
@@ -98,8 +98,8 @@ const aonTerms = (project, expiresAt) => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'Responsabilidade do Catarse')
-        ]), [m('div', [m('span.fontweight-semibold'), m('span.fontweight-semibold', 'O Catarse é responsável:'), ' pelo desenvolvimento tecnológico da plataforma, atendimento de dúvidas e problemas (tanto de apoiadores quanto de realizadores), por hospedar o projeto na plataforma e por garantir a segurança das transações financeiras.\ ', m('br'), m('br'), m('span.fontweight-semibold', 'O Catarse não é responsável:'), ' pelo financiamento, divulgação e execução, nem pela entrega de recompensas dos projetos inscritos.'])]
+            }, 'Responsibility of Trend')
+        ]), [m('div', [m('span.fontweight-semibold'), m('span.fontweight-semibold', 'Trend is responsible:'), ' the technological development of the platform, attendance of doubts and problems (both of supporters and directors), for hosting the project on the platform and for ensuring the security of financial transactions.\ ', m('br'), m('br'), m('span.fontweight-semibold', 'Trend is not responsible:'), ' financing, dissemination and execution, nor for the delivery of rewards of the registered projects.'])]
     ]),
 
     m('.w-col.w-col-11', [
@@ -110,9 +110,9 @@ const aonTerms = (project, expiresAt) => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'Suas responsabilidades')
+            }, 'Your responsibilities')
         ]),
-        m('div', 'É sua responsabilidade o recebimento do dinheiro da campanha e tudo aquilo que diz respeito a formatação do projeto, planejamento e divulgação da campanha de arrecadação, mobilização de apoiadores, execução do projeto, comunicação com apoiadores e produção e entrega de recompensas dentro do prazo estimado.')
+        m('div', 'It is your responsibility to receive the money from the campaign and everything related to formatting the project, planning and publicizing the fundraising campaign, mobilizing supporters, executing the project, communicating with supporters, and producing and delivering rewards within the estimated time frame.')
     ]),
 
     m('.w-col.w-col-11', [
@@ -123,9 +123,9 @@ const aonTerms = (project, expiresAt) => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'Retiradas de projetos no ar')
+            }, 'Withdrawals from projects in the air')
         ]),
-        m('div', [m('span.fontweight-semibold'), 'O CATARSE reserva-se o direito de, a seu exclusivo critério e uma vez notificado a respeito, cancelar projetos e encerrar as contas de CRIADORES DE PROJETOS que violem nossas ', m('a.alt-link[href=\'http://suporte.catarse.me/hc/pt-br/articles/202387638-Diretrizes-para-cria%C3%A7%C3%A3o-de-projetos\'][target=\'_blank\']', 'Regras do Jogo'), ' e ', m('a.alt-link[href=\'http://www.catarse.me/terms-of-use\'][target=\'_blank\']', 'Termos de Uso'), '.'])
+        m('div', [m('span.fontweight-semibold'), 'TREND reserves the right, in its sole discretion and once notified, to cancel projects and terminate the accounts of PROJECT CREATORS that violate our ', m('a.alt-link[href=\'http://suporte.catarse.me/hc/pt-br/articles/202387638-Diretrizes-para-cria%C3%A7%C3%A3o-de-projetos\'][target=\'_blank\']', 'Game rules'), ' e ', m('a.alt-link[href=\'http://www.catarse.me/terms-of-use\'][target=\'_blank\']', 'Terms of use'), '.'])
     ])
 ];
 
@@ -134,14 +134,14 @@ const flexTerms = project => [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '1/9'),
             ' ',
-            m('span.fontweight-semibold', 'O que pode e não pode alterar na página do projeto a partir da publicação?')
+            m('span.fontweight-semibold', 'What you can and can not change on the project page as of the post?')
         ]),
         m('div', [
-            m('span.fontweight-semibold', 'Você não poderá alterar'),
-            ': a identidade do responsável pelo projeto (Nome / CPF ou Razão Social / CNPJ), a Modalidade de financiamento, o título do projeto, a URL (link) do projeto, a categoria do projeto, a meta de arrecadação,  o prazo (caso já tenha definido), e as recompensas onde existirem apoios já efetuados.',
+            m('span.fontweight-semibold', 'You can not change'),
+            ': the identity of the person in charge of the project (Name / CPF or Social Reason / CNPJ), the funding modality, the project title, the URL of the project, the project category, the collection goal, the deadline has defined), and the rewards where there is support already made.',
             m('br'), m('br'),
-            m('span.fontweight-semibold', 'Você poderá alterar'),
-            ': o vídeo principal da campanha, o conteúdo da descrição, a imagem do projeto, a frase de efeito, as recompensas onde não existirem apoios efetuados, além de adicionar novas recompensas durante a arrecadação'
+            m('span.fontweight-semibold', 'You can change'),
+            ': the main video of the campaign, the content of the description, the project image, the phrase of effect, the rewards where there are no supports made, in addition to adding new rewards during the collection'
         ])
     ]),
 
@@ -149,59 +149,59 @@ const flexTerms = project => [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '2/9'),
             ' ',
-            m('span.fontweight-semibold', 'Regras da modalidade FLEX')
+            m('span.fontweight-semibold', 'FLEX Rules')
         ]),
-        m('div', 'Você escolheu a campanha flexível. Dessa maneira, você irá receber todos os recursos arrecadados junto aos apoiadores ao final do prazo da campanha (descontando a taxa do Catarse) e deverá cumprir com a execução do projeto e com a entrega das recompensas oferecidas independente do quanto arrecadar.')
+        m('div', 'You have chosen the flexible campaign. In this way, you will receive all the funds collected from the supporters at the end of the campaign term (discounting the Catarse fee) and must comply with the execution of the project and with the delivery of the rewards offered regardless of how much to collect.')
     ]),
     m('.w-col.w-col-11', [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '3/9'),
             ' ',
-            m('span.fontweight-semibold', 'Meta de arrecadação')
+            m('span.fontweight-semibold', 'Goal of collection')
         ]),
-        m('div', 'A meta não poderá ser alterada após o publicação do projeto.')
+        m('div', 'The goal can not be changed after the project has been published.')
     ]),
     m('.w-col.w-col-11', [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '4/9'),
             ' ',
-            m('span.fontweight-semibold', 'Taxas')
+            m('span.fontweight-semibold', 'Rates')
         ]),
         m('div', [
-            'Ao final da campanha, cobraremos 13% sobre o ',
-            m('span.fontweight-semibold', 'valor total arrecadado.')
+            'At the end of the campaign, we will charge 13% ',
+            m('span.fontweight-semibold', 'total amount collected.')
         ])
     ]),
     m('.w-col.w-col-11', [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '5/9'),
             ' ',
-            m('span.fontweight-semibold', 'Prazo da campanha')
+            m('span.fontweight-semibold', 'Campaign deadline')
         ]),
-        m('div', 'Uma vez definido, o prazo de encerramento não poderá ser alterado. Caso você tenha iniciado a campanha com o prazo em aberto, deverá defini-lo durante a campanha, podendo deixar a campanha aberta por no máximo 12 meses.')
+        m('div', 'Once set, the closing period can not be changed. If you started the campaign with the deadline, you should set it during the campaign, and you can leave the campaign open for a maximum of 12 months.')
     ]),
     m('.w-col.w-col-11', [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '6/9'),
             ' ',
-            m('span.fontweight-semibold', 'Prazo para repasse')
+            m('span.fontweight-semibold', 'Deadline for transfer')
         ]),
-        m('div', m.trust('Quando o prazo do seu projeto chegar ao fim, você deverá inscrever e confirmar seus dados bancários. Você poderá alterar o Banco, Conta e a Agência <strong>somente se a nova conta cadastrada for de sua titularidade</strong>. Após a confirmação, o Catarse depositará na sua conta corrente em até 10 dias úteis. O valor depositado já estará considerando o desconto de 13% da taxa.'))
+        m('div', m.trust('When the deadline for your project comes to an end, you must enter and confirm your bank details. You may change the Bank, Account and the Agency <strong>only if the new registered account is owned by you</strong> . Upon confirmation, Catarse will deposit into your checking account within 10 business days. The amount deposited will already be considering the discount of 13% of the rate.'))
     ]),
     m('.w-col.w-col-11', [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '7/9'),
             ' ',
-            m('span.fontweight-semibold', 'Responsabilidade do Catarse')
-        ]), [m('div', [m('span.fontweight-semibold'), m('span.fontweight-semibold', 'O Catarse é responsável:'), ' pelo desenvolvimento tecnológico da plataforma, atendimento de dúvidas e problemas (tanto de apoiadores quanto de realizadores), por hospedar o projeto na plataforma e por garantir a segurança das transações financeiras.\ ', m('br'), m('br'), m('span.fontweight-semibold', 'O Catarse não é responsável:'), ' pelo financiamento, divulgação e execução, nem pela entrega de recompensas dos projetos inscritos.'])]
+            m('span.fontweight-semibold', 'Responsibility of Trend')
+        ]), [m('div', [m('span.fontweight-semibold'), m('span.fontweight-semibold', 'Trend is responsible:'), ' the technological development of the platform, attendance of doubts and problems (both of supporters and directors), for hosting the project on the platform and for ensuring the security of financial transactions.\ ', m('br'), m('br'), m('span.fontweight-semibold', 'Catarse is not responsible:'), 'financing, dissemination and execution, nor for the delivery of rewards of the registered projects.'])]
     ]),
     m('.w-col.w-col-11', [
         m('div', [
             m('span.fontsize-smallest.fontcolor-secondary', '8/9'),
             ' ',
-            m('span.fontweight-semibold', 'Suas responsabilidades')
+            m('span.fontweight-semibold', 'Your responsibilities')
         ]),
-        m('div', 'É sua responsabilidade o recebimento do dinheiro da campanha e tudo aquilo que diz respeito a formatação do projeto, planejamento e divulgação da campanha de arrecadação, mobilização de apoiadores, execução do projeto, comunicação com apoiadores e produção e entrega de recompensas dentro do prazo estimado.')
+        m('div', 'It is your responsibility to receive the money from the campaign and everything related to formatting the project, planning and publicizing the fundraising campaign, mobilizing supporters, executing the project, communicating with supporters, and producing and delivering rewards within the estimated time frame.')
     ]),
     m('.w-col.w-col-11', [
         m('div', [
@@ -211,9 +211,9 @@ const flexTerms = project => [
                 style: {
                     'font-weight': ' 600'
                 }
-            }, 'Retiradas de projetos no ar')
+            }, 'Withdrawals from projects in the air')
         ]),
-        m('div', [m('span.fontweight-semibold'), 'O CATARSE reserva-se o direito de, a seu exclusivo critério e uma vez notificado a respeito, cancelar projetos e encerrar as contas de CRIADORES DE PROJETOS que violem nossas ', m('a.alt-link[href=\'http://suporte.catarse.me/hc/pt-br/articles/202387638-Diretrizes-para-cria%C3%A7%C3%A3o-de-projetos\'][target=\'_blank\']', 'Regras do Jogo'), ' e ', m('a.alt-link[href=\'http://www.catarse.me/terms-of-use\'][target=\'_blank\']', 'Termos de Uso'), '.'])
+        m('div', [m('span.fontweight-semibold'), 'TREND reserves the right, in its sole discretion and once notified, to cancel projects and terminate the accounts of PROJECT CREATORS that violate our ', m('a.alt-link[href=\'http://suporte.catarse.me/hc/pt-br/articles/202387638-Diretrizes-para-cria%C3%A7%C3%A3o-de-projetos\'][target=\'_blank\']', 'Game rules'), ' e ', m('a.alt-link[href=\'http://www.catarse.me/terms-of-use\'][target=\'_blank\']', 'Terms of use'), '.'])
     ])
 ];
 
@@ -225,20 +225,20 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'O que pode e não pode alterar na página do projeto a partir da publicação?'
+                'What you can and can not change on the project page as of the post?'
             )
         ]),
         m('div', [
             m('span.fontweight-semibold',
-                'Você não poderá alterar:'
+                'You can not change:'
             ),
-            ' a identidade do responsável pelo projeto (Nome / CPF ou Razão Social / CNPJ), a Modalidade de financiamento, o título do projeto, a URL (link) do projeto, a categoria escolhida, as metas de arrecadação já atingidas e as recompensas onde existirem apoios já efetuados.',
+            ' the identity of the person in charge of the project (Name / CPF or Corporate Name / CNPJ), a Financing method, the title of the project, the URL (link) of the project, the category chosen, the collection goals already reached and the rewards where there are already supported.',
             m('br'),
             m('br'),
             m('span.fontweight-semibold',
-                'Você poderá alterar: '
+                'You can change: '
             ),
-            'o conteúdo da descrição do projeto, o vídeo principal da campanha, as imagens do projeto, a frase de efeito, as recompensas onde não existirem apoios efetuados, além de adicionar novas recompensas e novas metas durante a arrecadação.'
+            'the content of the project description, the main campaign video, project images, effect phrase, rewards where there are no supports made, and adding new rewards and new goals during fundraising.'
         ])
     ]),
     m('.w-col.w-col-11', [
@@ -247,11 +247,11 @@ const subTerms = project => [
                 '2/9'
             ),
             m('span.fontweight-semibold',
-                'Regras da modalidade Assinatura'
+                'Rules of the Subscription Mode'
             )
         ]),
         m('div',
-            'Você escolheu a modalidade Assinatura. Dessa maneira, você irá receber em tempo real, no saldo de sua conta no Catarse, os recursos arrecadados pelos seus assinantes. Você é o responsável por entregar as recompensas oferecidas aos seus assinantes.'
+            'You have chosen Signature mode. In this way, you will receive in real time, in the balance of your Catarse account, the funds collected by your subscribers. You are responsible for delivering the rewards offered to your subscribers.'
         )
     ]),
 
@@ -262,11 +262,11 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'Metas de arrecadação'
+                'Collection goals'
             )
         ]),
         m('div',
-            'Você só poderá alterar, durante a campanha no ar, metas de arrecadação futuras. Ou seja, sua meta de arrecadação ativa e suas metas já atingidas não poderão ser alteradas.'
+            'You can only change future collection targets during the air campaign. That is, your active collection goal and your goals already achieved can not be changed.'
         )
     ]),
 
@@ -277,11 +277,11 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'Taxas'
+                'Rates'
             )
         ]),
         m('div', [
-            'Cobramos 13% sobre todos os valores arrecadados em sua campanha de assinatura. ',
+            'We charge 13% on all amounts collected in your subscription campaign. ',
             m('span.fontweight-semibold')
         ])
     ]),
@@ -293,11 +293,11 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'Prazo da campanha'
+                'Campaign deadline'
             )
         ]),
         m('div',
-            'No Catarse Assinaturas você pode manter sua campanha no ar por quanto tempo você quiser.'
+            'At Trend Subscriptions you can keep your campaign on the air for as long as you want.'
         )
     ]),
 
@@ -308,11 +308,11 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'Regras da transferência de dinheiro'
+                'Money Transfer Rules'
             )
         ]),
         m('div', [
-            'Você poderá realizar 01 saque mensal (que é como chamamos a transferência do seu saldo no Catarse para sua conta bancária cadastrada). Assim que você solicitar o saque, o Catarse depositará o valor, já com o desconto da taxa, na sua conta corrente em até 10 dias úteis.',
+            'You can make 01 monthly withdrawal (which is what we call transferring your balance in the Trend to your registered bank account). As soon as you request the withdrawal, Catarse will deposit the amount, with the discount of the rate, into your checking account within 10 business days.',
             m.trust('&nbsp;')
         ])
     ]),
@@ -323,23 +323,23 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'Responsabilidade do Catarse'
+                'Responsibility of Catharsis'
             )
         ]),
         m('div', [
             m('span.fontweight-semibold'),
             m('span.fontweight-semibold',
-                'O Catarse é responsável:'
+                'Catarse is responsible:'
             ),
             m.trust('&nbsp;'),
-            'pelo desenvolvimento tecnológico da plataforma, atendimento de dúvidas e problemas (tanto de apoiadores quanto de realizadores), por hospedar o projeto na plataforma e por garantir a segurança das transações financeiras.',
+            'the technological development of the platform, attendance of doubts and problems (both of supporters and directors), for hosting the project on the platform and for ensuring the security of financial transactions.',
             m('br'),
             m('br'),
             m('span.fontweight-semibold',
-                'O Catarse não é responsável:'
+                'Trend is not responsible:'
             ),
             m.trust('&nbsp;'),
-            'pelo financiamento, divulgação e execução, nem pela entrega de recompensas dos projetos inscritos.'
+            'financing, dissemination and execution, nor for the delivery of rewards of the registered projects.'
         ])
     ]),
     m('.w-col.w-col-11', [
@@ -349,13 +349,13 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'Suas responsabilidades'
+                'Your responsibilities'
             )
         ]),
         m('div', [
             m('span.fontweight-semibold'),
             m('span.fontweight-semibold'),
-            'É sua responsabilidade o recebimento do dinheiro da campanha e tudo aquilo que diz respeito a formatação do projeto, planejamento e divulgação da campanha de arrecadação, mobilização de apoiadores, execução do projeto, comunicação com apoiadores e produção e entrega de recompensas dentro do prazo estimado.'
+            'It is your responsibility to receive the money from the campaign and everything related to formatting the project, planning and publicizing the fundraising campaign, mobilizing supporters, executing the project, communicating with supporters, and producing and delivering rewards within the estimated time frame.'
         ])
     ]),
     m('.w-col.w-col-11', [
@@ -365,18 +365,18 @@ const subTerms = project => [
             ),
             m.trust('&nbsp;'),
             m('span.fontweight-semibold',
-                'Retiradas de projetos no ar'
+                'Withdrawals from projects in the air'
             )
         ]),
         m('div', [
             m('span.fontweight-semibold'),
-            'O CATARSE reserva-se o direito de, a seu exclusivo critério e uma vez notificado a respeito, cancelar projetos e encerrar as contas de CRIADORES DE PROJETOS que violem nossas ',
+            'TREND reserves the right, in its sole discretion and once notified, to cancel projects and terminate the accounts of PROJECT CREATORS that violate our ',
             m("a.alt-link[href='http://suporte.catarse.me/hc/pt-br/articles/202387638-Diretrizes-para-cria%C3%A7%C3%A3o-de-projetos'][target='_blank']",
-                'Regras do Jogo'
+                'Game rules'
             ),
             ' e ',
             m("a.alt-link[href='http://www.catarse.me/terms-of-use'][target='_blank']",
-                'Termos de Uso'
+                'Terms of use'
             ),
             '.'
         ])

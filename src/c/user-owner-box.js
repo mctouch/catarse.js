@@ -13,8 +13,8 @@ const UserOwnerBox = {
                 ])),
                 m('.w-col.w-col-10.w-col-small-10.w-col-tiny-10', [
                     m('.fontcolor-secondary.fontsize-smallest.u-marginbottom-10', [
-                         (project ? 'Dados do apoiador ' : 'Dados do usuário '),
-                        m(`a.alt-link[href="/not-my-account${project ? `?project_id=${project.project_id}` : ''}${args.reward ? `&reward_id=${args.reward.id}` : ''}${args.value ? `&value=${args.value}` : ''}"]`, 'Não é você?')
+                         (project ? 'Supporter data ' : 'User data '),
+                        m(`a.alt-link[href="/not-my-account${project ? `?project_id=${project.project_id}` : ''}${args.reward ? `&reward_id=${args.reward.id}` : ''}${args.value ? `&value=${args.value}` : ''}"]`, 'No, and you?')
                     ]),
                     m('.fontsize-base.fontweight-semibold', user.name),
                     m('label.field-label', `CPF/CNPJ: ${user.owner_document}`)

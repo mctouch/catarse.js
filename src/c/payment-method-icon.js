@@ -9,7 +9,7 @@ const paymentMethodIcon = {
         const subscription = args.subscription;
 
         const paymentClass = {
-            boleto: 'fa-barcode',
+            ticket: 'Fa-barcode',
             credit_card: 'fa-credit-card'
         };
         return {

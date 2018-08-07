@@ -58,58 +58,58 @@ const projectFiltersVM = () => {
 
         filters = {
             all: {
-                title: 'Todas as Categorias',
+                title: 'All categories',
                 filter: all,
-                nicename: 'Populares',
+                nicename: 'Popular',
                 isContextual: false,
                 keyName: 'all'
             },
             recommended_1: {
-                title: 'Recomendados para você',
+                title: 'Recommended for you',
                 filter: recommended,
-                nicename: 'Recomendados para você',
+                nicename: 'Recommended for you',
                 isContextual: false,
                 keyName: 'recommended_1'
             },
             recommended_2: {
-                title: 'Recomendados para você',
+                title: 'Recommended for you',
                 filter: recommended,
-                nicename: 'Recomendados para você',
+                nicename: 'Recommended for you',
                 isContextual: false,
                 keyName: 'recommended_2'
             },
             contributed_by_friends: {
-                title: 'Amigos',
+                title: 'friends',
                 filter: contributed_by_friends,
-                nicename: 'Apoiados por amigos',
+                nicename: 'Supported by friends',
                 isContextual: false,
                 keyName: 'contributed_by_friends'
             },
             recent: {
-                title: 'Recentes',
+                title: 'Recent Updates',
                 filter: recent,
-                nicename: 'Recentes',
+                nicename: 'Recent Updates',
                 isContextual: false,
                 keyName: 'recent'
             },
             expiring: {
-                title: 'Reta final',
+                title: 'Final stretch',
                 filter: expiring,
-                nicename: 'Reta final',
+                nicename: 'Final stretch',
                 isContextual: false,
                 keyName: 'expiring'
             },
             finished: {
-                title: 'Todas as Categorias',
+                title: 'All categories',
                 filter: finished,
-                nicename: 'Finalizados',
+                nicename: 'Finalized',
                 isContextual: false,
                 keyName: 'finished'
             },
             score: {
-                title: 'Todas as Categorias',
+                title: 'All categories',
                 filter: score,
-                nicename: 'Populares',
+                nicename: 'Popular',
                 isContextual: false,
                 keyName: 'score'
             },
@@ -120,32 +120,32 @@ const projectFiltersVM = () => {
                 keyName: 'online'
             },
             successful: {
-                title: 'Todas as Categorias',
+                title: 'All categories',
                 filter: successful,
-                nicename: 'Financiados',
+                nicename: 'Funded',
                 isContextual: false,
                 keyName: 'successful'
             },
             not_sub: {
-                title: 'Projetos pontuais',
+                title: 'Point projects',
                 filter: notSub,
                 isContextual: false,
                 keyName: 'not_sub'
             },
             all_modes: {
-                title: 'Todos os projetos',
+                title: 'All Projects',
                 filter: null,
                 isContextual: false,
                 keyName: 'all_modes'
             },
             sub: {
-                title: 'Projetos recorrentes',
+                title: 'Recurring projects',
                 filter: sub,
                 isContextual: false,
                 keyName: 'sub'
             },
             near_me: {
-                title: 'Próximos a mim',
+                title: 'Next to me',
                 filter: nearMe,
                 isContextual: false,
                 keyName: 'near_me'

@@ -158,10 +158,10 @@ const projectContributionReportContentCard = {
                                       m('.w-col.w-col-3.w-col-push-1', [
                                           m('.fontsize-smallest', [
                                               m('a.link-hidden',
-                                                'Questionário '
+                                                'Quiz '
                                             ),
                                               m('span.fontweight-semibold.text-success',
-                                                'respondido'
+                                                'answered'
                                             )
                                           ]),
                                           m('.fontcolor-terciary.fontsize-smallest',
@@ -171,10 +171,10 @@ const projectContributionReportContentCard = {
                                       m('.w-col.w-col-3.w-col-push-1', [
                                           m('.fontsize-smallest', [
                                               m('a.link-hidden',
-                                                'Questionário '
+                                                'Quiz '
                                             ),
                                               m('span.fontweight-semibold.text-fail',
-                                                'sem resposta'
+                                                'no reply'
                                             )
                                           ]),
                                           m('.fontcolor-terciary.fontsize-smallest',
@@ -184,10 +184,10 @@ const projectContributionReportContentCard = {
                                     m('.w-col.w-col-3.w-col-push-1', [
                                         m('.fontsize-smallest', [
                                             m('a.link-hidden',
-                                                'Questionário '
+                                                'Quiz '
                                             ),
                                             m('span.fontweight-semibold.text-waiting',
-                                                'enviado'
+                                                'Sent'
                                             )
                                         ]),
                                         m('.fontcolor-terciary.fontsize-smallest',
@@ -307,9 +307,9 @@ const projectContributionReportContentCard = {
                         m('.w-tab-pane',
                             m('.fontsize-small',
                                 m('p', [
-                                    `Nome completo: ${contribution.user_name}`,
+                                    `Full name: ${contribution.user_name}`,
                                     m('br'),
-                                    `Nome público: ${contribution.public_user_name}`,
+                                    `Public name: ${contribution.public_user_name}`,
                                     m('br'),
                                     contribution.email,
                                     m('br'),

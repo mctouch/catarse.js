@@ -9,7 +9,7 @@ const dashboardOpenQuestion = {
                 m('.w-row', [
                     m('.w-col.w-col-4',
                         m('label.fontsize-smaller[for="name-3"]',
-                            'Pergunta'
+                            'Question'
                         )
                     ),
                     m('.w-col.w-col-8',
@@ -22,13 +22,13 @@ const dashboardOpenQuestion = {
                                 question.error = false;
                             }
                         }),
-                        question.error ? m(inlineError, { message: 'O campo pergunta não pode ser vazio.' }) : null
+                        question.error ? m(inlineError, { message: 'The question field can not be empty.' }) : null
                     )
                 ]),
                 m('.w-row', [
                     m('.w-col.w-col-4',
                         m('label.fontsize-smaller[for="name-3"]',
-                            'Descrição'
+                            'description'
                         )
                     ),
                     m('.w-col.w-col-8',

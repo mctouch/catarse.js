@@ -26,12 +26,12 @@ const deleteProjectModalContent = {
                     deleteSuccess(true);
                 }).catch((err) => {
                     confirmed(false);
-                    error('Erro ao deletar projeto. Por favor tente novamente.');
+                    error('Error deleting project. Please try again.');
                     m.redraw();
                 });
             } else {
                 confirmed(false);
-                error('Por favor, corrija os seguintes erros: para deletar definitivamente o projeto você deverá preencher "deletar-rascunho".');
+                error('Please correct the following errors: To permanently delete the project you must fill in "delete-draft".');
             }
             return false;
         };
@@ -49,7 +49,7 @@ const deleteProjectModalContent = {
                  (ctrl.deleteSuccess() ? '' : m('.modal-dialog-header',
                   m('.fontsize-large.u-text-center',
                       [
-                          'Confirmar ',
+                          'Confirm ',
                           m('span.fa.fa-trash',
                         ''
                       )
@@ -57,21 +57,21 @@ const deleteProjectModalContent = {
                   )
                 )),
                 m('form.modal-dialog-content', { onsubmit: ctrl.deleteProject },
-                  (ctrl.deleteSuccess() ? [m('.fontsize-base.u-margintop-30', 'Projeto deletado com sucesso. Clique no link abaixo para voltar a página inicial.'),
+                  (ctrl.deleteSuccess() ? [m('.fontsize-base.u-margintop-30', 'Project deleted successfully. Click the link below to return to the homepage.'),
                       m(`a.btn.btn-inactive.btn-large.u-margintop-30[href='/pt/users/${h.getUser().user_id}/edit#projects']`, 'Voltar')
                   ] :
                   [
                       m('.fontsize-base.u-marginbottom-60',
                           [
-                              'O projeto será deletado permanentemente e todos os dados que você preencheu na edição do rascunho não poderão ser recuperados.'
+                              'The project will be deleted permanently and all the data you filled in the draft edition will not be retrieved.'
                           ]
                     ),
                       m('.fontsize-base.u-marginbottom-10',
                           [
-                              'Confirme escrevendo ',
-                              'no campo abaixo ',
+                              'Confirm writing ',
+                              'in the field below ',
                               m('span.fontweight-semibold.text-error',
-                          'deletar-rascunho'
+                          'delete-draft'
                         )
                           ]
                     ),
@@ -79,7 +79,7 @@ const deleteProjectModalContent = {
                       m('.text-error.u-marginbottom-10', ctrl.error()),
                           [
                               m('div',
-                          m('input.positive.text-field.u-marginbottom-40.w-input[maxlength=\'256\'][type=\'text\']', { class: ctrl.confirmed() ? false : 'error', placeholder: 'deletar-rascunho', onchange: m.withAttr('value', ctrl.check) })
+                          m('input.positive.text-field.u-marginbottom-40.w-input[maxlength=\'256\'][type=\'text\']', { class: ctrl.confirmed() ? false : 'error', placeholder: 'delete-draft', onchange: m.withAttr('value', ctrl.check) })
                         )
                           ]
                     ),
@@ -89,8 +89,8 @@ const deleteProjectModalContent = {
                               m('.w-col.w-col-3'),
                               m('.u-text-center.w-col.w-col-6',
                                   [
-                                      m('input.btn.btn-inactive.btn-large.u-marginbottom-20[type=\'submit\'][value=\'Deletar para sempre\']'),
-                                      m('a.fontsize-small.link-hidden-light[href=\'#\']', { onclick: args.displayDeleteModal.toggle }, 'Cancelar'
+                                      m('input.btn.btn-inactive.btn-large.u-marginbottom-20[type=\'submit\'][value=\'Delete forever\']'),
+                                      m('a.fontsize-small.link-hidden-light[href=\'#\']', { onclick: args.displayDeleteModal.toggle }, 'Cancel'
                               )
                                   ]
                           ),

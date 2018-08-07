@@ -107,7 +107,7 @@ const projectEditReward = {
                 m('.w-section.section',
                     m('.w-container', [
                         (ctrl.showSuccess() ? m.component(popNotification, {
-                            message: 'Recompensa salva com sucesso'
+                            message: 'Reward saved successfully'
                         }) : ''),
                         (ctrl.error() ? m.component(popNotification, {
                             message: ctrl.errors(),

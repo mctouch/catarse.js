@@ -15,7 +15,7 @@ const projectsContribution = {
         const rewards = () => _.union(
             [{
                 id: null,
-                description: 'Obrigado. Eu só quero ajudar o projeto.',
+                description: 'Thank you. I just want to help the project..',
                 minimum_value: 10,
                 shipping_options: null,
                 row_order: -9999999
@@ -27,7 +27,7 @@ const projectsContribution = {
             const valueFloat = h.monetaryToFloat(rewardVM.contributionValue);
 
             if (valueFloat < rewardVM.selectedReward().minimum_value) {
-                rewardVM.error(`O valor de apoio para essa recompensa deve ser de no mínimo R$${rewardVM.selectedReward().minimum_value}`);
+                rewardVM.error(`The support amount for this reward must be at leastR$${rewardVM.selectedReward().minimum_value}`);
             } else {
                 rewardVM.error('');
                 h.navigateTo(`/projects/${projectVM.currentProject().project_id}/contributions/fallback_create?contribution%5Breward_id%5D=${rewardVM.selectedReward().id}&contribution%5Bvalue%5D=${valueFloat}`);
@@ -57,9 +57,9 @@ const projectsContribution = {
                         m('.w-section.header-cont-new',
                         m('.w-container',
                             m('.fontweight-semibold.lineheight-tight.text-success.fontsize-large.u-text-center-small-only', [
-                                'Escolha a recompensa e o valor do apoio',
+                                'Choose the reward and value of the support',
                                 m.trust('&nbsp;'),
-                                m('span.fontsize-small.badge.badge-success', '(parcele em até 6x)')
+                                m('span.fontsize-small.badge.badge-success', '(Sets up to 6x)')
                             ])
                         )
                 ),

@@ -32,7 +32,7 @@ const projectsSubscriptionContribution = {
             const currentRewardId = rewardVM.selectedReward().id;
 
             if (valueFloat < rewardVM.selectedReward().minimum_value) {
-                rewardVM.error(`O valor de apoio para essa recompensa deve ser de no mínimo R$${rewardVM.selectedReward().minimum_value}`);
+                rewardVM.error(`The support amount for this reward must be at least R$${rewardVM.selectedReward().minimum_value}`);
             } else {
                 rewardVM.error('');
                 m.route(`/projects/${projectVM.currentProject().project_id}/subscriptions/checkout?contribution_value=${valueFloat}${currentRewardId ? `&reward_id=${currentRewardId}` : ''}${isEdit() ? `&subscription_id=${m.route.param('subscription_id')}` : ''}${isReactivation() ? `&subscription_status=${subscriptionStatus}` : ''}`);

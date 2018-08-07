@@ -48,10 +48,10 @@ const posts = {
             },
             togglePreview = () => {
                 if (!validateTitle()) {
-                    errors('Título não pode ficar em branco.');
+                    errors('Title can not be empty.');
                     showError(true);
                 } else if (!validateComment()) {
-                    errors('Mensagem não pode ficar em branco.');
+                    errors('Message can not be left blank.');
                     showError(true);
                 } else {
                     h.scrollTop();
@@ -65,10 +65,10 @@ const posts = {
                 // @TODO move non-sub rewards to common API
                 if (projectVM.isSubscription(project)) {
                     const reward = _.find(rewardVM.rewards(), r => String(r.external_id) === String(rewardId));
-                    return `Assinantes da recompensa R$${reward.data.minimum_value / 100} - ${reward.data.title ? reward.data.title : `${reward.data.description.substring(0, 70)}...`}`;
+                    return `Reward Subscribers R$${reward.data.minimum_value / 100} - ${reward.data.title ? reward.data.title : `${reward.data.description.substring(0, 70)}...`}`;
                 }
                 const reward = _.find(rewardVM.rewards(), r => String(r.id) === String(rewardId));
-                return `Apoiadores da recompensa R$${reward.minimum_value} - ${reward.title ? reward.title : `${reward.description.substring(0, 70)}...`}`;
+                return `Reward supporters R$${reward.minimum_value} - ${reward.title ? reward.title : `${reward.description.substring(0, 70)}...`}`;
             },
             showRecipientes = (post, project) => {
                 if (post.recipients === 'public') {
@@ -185,16 +185,16 @@ const posts = {
                                     m('span.fa.fa-lightbulb-o',
                                         ''
                                     ),
-                                    ' Veja ótimo motivos para ',
+                                    ' Here are some great reasons to ',
                                     m('a.alt-link[href=\'https://catarse.attach.io/B1AHAGm1x\'][target=\'_blank\']',
-                                        'falar com seus apoiadores agora mesmo!'
+                                        'talk to your supporters right now!'
                                     )
                                 ])
                             )),
                             m('.card.card-terciary.medium.u-marginbottom-80.w-form', [
                                 m('form', [
                                     m('label.field-label.fontweight-semibold',
-                                        'Destinatários'
+                                        'Recipients'
                                     ),
                                     m('select.positive.text-field.w-select', {
                                         onchange: m.withAttr('value', ctrl.fields.reward_id)
@@ -212,7 +212,7 @@ const posts = {
                                             )))
                                     ]),
                                     m('label.field-label.fontweight-semibold',
-                                        'Título'
+                                        'Title'
                                     ),
                                     m('input.positive.text-field.w-input[id=\'post_title\'][maxlength=\'256\'][type=\'text\']', {
                                         name: 'posts[title]',
@@ -222,7 +222,7 @@ const posts = {
                                         onchange: m.withAttr('value', ctrl.fields.title)
                                     }),
                                     m('label.field-label.fontweight-semibold',
-                                        'Texto'
+                                        'Text'
                                     ),
                                     m('.preview-container.u-marginbottom-40', {
                                         class: ctrl.commentHasError() ? 'error' : '',
@@ -242,23 +242,23 @@ const posts = {
                                 ])
                             ]),
                             m('.fontsize-large.fontweight-semibold.u-marginbottom-40',
-                                'Novidades já enviadas'
+                                'News already sent'
                             ),
                             m('.table-outer.u-marginbottom-60', [
                                 m('.fontsize-smaller.fontweight-semibold.header.table-row.w-row', [
                                     m('.table-col.w-col.w-col-5',
                                         m('div',
-                                            'Título'
+                                            'Title'
                                         )
                                     ),
                                     m('.table-col.u-text-center.w-col.w-col-3',
                                         m('div',
-                                            'Enviadas'
+                                            'Sent'
                                         )
                                     ),
                                     m('.table-col.u-text-center.w-col.w-col-3',
                                         m('div',
-                                            'Abertas'
+                                            'Open'
                                         )
                                     ),
                                     m('.table-col.w-col.w-col-1')
@@ -271,13 +271,13 @@ const posts = {
                                                 ),
                                             m('.fontcolor-secondary.fontsize-smallest', [
                                                 m('span.fontweight-semibold',
-                                                        'Enviada em: '
+                                                        'sent in: '
                                                     ),
                                                 h.momentify(post.created_at, 'DD/MM/YYYY, h:mm A')
                                             ]),
                                             m('.fontcolor-secondary.fontsize-smallest', [
                                                 m('span.fontweight-semibold',
-                                                        'Destinatários: '
+                                                        'Recipients: '
                                                     ),
                                                 ctrl.showRecipientes(post, project)
                                             ])

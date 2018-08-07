@@ -32,9 +32,9 @@ const projectDataStats = {
                     m('.fontsize-large.fontweight-semibold', [
                         m('span.fa.fa-clock-o'),
                         (_.isNull(project.expires_at) ?
-                            ` Iniciado há ${elapsedTextObj.total} ${elapsedTextObj.unit}`
+                            ` Started there ${elapsedTextObj.total} ${elapsedTextObj.unit}`
                             :
-                            ` ${remainingTextObj.total} ${remainingTextObj.unit} ${(remainingTextObj.total > 1 ? 'restantes' : 'restante')}`
+                            ` ${remainingTextObj.total} ${remainingTextObj.unit} ${(remainingTextObj.total > 1 ? 'remaining' : 'remaining')}`
                         )
                     ])
                 ]),
@@ -46,14 +46,14 @@ const projectDataStats = {
                         m('.w-row.u-marginbottom-30.u-margintop-30', [
                             m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4', [
                                 m('.fontsize-larger.fontweight-semibold', `${visitorsTotal}`),
-                                'Visitantes'
+                                'Visitors'
                             ]),
                             m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4', [
                                 m('.bg-triangle-funnel.fontcolor-secondary.fontsize-base', `${h.formatNumber((project.total_contributors / visitorsTotal * 100 || 0), 2)}%`)
                             ]),
                             m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4', [
                                 m('.fontsize-larger.fontweight-semibold', `${project.total_contributors}`),
-                                'Apoiadores'
+                                'Supporters'
                             ])
                         ])
                     ]),
@@ -61,18 +61,18 @@ const projectDataStats = {
                         m('.w-row.u-marginbottom-30.u-margintop-30', [
                             m('.w-col.w-col-9.w-col-small-6.w-col-tiny-6', [
                                 m('.fontsize-larger.fontweight-semibold', `R$ ${h.formatNumber(project.pledged, 2)}`),
-                                'Arrecadados'
+                                'Collected'
                             ]),
                             m('.w-col.w-col-3.w-col-small-6.w-col-tiny-6', [
                                 m('.fontsize-larger.fontweight-semibold', `${h.formatNumber(project.progress, 2)}%`),
-                                'da Meta'
+                                'yes Meta'
                             ])
                         ])
                     ])
                 ]),
                 m('.fontcolor-secondary.fontsize-smallest.u-margintop-20', [
-                    'Os dados podem levar até 24 horas para serem atualizados.',
-                    m('a.alt-link', { href: 'https://suporte.catarse.me/hc/pt-br/articles/115002214463-projeto-ONLINE#visitante', target: '_blank' }, ' Saiba mais'),
+                    'Data may take up to 24 hours to be updated.',
+                    m('a.alt-link', { href: 'https://suporte.catarse.me/hc/pt-br/articles/115002214463-projeto-ONLINE#visitante', target: '_blank' }, ' know more'),
                     '.'
                 ])
             ])

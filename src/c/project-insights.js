@@ -48,11 +48,11 @@ const projectInsights = {
         const lContributionsPerDay = loader(models.projectContributionsPerDay.getRowOptions(filtersVM.parameters()));
         lContributionsPerDay.load().then(contributionsPerDay);
 
-        const contributionsPerLocationTable = [['Estado', 'Apoios', 'R$ apoiados (% do total)']];
+        const contributionsPerLocationTable = [['State', 'Support', 'R$ supported (% do total)']];
         const buildPerLocationTable = contributions => (!_.isEmpty(contributions)) ? _.map(_.first(contributions).source, (contribution) => {
             const column = [];
 
-            column.push(contribution.state_acronym || 'Outro/other');
+            column.push(contribution.state_acronym || 'Other/other');
             column.push(contribution.total_contributions);
             column.push([contribution.total_contributed, [// Adding row with custom comparator => read project-data-table description
                 m(`input[type="hidden"][value="${contribution.total_contributed}"`),
@@ -117,14 +117,14 @@ const projectInsights = {
             buildTooltip = el => m.component(tooltip, {
                 el,
                 text: [
-                    'Informa de onde vieram os apoios de seu projeto. Saiba como usar essa tabela e planejar melhor suas ações de comunicação ',
+                    'Tell us where your project came from. Learn how to use this table and better plan your communication actions ',
                     m(`a[href="${window.I18n.t('ref_table.help_url', I18nScope())}"][target='_blank']`, 'aqui.')
                 ],
                 width: 380
             });
 
         if (!args.l()) {
-            project.user.name = project.user.name || 'Realizador';
+            project.user.name = project.user.name || 'Producer';
         }
 
         return m('.project-insights', !args.l() ? [

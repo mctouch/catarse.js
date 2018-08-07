@@ -86,7 +86,7 @@ const projectContributionReportContent = {
               }) : ''),
 
             (ctrl.showSuccess() ? m.component(popNotification, {
-                message: 'As informações foram atualizadas'
+                message: 'Information was updated'
             }) : ''),
             m('.w-container', [
                 m('.u-marginbottom-40',
@@ -96,7 +96,7 @@ const projectContributionReportContent = {
                                 m('span.fontweight-semibold',
                                     (list.isLoading() ? '' : list.total())
                                 ),
-                                ' apoios'
+                                ' supports'
                             ])
                         ),
                         m('.w-col.w-col-6', isFailed ? '' : [
@@ -104,12 +104,12 @@ const projectContributionReportContent = {
                                 m('button.btn.btn-inline.btn-small.btn-terciary.u-marginright-20.w-button', {
                                     onclick: ctrl.selectAll
                                 },
-                                    'Selecionar todos'
+                                    'Select all'
                                 ) :
                                 m('button.btn.btn-inline.btn-small.btn-terciary.u-marginright-20.w-button', {
                                     onclick: ctrl.unselectAll
                                 },
-                                    'Desmarcar todos'
+                                    'Deselect All'
                                 )
                             ),
                             (ctrl.selectedAny() ?
@@ -117,23 +117,23 @@ const projectContributionReportContent = {
                                     m('button.btn.btn-inline.btn-small.btn-terciary.w-button', {
                                         onclick: ctrl.showSelectedMenu.toggle
                                     }, [
-                                        'Marcar ',
+                                        'Mark ',
                                         m('span.w-hidden-tiny',
-                                            'entrega'
+                                            'delivery'
                                         ),
-                                        ' como'
+                                        ' as'
                                     ]),
                                     (ctrl.showSelectedMenu() ?
                                         m('.card.dropdown-list.dropdown-list-medium.u-radius.zindex-10[id=\'transfer\']', [
                                             m('a.dropdown-link.fontsize-smaller[href=\'#\']', {
                                                 onclick: () => ctrl.displayDeliverModal.toggle()
                                             },
-                                                'Entregue'
+                                                'Delivered'
                                             ),
                                             m('a.dropdown-link.fontsize-smaller[href=\'#\']', {
                                                 onclick: () => ctrl.displayErrorModal.toggle()
                                             },
-                                                'Erro na entrega'
+                                                'Delivery error'
                                             )
                                         ]) : '')
                                 ]) : '')
@@ -143,7 +143,7 @@ const projectContributionReportContent = {
                                 m('span.fa.fa-download',
                                     ''
                                 ),
-                                ' Baixar relatórios'
+                                ' Download reports'
                             ])
                         )
                     ])
@@ -166,7 +166,7 @@ const projectContributionReportContent = {
                             (!list.isLoading() ?
                                 (list.isLastPage() ? '' : m('button#load-more.btn.btn-medium.btn-terciary', {
                                     onclick: list.nextPage
-                                }, 'Carregar mais')) : h.loader())
+                                }, 'Load more')) : h.loader())
                         ])
                     ])
 

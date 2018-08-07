@@ -23,7 +23,7 @@ const blogBanner = {
                             ),
                             m('.fontsize-large.u-marginbottom-60.text-success',
                                 m('a.link-hidden-success[href=\'http://blog.catarse.me\'][target=\'__blank\']',
-                                    'Blog do Catarse'
+                                    'Blog to Trend'
                                 )
                             )
                         ]
@@ -34,7 +34,7 @@ const blogBanner = {
                             m('.fontsize-smaller.fontcolor-secondary.u-margintop-10', m.trust(`${h.strip(post[6][1].substr(0, 130))}...`))
                         ]
                         ))),
-                    ctrl.error() ? m('.w-row', m('.w-col.w-col-12.u-text-center', 'Erro ao carregar posts...')) : ''
+                    ctrl.error() ? m('.w-row', m('.w-col.w-col-12.u-text-center', 'Error loading posts...')) : ''
                 ]
             )
         );

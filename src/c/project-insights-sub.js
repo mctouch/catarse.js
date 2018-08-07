@@ -99,10 +99,10 @@ const projectInsightsSub = {
             m('.dashboard-header.section-one-column', [
                 m('.u-marginbottom-30.u-text-center', [
                     m('.fontsize-larger.fontweight-semibold',
-                        `Olá, ${project.user.public_name || project.user.name}!`
+                        `Hello, ${project.user.public_name || project.user.name}!`
                     ),
                     m('.fontsize-smaller',
-                        `Este é o retrato de sua campanha hoje, ${moment().format('DD [de] MMMM [de] YYYY')}`
+                        `Your daily campaign update, ${moment().format('DD [de] MMMM [de] YYYY')}`
                     )
                 ]),
                 m('.w-container', [
@@ -114,7 +114,7 @@ const projectInsightsSub = {
                         }) : '',
                         m('.card.card-terciary.flex-column.u-marginbottom-10.u-radius', [
                             m('.fontsize-small.u-marginbottom-10',
-                                'Assinantes ativos'
+                                'Active subscribers'
                             ),
                             m('.fontsize-largest.fontweight-semibold',
                                 subscribersDetails.total_subscriptions
@@ -122,7 +122,7 @@ const projectInsightsSub = {
                         ]),
                         m('.card.card-terciary.flex-column.u-marginbottom-10.u-radius', [
                             m('.fontsize-small.u-marginbottom-10',
-                                'Receita Mensal'
+                                'Monthly Revenue'
                             ),
                             m('.fontsize-largest.fontweight-semibold',
                                 `R$${h.formatNumber(subscribersDetails.amount_paid_for_valid_period, 2, 3)}`
@@ -130,18 +130,18 @@ const projectInsightsSub = {
                         ]),
                         m('.card.flex-column.u-marginbottom-10.u-radius', [
                             m('.fontsize-small.u-marginbottom-10', [
-                                'Saldo',
+                                'Balance',
                                 m.trust('&nbsp;'),
                                 ' ',
                                 m(`a.btn-inline.btn-terciary.fontsize-smallest.u-radius[href='/users/${project.user_id}/edit#balance']`,
-                                    'Sacar'
+                                    'Take'
                                 )
                             ]),
                             m('.fontsize-largest.fontweight-semibold.text-success.u-marginbottom-10',
                                 (balanceData && balanceData.amount ? `R$${h.formatNumber(balanceData.amount, 2, 3)}` : '')
                             ),
                             m('.fontsize-mini.fontcolor-secondary.lineheight-tighter',
-                                'O saldo demora até 20 mins após o pagamento para ser atualizado.'
+                                'The balance will be updated within 20 mins after payment is received.'
                             )
                         ])
                     ]),
@@ -153,7 +153,7 @@ const projectInsightsSub = {
                         m('.flex-row.u-marginbottom-40.u-text-center-small-only', [
                             m('.flex-column.card.u-radius.u-marginbottom-10', [
                                 m('div',
-                                    'Receita média por assinante'
+                                    'Average revenue per subscriber'
                                 ),
                                 m('.fontsize-smallest.fontcolor-secondary.lineheight-tighter',
                                     `em ${moment().format('DD/MM/YYYY')}`
@@ -164,13 +164,13 @@ const projectInsightsSub = {
 
                             ]),
                             m(insightsInfoBox, {
-                                label: 'Novos Assinantes',
+                                label: 'New Subscribers',
                                 info: ctrl.weekSubscriptions().length,
                                 newCount: ctrl.weekSubscriptions().length,
                                 oldCount: ctrl.lastWeekSubscriptions().length
                             }),
                             m(insightsInfoBox, {
-                                label: 'Nova receita',
+                                label: 'New recipe',
                                 info: `R$${weekSum}`,
                                 newCount: weekSum,
                                 oldCount: lastWeekSum

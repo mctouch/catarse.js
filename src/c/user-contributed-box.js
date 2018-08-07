@@ -86,7 +86,7 @@ const userContributedBox = {
                                 ]),
                                 m('.fontsize-smallest',
                                     (contribution.installments > 1 ? (`${contribution.installments} x R$ ${contribution.installment_value} `) : ''),
-                                    (contribution.payment_method === 'BoletoBancario' ? 'Boleto Bancário' : 'Cartão de Crédito')
+                                    (contribution.payment_method === 'Bank slip' ? 'Bank slip' : 'Credit card')
                                 ),
                                 (contributionVM.canShowReceipt(contribution) ?
                                     m(`a.alt-link.u-margintop-10[href='/projects/${contribution.project_id}/contributions/${contribution.contribution_id}/receipt'][target='__blank']`,
@@ -146,22 +146,22 @@ const userContributedBox = {
                                         ''
                                     ),
                                     m.trust('&nbsp;'),
-                                    'Questionário',
+                                    'Quiz',
                                     m('br'),
-                                    'Não respondido'
+                                    'Not answered'
                                 ])
                             )
                         ) : answeredAt ?
                         m('.u-text-center.w-col.w-col-2', [
                             m('.fontsize-smaller.fontweight-semibold.lineheight-tighter',
                                 m(`a.link-hidden-dark[href='/contributions/${contribution.contribution_id}/surveys/${contribution.survey.survey_id}'][target='_blank']`, [
-                                    'Questionário',
+                                    'Quiz',
                                     m('br'),
-                                    'Respondido'
+                                    'Answered'
                                 ])
                             ),
                             m('.fontcolor-secondary.fontsize-smallest',
-                                `em ${h.momentify(answeredAt, 'DD/MM/YYYY')}`
+                                `in ${h.momentify(answeredAt, 'DD/MM/YYYY')}`
                             )
                         ]) :
                         m('.u-text-center.w-col.w-col-2',

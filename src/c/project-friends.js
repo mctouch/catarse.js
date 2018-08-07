@@ -45,11 +45,11 @@ const projectFriends = {
                 (friendsCount > 2 ? [
                     ' e ',
                     m('span.fontweight-semibold',
-                        `mais ${friendsCount - ctrl.friendsSample().length}`
+                        `more ${friendsCount - ctrl.friendsSample().length}`
                     )
                 ] : ''),
                 (friendsCount > 1 ?
-                    ' apoiaram' : ' apoiou')
+                    ' supported' : ' supported')
             ])
         ]);
     }

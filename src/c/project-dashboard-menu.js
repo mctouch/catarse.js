@@ -74,7 +74,7 @@ const projectDashboardMenu = {
             projectRoute = `/projects/${project.project_id}`,
             editRoute = `${projectRoute}/edit`,
             editLinkClass = hash => `dashboard-nav-link-left ${project.is_published ? 'indent' : ''} ${h.hashMatch(hash) ? 'selected' : ''}`;
-        const optionalOpt = m('span.fontsize-smallest.fontcolor-secondary', ' (opcional)');
+        const optionalOpt = m('span.fontsize-smallest.fontcolor-secondary', ' (optional)');
 
         ctrl.body.className = ctrl.bodyToggleForNav();
         return m('#project-nav', [
@@ -115,7 +115,7 @@ const projectDashboardMenu = {
                                 window.I18n.t('posts_tab', I18nScope()),
                                 project.posts_count > 0 ?
                                 m('span.badge', project.posts_count) :
-                                m('span.badge.badge-attention', 'Nenhuma')
+                                m('span.badge.badge-attention', 'None')
                             ]),
 
                             (projectVM.isSubscription(project) ? '' :
@@ -147,17 +147,17 @@ const projectDashboardMenu = {
                                 projectVM.isSubscription(project) ? m(`a#goals_link[class="${editLinkClass('#goals')}"][href="${editRoute}#goals"]`, railsErrorsVM.errorsFor('goals'), window.I18n.t('goals_tab', linksScope())) : '',
                                 m(`a#description_link[class="${editLinkClass('#description')}"][href="${editRoute}#description"]`, railsErrorsVM.errorsFor('description'), window.I18n.t('description_tab', linksScope())),
                                 projectVM.isSubscription(project) ? null : m(`a#video_link[class="${editLinkClass('#video')}"][href="${editRoute}#video"]`, [railsErrorsVM.errorsFor('video'),
-                                    'Vídeo', m('span.fontsize-smallest.fontcolor-secondary', ' (opcional)')
+                                    'Video', m('span.fontsize-smallest.fontcolor-secondary', ' (opcional)')
                                 ]),
                                 projectVM.isSubscription(project) ? null :
                                 m(`a#budget_link[class="${editLinkClass('#budget')}"][href="${editRoute}#budget"]`, railsErrorsVM.errorsFor('budget'), window.I18n.t('budget_tab', linksScope())),
                                 m(`a#card_link[class="${editLinkClass('#card')}"][href="${editRoute}#card"]`, railsErrorsVM.errorsFor('card'), window.I18n.t(`card_tab_${project.mode}`, linksScope())),
                                 m(`a#dashboard_reward_link[class="${editLinkClass('#reward')}"][href="${editRoute}#reward"]`, [railsErrorsVM.errorsFor('reward'),
-                                    'Recompensas', optionalOpt
+                                    'Rewards', optionalOpt
                                 ]),
                                 projectVM.isSubscription(project) ?
                                 m(`a#dashboard_welcome_message_link[class="${editLinkClass('#welcome_message')}"][href="${editRoute}#welcome_message"]`, [railsErrorsVM.errorsFor('welcome_message'),
-                                    'Email de boas vindas', optionalOpt
+                                    'Welcome email', optionalOpt
                                 ]) : null,
                                 m(`a#dashboard_user_about_link[class="${editLinkClass('#user_about')}"][href="${editRoute}#user_about"]`, railsErrorsVM.errorsFor('user_about'), window.I18n.t('about_you_tab', linksScope())),
                                 ((project.is_published || project.state === 'draft') || project.is_admin_role ? [

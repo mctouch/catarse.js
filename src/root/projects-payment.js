@@ -160,7 +160,7 @@ const projectsPayment = {
                             `R$ ${formatedValue}`
                         ),
                         m(`a.alt-link.fontsize-smaller.u-right[href="/projects/${projectVM.currentProject().project_id}/contributions/new${ctrl.reward().id ? `?reward_id=${ctrl.reward().id}` : ''}"]`,
-                            'Editar'
+                            'Edit'
                         )
                     ]),
                     m('.divider.u-marginbottom-10.u-margintop-10'),
@@ -189,21 +189,21 @@ const projectsPayment = {
                         ctrl.isLongDescription(ctrl.reward()) ? m('a[href="javascript:void(0);"].link-hidden.link-more.u-marginbottom-20', {
                             onclick: ctrl.toggleDescription.toggle
                         }, [
-                            ctrl.toggleDescription() ? 'menos ' : 'mais ',
+                            ctrl.toggleDescription() ? 'less ' : 'more ',
                             m('span.fa.fa-angle-down', {
                                 class: ctrl.toggleDescription() ? 'reversed' : ''
                             })
                         ]) : '',
                         ctrl.reward().deliver_at ? m('.fontcolor-secondary.fontsize-smallest.u-margintop-10', [
                             m('span.fontweight-semibold',
-                                'Entrega prevista:'
+                                'Expected delivery:'
                             ),
                             ` ${h.momentify(ctrl.reward().deliver_at, 'MMM/YYYY')}`
                         ]) : '',
                         (rewardVM.hasShippingOptions(ctrl.reward()) || ctrl.reward().shipping_options === 'presential') ?
                         m('.fontcolor-secondary.fontsize-smallest', [
                             m('span.fontweight-semibold',
-                                'Forma de envio: '
+                                'Shipping method: '
                             ),
                             window.I18n.t(`shipping_options.${ctrl.reward().shipping_options}`, {
                                 scope: 'projects.contributions'
@@ -236,8 +236,8 @@ const projectsPayment = {
                                             ]),
                                             m('.w-col.w-col-10.w-col-small-10.w-col-tiny-10', [
                                                 m('.fontcolor-secondary.fontsize-smallest.u-marginbottom-10', [
-                                                    (project ? 'Dados do apoiador ' : 'Dados do usuário '),
-                                                    m(`a.alt-link[href="/not-my-account${project ? `?project_id=${project.project_id}` : ''}${ctrl.reward() ? `&reward_id=${ctrl.reward().id}` : ''}${ctrl.value ? `&value=${ctrl.value * 100}` : ''}"]`, 'Não é você?')
+                                                    (project ? 'Supporter data ' : 'User data '),
+                                                    m(`a.alt-link[href="/not-my-account${project ? `?project_id=${project.project_id}` : ''}${ctrl.reward() ? `&reward_id=${ctrl.reward().id}` : ''}${ctrl.value ? `&value=${ctrl.value * 100}` : ''}"]`, 'No, and you?')
                                                 ]),
                                                 m('.fontsize-base.fontweight-semibold', user.name),
                                                 (user.owner_document ?
@@ -269,7 +269,7 @@ const projectsPayment = {
                                                 type: 'text',
                                                 onchange: m.withAttr('value', ctrl.vm.fields.completeName),
                                                 value: ctrl.vm.fields.completeName(),
-                                                placeholder: 'Nome Completo'
+                                                placeholder: 'Full name'
                                             }),
                                             ctrl.fieldHasError('completeName')
                                         ]),
@@ -327,7 +327,7 @@ const projectsPayment = {
                                     `R$ ${formatedValue}`
                                 ),
                                 m(`a.alt-link.fontsize-smaller.u-right[href="/projects/${projectVM.currentProject().project_id}/contributions/new${ctrl.reward().id ? `?reward_id=${ctrl.reward().id}` : ''}"]`,
-                                    'Editar'
+                                    'Edit'
                                 )
                             ]),
                             m('.divider.u-marginbottom-10.u-margintop-10'),
@@ -356,21 +356,21 @@ const projectsPayment = {
                                 ctrl.isLongDescription(ctrl.reward()) ? m('a[href="javascript:void(0);"].link-hidden.link-more.u-marginbottom-20', {
                                     onclick: ctrl.toggleDescription.toggle
                                 }, [
-                                    ctrl.toggleDescription() ? 'menos ' : 'mais ',
+                                    ctrl.toggleDescription() ? 'less ' : 'more ',
                                     m('span.fa.fa-angle-down', {
                                         class: ctrl.toggleDescription() ? 'reversed' : ''
                                     })
                                 ]) : '',
                                 ctrl.reward().deliver_at ? m('.fontcolor-secondary.fontsize-smallest.u-margintop-10', [
                                     m('span.fontweight-semibold',
-                                        'Entrega prevista:'
+                                        'Expected delivery:'
                                     ),
                                     ` ${h.momentify(ctrl.reward().deliver_at, 'MMM/YYYY')}`
                                 ]) : '',
                                 (ctrl.reward() && (rewardVM.hasShippingOptions(ctrl.reward()) || ctrl.reward().shipping_options === 'presential')) ?
                                 m('.fontcolor-secondary.fontsize-smallest', [
                                     m('span.fontweight-semibold',
-                                        'Forma de envio: '
+                                        'Shipping method: '
                                     ),
                                     window.I18n.t(`shipping_options.${ctrl.reward().shipping_options}`, {
                                         scope: 'projects.contributions'
@@ -381,10 +381,10 @@ const projectsPayment = {
                                     // ctrl.contribution().shipping_fee_id ? [
                                     //     m('.divider.u-marginbottom-10.u-margintop-10'),
                                     //     m('.fontsize-smaller.fontweight-semibold',
-                                    //         'Destino da recompensa:'
+                                    //         'Reward destination:'
                                     //     ),
                                     //     m(`a.alt-link.fontsize-smaller.u-right[href="/projects/${projectVM.currentProject().project_id}/contributions/new${ctrl.reward().id ? `?reward_id=${ctrl.reward().id}` : ''}"]`,
-                                    //         'Editar'
+                                    //         'Edit'
                                     //     ),
                                     //     m('.fontsize-smaller', { style: 'padding-right: 42px;' },
                                     //         `${rewardVM.feeDestination(ctrl.reward(), ctrl.contribution().shipping_fee_id)}`

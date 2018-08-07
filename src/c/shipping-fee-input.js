@@ -43,7 +43,7 @@ const shippingFeeInput = {
                                 value: 'others'
                             }),
                             m('label.field-label.fontsize-smallest',
-                                (othersCount > 0 ? 'Resto do Brasil' : 'Todos os estados do Brasil')
+                                (othersCount > 0 ? 'Rest of Australia' : 'All states of Australia')
                             )
                         ] :
 
@@ -54,7 +54,7 @@ const shippingFeeInput = {
                                 value: 'international'
                             }),
                             m('label.field-label.fontsize-smallest',
-                                'Internacional'
+                                'International'
                             )
                         ] :
 
@@ -104,7 +104,7 @@ const shippingFeeInput = {
 
 
             ],
-            ctrl.fee.error ? m(inlineError, { message: 'Estado não pode ficar em branco.' }) : ''
+            ctrl.fee.error ? m(inlineError, { message: 'Status can not be left blank.' }) : ''
             ), m('.divider.u-marginbottom-10')
         ]);
     }

@@ -18,14 +18,14 @@ const projectAbout = {
                 return -Math.ceil(duration.asDays());
             };
         const fundingPeriod = () => (project.is_published && h.existy(project.zone_expires_at)) ? m('.funding-period', [
-            m('.fontsize-small.fontweight-semibold.u-text-center-small-only', 'Período de campanha'),
-            m('.fontsize-small.u-text-center-small-only', `${h.momentify(project.zone_online_date)} - ${h.momentify(project.zone_expires_at)} (${onlineDays()} dias)`)
+            m('.fontsize-small.fontweight-semibold.u-text-center-small-only', 'Campaign period'),
+            m('.fontsize-small.u-text-center-small-only', `${h.momentify(project.zone_online_date)} - ${h.momentify(project.zone_expires_at)} (${onlineDays()} days)`)
         ]) : '';
 
         const nextStepsCardOptions = () => {
             const isSubscription = projectVM.isSubscription(project);
             const hasRewards = !_.isEmpty(args.rewardDetails());
-            const titleText = hasRewards ? 'Recompensas' : 'Sugestões de apoio';
+            const titleText = hasRewards ? 'Rewards' : 'Suggestions for support';
 
             return [
                 isSubscription ? [
@@ -34,7 +34,7 @@ const projectAbout = {
                     m('.fontsize-base.u-marginbottom-30.w-hidden-small.w-hidden-tiny', [
                         m('span.fontweight-semibold', titleText),
                         m.trust('&nbsp;'),
-                        m('span.badge.fontsize-smaller.badge-success', 'parcele em até 6x')
+                        m('span.badge.fontsize-smaller.badge-success', 'Sets up to 6x')
                     ])
                 ],
                 hasRewards ? [
@@ -59,7 +59,7 @@ const projectAbout = {
                 ]),
                 m('.fontsize-base[itemprop="about"]', m.trust(h.selfOrEmpty(project.about_html, '...'))),
                 project.budget ? [
-                    m('p.fontsize-base.fontweight-semibold', 'Orçamento'),
+                    m('p.fontsize-base.fontweight-semibold', 'Budget'),
                     m('p.fontsize-base', m.trust(project.budget))
                 ] : '',
                 m.component(projectReport)

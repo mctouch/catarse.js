@@ -12,12 +12,12 @@ const successfulProjectTaxModal = {
         return m('div', [
             m('.modal-dialog-header', [
                 m('.fontsize-large.u-text-center',
-                  'Extrato do projeto')
+                  'Project Extract')
             ]),
             m('.modal-dialog-content', [
                 m('p.fontsize-small.u-marginbottom-40', [
-                    'Confira o extrato do seu projeto, já incluindo as taxas e retenções. Se você tiver dúvidas sobre como esse cálculo é feito, ',
-                    m('a.alt-link[href="http://suporte.catarse.me/hc/pt-br/articles/202037493-FINANCIADO-Como-ser%C3%A1-feito-o-repasse-do-dinheiro-"][target="__blank"]', 'acesse aqui'),
+                    'Check out the extract of your project, including fees and deductions. If you have questions about how this calculation is done, ',
+                    m('a.alt-link[href="http://suporte.catarse.me/hc/pt-br/articles/202037493-FINANCIADO-Como-ser%C3%A1-feito-o-repasse-do-dinheiro-"][target="__blank"]', 'access here'),
                     '.'
                 ]),
                 m('div', [
@@ -26,7 +26,7 @@ const successfulProjectTaxModal = {
                             m('.text-success', `+ R$ ${h.formatNumber(pt.pledged, 2)}`)
                         ]),
                         m('.w-col.w-col-8', [
-                            m('div', `Arrecadação total (${pt.total_contributions} apoios)`)
+                            m('div', `Total collection (${pt.total_contributions} supports)`)
                         ])
                     ]),
                     (pt.irrf_tax > 0 ?
@@ -35,7 +35,7 @@ const successfulProjectTaxModal = {
                              m('.text-success', `+ R$ ${h.formatNumber(pt.irrf_tax, 2)}`)
                          ]),
                          m('.w-col.w-col-8', [
-                             m('div', 'Retenção IRF (Imposto de Renda na Fonte)')
+                             m('div', 'IRF Retention (Income Taxes at Source)')
                          ])
                      ]) : ''),
                     m('.w-row.fontsize-small.u-marginbottom-10', [
@@ -43,7 +43,7 @@ const successfulProjectTaxModal = {
                             m('.text-error', `- R$ ${h.formatNumber(pt.catarse_fee, 2)}`)
                         ]),
                         m('.w-col.w-col-8', [
-                            m('div', `Taxa do Catarse e meio de pagamento (${h.formatNumber((pt.service_fee * 100), 2)}%) `)
+                            m('div', `Trend fee and means of payment (${h.formatNumber((pt.service_fee * 100), 2)}%) `)
                         ])
                     ]),
                     m('.divider.u-marginbottom-10'),
@@ -52,7 +52,7 @@ const successfulProjectTaxModal = {
                             m('div', `R$ ${h.formatNumber(pt.total_amount, 2)}`)
                         ]),
                         m('.w-col.w-col-8', [
-                            m('div', 'Total a ser transferido')
+                            m('div', 'Total to be transferred')
                         ])
                     ])
                 ])

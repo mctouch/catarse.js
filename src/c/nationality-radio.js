@@ -20,7 +20,7 @@ const nationalityRadio = {
             m('.w-row', [
                 m('.w-col.w-col-4',
                     m('.fontsize-small.fontweight-semibold',
-                        'Nacionalidade:'
+                        'Nationality:'
                     )
                 ),
                 m('.w-col.w-col-4',
@@ -33,7 +33,7 @@ const nationalityRadio = {
                             }
                         }),
                         m('label.w-form-label',
-                            'Brasileiro (a)'
+                            'Australian (a)'
                         )
                     ])
                 ),

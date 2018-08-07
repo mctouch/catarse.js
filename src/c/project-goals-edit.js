@@ -58,10 +58,10 @@ const projectGoalsEdit = {
         return m('.w-container',
             m('.w-row', [
                 (ctrl.showSuccess() ? m.component(popNotification, {
-                    message: 'Meta salva com sucesso'
+                    message: 'Meta successfully saves'
                 }) : ''),
                 (ctrl.error() ? m.component(popNotification, {
-                    message: 'Erro ao salvar informações',
+                    message: 'Error saving information',
                     error: true
                 }) : ''),
 
@@ -72,12 +72,12 @@ const projectGoalsEdit = {
                             m(".card.card-terciary.medium.u-marginbottom-30[id='arrecadacao']", [
                                 m('.u-marginbottom-30', [
                                     m("label.fontsize-base.fontweight-semibold[for='name-8']",
-                                        'O que você vai alcançar com os pagamentos mensais de seus assinantes?'
+                                        'What you will you achieve with the monthly payments of your subscribers?'
                                     ),
                                     m('.fontsize-smaller', [
-                                        'As metas mensais são a melhor maneira de informar aos seus assinantes como os recursos arrecadados mensalmente serão usados e o que vocês estão conquistando juntos.',
+                                        'Monthly goals are the best way to let your subscribers know how the monthly proceeds will be used and what you are conquering together.',
                                         m.trust('&nbsp;'),
-                                        'Lembre-se: uma vez que a arrecadação for iniciada, você não poderá mais alterar a sua meta de arrecadação inicial.'
+                                        'Remember: once your fundraising is started, you will no longer be able to change your initial fundraising goal.'
                                     ])
                                 ]),
                                 _.map(ctrl.goals(), (goal) => {
@@ -103,7 +103,7 @@ const projectGoalsEdit = {
                                 }, [
                                     '+ ',
                                     m.trust('&nbsp;'),
-                                    ' Adicionar meta mensal'
+                                    ' Add monthly goal'
                                 ])
                             ])
                         )
@@ -116,34 +116,34 @@ const projectGoalsEdit = {
                               [
                                   m('span.fa.fa-lightbulb-o.fa-lg'),
                                   m.trust('&nbsp;'),
-                                  'Dicas'
+                                  'Tips'
                               ]
                       ),
                           m('ul.w-list-unstyled',
                               [
                                   m('li.u-marginbottom-10',
                             m('a.fontsize-smaller.alt-link[href="https://suporte.catarse.me/hc/pt-br/articles/115005632746-Catarse-Assinaturas-FAQ-Realizadores#meta_inicial"][target="_blank"]',
-                              'O que é a meta mensal inicial?'
+                              'What is the initial monthly goal?'
                             )
                           ),
                                   m('li.u-marginbottom-10',
                             m('a.fontsize-smaller.alt-link[href="https://suporte.catarse.me/hc/pt-br/articles/115005632746-Catarse-Assinaturas-FAQ-Realizadores#meta_futura"][target="_blank"]',
-                              'O que são as metas mensais futuras?'
+                              'What are the future monthly goals?'
                             )
                           ),
                                   m('li.u-marginbottom-10',
                             m('a.fontsize-smaller.alt-link[href="https://suporte.catarse.me/hc/pt-br/articles/115005632746-Catarse-Assinaturas-FAQ-Realizadores#meta_atual"][target="_blank"]',
-                              'O que é a meta mensal atual?'
+                              'What is your current monthly goal?'
                             )
                           ),
                                   m('li.u-marginbottom-10',
                             m('a.fontsize-smaller.alt-link[href="https://suporte.catarse.me/hc/pt-br/articles/115005632746-Catarse-Assinaturas-FAQ-Realizadores#nova_meta"][target="_blank"]',
-                              'Posso adicionar novas metas depois do lançamento?'
+                              'Can I add new goals after the release?'
                             )
                           ),
                                   m('li.u-marginbottom-10',
                             m('a.fontsize-smaller.alt-link[href="https://suporte.catarse.me/hc/pt-br/articles/115005632746-Catarse-Assinaturas-FAQ-Realizadores#nao_atingir"][target="_blank"]',
-                              'O que acontece se eu não atingir a meta do meu projeto?'
+                              'What happens if I do not reach my project goal?'
                             )
                           )
                               ]

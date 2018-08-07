@@ -46,10 +46,10 @@ const landingSignup = {
                     onchange: m.withAttr('value', ctrl.email),
                     value: ctrl.email()
                 }),
-                (ctrl.error() ? m('span.fontsize-smaller.text-error', 'E-mail inválido') : '')
+                (ctrl.error() ? m('span.fontsize-smaller.text-error', 'Invalid email') : '')
             ]),
             m('.w-col.w-col-3', [
-                m('input.w-button.btn.btn-large[type="submit"][value="Cadastrar"]')
+                m('input.w-button.btn.btn-large[type="submit"][value="Register"]')
             ])
         ]);
     }

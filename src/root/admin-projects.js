@@ -24,18 +24,18 @@ const adminProjects = {
                 component: filterMain,
                 data: {
                     vm: filterVM.full_text_index,
-                    placeholder: 'Busque por projeto, permalink, email, nome do realizador...',
+                    placeholder: 'Search by project, permalink, email, name of the director...',
                 },
             }, { // status
                 component: filterDropdown,
                 data: {
-                    label: 'Com o estado',
+                    label: 'With the status',
                     index: 'state',
                     name: 'state',
                     vm: filterVM.state,
                     options: [{
                         value: '',
-                        option: 'Qualquer um'
+                        option: 'Any'
                     }, {
                         value: 'successful',
                         option: 'successful'
@@ -57,22 +57,22 @@ const adminProjects = {
             { // mode
                 component: filterDropdown,
                 data: {
-                    label: 'Modalidade',
+                    label: 'Modality',
                     index: 'mode',
                     name: 'mode',
                     vm: filterVM.mode,
                     options: [{
                         value: '',
-                        option: 'Qualquer um'
+                        option: 'Any'
                     }, {
-                        value: 'aon',
-                        option: 'Tudo ou nada'
+                        value: 'one',
+                        option: 'Everything or nothing'
                     }, {
                         value: 'flex',
                         option: 'Flex'
                     }, {
                         value: 'sub',
-                        option: 'Recorrente'
+                        option: 'Recurrent'
                     }
                     ]
                 }
@@ -80,26 +80,26 @@ const adminProjects = {
             { // recommended
                 component: filterDropdown,
                 data: {
-                    label: 'Recomendado',
+                    label: 'Recommended',
                     index: 'recommended',
                     name: 'recommended',
                     vm: filterVM.recommended,
                     options: [{
                         value: '',
-                        option: 'Qualquer um'
+                        option: 'Any'
                     }, {
                         value: true,
                         option: 'Sim'
                     }, {
                         value: false,
-                        option: 'Não'
+                        option: 'No'
                     }
                     ]
                 }
             }, { // goal
                 component: filterNumberRange,
                 data: {
-                    label: 'Meta entre',
+                    label: 'Meta between',
                     first: filterVM.goal.gte,
                     last: filterVM.goal.lte
                 }
@@ -107,7 +107,7 @@ const adminProjects = {
             { // progress
                 component: filterNumberRange,
                 data: {
-                    label: 'Progresso % entre',
+                    label: 'Progress% between',
                     first: filterVM.progress.gte,
                     last: filterVM.progress.lte
                 }
@@ -115,7 +115,7 @@ const adminProjects = {
             { // updated at
                 component: filterDateRange,
                 data: {
-                    label: 'Atualizado entre',
+                    label: 'Updated between',
                     first: filterVM.updated_at.gte,
                     last: filterVM.updated_at.lte
                 }
@@ -123,7 +123,7 @@ const adminProjects = {
             { // expires_at
                 component: filterDateRange,
                 data: {
-                    label: 'Expira entre',
+                    label: 'Expire between',
                     first: filterVM.project_expires_at.gte,
                     last: filterVM.project_expires_at.lte
                 }
@@ -131,7 +131,7 @@ const adminProjects = {
             { // created_at
                 component: filterDateRange,
                 data: {
-                    label: 'Criado entre',
+                    label: 'Created between',
                     first: filterVM.created_at.gte,
                     last: filterVM.created_at.lte
                 }
@@ -142,12 +142,12 @@ const adminProjects = {
             }).parameters()).then((data) => {
                 categories(data);
                 const options = _.map(categories(), category => ({ value: category.name, option: category.name }));
-                options.unshift({ value: '', option: 'Qualquer uma' });
+                options.unshift({ value: '', option: 'Any of them' });
                 filterBuilder.unshift(
                     { // category
                         component: filterDropdown,
                         data: {
-                            label: 'Categoria',
+                            label: 'Category',
                             index: 'category',
                             name: 'category_name',
                             vm: filterVM.category_name,
@@ -176,7 +176,7 @@ const adminProjects = {
         };
     },
     view: function(ctrl) {
-        const label = 'Projetos';
+        const label = 'Projects';
 
         return m('', [
             m.component(adminFilter, {

@@ -88,10 +88,10 @@ const projectEditWelcome = {
         return m("[id='dashboard-welcome-tab']",
             (project() ? [
                 ctrl.showSuccess() ? m.component(popNotification, {
-                    message: 'Recompensas salvas com sucesso'
+                    message: 'Rewards successfully saved'
                 }) : '',
                 (ctrl.error() ? m.component(popNotification, {
-                    message: 'Erro ao salvar. Preencha todos os campos',
+                    message: 'Error saving. Fill in all the fields',
                     error: true
                 }) : ''),
                 m('.section',
@@ -101,13 +101,13 @@ const projectEditWelcome = {
                             m('.w-col.w-col-10',
                                 m('.card.card-terciary.medium.u-marginbottom-30', [
                                     m('.fontsize-small.fontweight-semibold',
-                                        'Escreva um email para cada faixa de assinante!'
+                                        'Write an email for each subscriber band!'
                                     ),
                                     m('.fontsize-smaller.u-marginbottom-40',
-                                        'Seus novos assinantes vão receber uma mensagem especial, assim que eles confirmarem o primeiro apoio ao seu projeto! Esse email é opcional, e você pode voltar aqui para editá-lo a qualquer momento.'
+                                        'Your new subscribers will receive a special message as soon as they confirm the first support for your project! This email is optional, and you can return here to edit it at any time.'
                                     ),
                                     m('.field-label.fontweight-semibold.u-marginbottom-10',
-                                        'Recompensa'
+                                        'Reward'
                                     ),
                                     m('select.u-marginbottom-30.w-input.text-field.w-select.positive.medium', {
                                         onchange: (e) => {
@@ -134,14 +134,14 @@ const projectEditWelcome = {
                                     m('.w-form', [
                                         m('form', [
                                             m('.field-label.fontweight-semibold.u-marginbottom-10',
-                                                'Título'
+                                                'Title'
                                             ),
                                             m("input.text-field.positive.w-input[type='text']", {
                                                 value: ctrl.currentReward().welcome_message_subject(),
                                                 onchange: m.withAttr('value', ctrl.currentReward().welcome_message_subject)
                                             }),
                                             m('.field-label.fontweight-semibold.u-marginbottom-10',
-                                                'Texto'
+                                                'Text'
                                             ),
                                             m('textarea.text-field.height-medium.positive.u-marginbottom-60.w-input', {
                                                 value: ctrl.currentReward().welcome_message_body(),
@@ -153,7 +153,7 @@ const projectEditWelcome = {
                                                     m('a.btn.btn-large', {
                                                         onclick: ctrl.updateRewards
                                                     },
-                                                        'Salvar'
+                                                        'To save'
                                                     )
                                                 ),
                                                 m('.w-col.w-col-3')

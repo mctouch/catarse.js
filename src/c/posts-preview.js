@@ -36,7 +36,7 @@ const postsPreview = {
                     togglePreview();
                     m.redraw();
                 }).catch((err) => {
-                    args.errors('Erro ao enviar mensagem.'),
+                    args.errors('Error sending message.'),
                     args.showError(true);
                     m.redraw();
                 });
@@ -51,32 +51,32 @@ const postsPreview = {
             title = args.title(),
             recipientsText = args.reward_id > 1 ?
             m('.fontsize-small.u-marginbottom-30', [
-                'A novidade acima será enviada por email para os ',
+                'The above news will be sent by email to ',
                 m('span.fontweight-semibold',
                     args.rewardText
                 ),
-                ' e ficará ',
+                ' and will stay ',
                 m('span.fontweight-semibold',
                 window.I18n.t(`backers_only_${args.mode}`, I18nScope())
                 )
             ]) :
             args.reward_id === '-1' ?
             m('.fontsize-small.u-marginbottom-30', [
-                'A novidade acima será  ',
+                'The novelty above will be  ',
                 m('span.fontweight-semibold',
-                    'enviada por email para todos'
+                    'sent by email to everyone'
                 ),
                 window.I18n.t(`all_backers_${args.mode}`, I18nScope()),
                 m('span.fontweight-semibold',
-                    'visível publicamente '
+                    'publicly visible '
                 ),
-                'na plataforma.'
+                'on the platform.'
             ]) :
             m('.fontsize-small.u-marginbottom-30', [
-                m('span', ' A novidade acima será  '),
+                m('span', ' The novelty above will be '),
                 m('span.fontweight-semibold', window.I18n.t(`email_backers_${args.mode}`, I18nScope())),
-                m('span', ' e ficará '),
-                m('span.fontweight-semibold', 'visível somente para esses na plataforma.')
+                m('span', ' and will stay '),
+                m('span.fontweight-semibold', 'visible only to those on the platform.')
             ]);
 
         return m('div', [
@@ -86,7 +86,7 @@ const postsPreview = {
                         m('.w-col.w-col-3'),
                         m('.w-col.w-col-6',
                             m('.fontsize-larger.fontweight-semibold.lineheight-tight',
-                                'Revise sua novidade antes de enviar!'
+                                'Review your news before submitting!'
                             )
                         ),
                         m('.w-col.w-col-3')
@@ -127,14 +127,14 @@ const postsPreview = {
                             ),
                             ' ',
                             m.trust('&nbsp;'),
-                            'Enviar'
+                            'Submit'
                         ])
                     ),
                     m('.w-col.w-col-2',
-                        m('button.btn.btn-large.btn-terciary', {
+                        m('button.btn.btn-large.btn-tertiary', {
                             onclick: ctrl.togglePreview
                         },
-                            'Editar'
+                            'Edit'
                         )
                     ),
                     m('.w-col.w-col-3')

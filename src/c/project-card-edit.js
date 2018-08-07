@@ -90,8 +90,8 @@ const projectCardEdit = {
                                     children: [
                                         m('span.hint',
                                             (vm.fields.cover_image()
-                                            ? m(`img[alt="Imagem de fundo"][src="${vm.fields.cover_image()}"]`)
-                                            : 'Imagem de fundo')
+                                            ? m(`img[alt="Background image"][src="${vm.fields.cover_image()}"]`)
+                                            : 'Background image')
                                         ),
                                         m('input.file.optional.w-input.text-field[id="project_cover_image"][name="project[cover_image]"][type="file"]', {
                                             class: vm.e.hasError('cover_image') ? 'error' : false,

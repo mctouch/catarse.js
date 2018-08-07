@@ -25,7 +25,7 @@ describe('FaqBox', () => {
 
     describe('view', () => {
         beforeAll(() => {
-            $output = (mode = 'aon') => mq(
+            $output = (mode = 'one') => mq(
                 m(faqBox, {
                     mode: mode,
                     vm: {

@@ -56,7 +56,7 @@ const projectReportNoRewardReceived = {
                        }),
 						                       m('label.fontsize-small.fontweight-semibold.w-form-label', {
                            onclick: _ => args.displayFormWithName(ctrl.formName)
-                       }, 'Apoiei este projeto e ainda não recebi a recompensa')
+                       }, 'I supported this project and have not received the reward yet')
 					                     ]
 				                      ),
 				                     m('.u-margintop-30', {
@@ -66,7 +66,7 @@ const projectReportNoRewardReceived = {
                      },
 					                     m('.fontsize-small',
 						                     [
-							                       'Para saber sobre a de entrega da sua recompensa, você pode enviar uma',
+							                       'To know about the delivery of your reward, you can send a',
 							                       m('a.alt-link', {
                            style: {
                                cursor: 'pointer'
@@ -77,17 +77,17 @@ const projectReportNoRewardReceived = {
                                lbl: args.user.id,
                                project: args.project()
                            }, ctrl.sendMessage),
-                           text: ' mensagem diretamente para o(a) Realizador(a)'
+                           text: ' Message directly to the Director'
                        }),
 							                       '.',
 							                       m('br'),
 							                       m('br'),
-							                       'Veja',
+							                       'Look',
 							                       m('a.alt-link', {
                            href: 'https://suporte.catarse.me/hc/pt-br/articles/360000149946-Ainda-n%C3%A3o-recebi-minha-recompensa-E-agora-',
                            target: '_blank'
-                       }, ' aqui '),
-							                       'outras dicas sobre como acompanhar essa entrega.'
+                       }, ' on here '),
+							                       'other tips on tracking this delivery.'
 						                     ]
 					                      )
 				                      )

@@ -5,8 +5,8 @@ import h from '../h';
 const I18nScope = _.partial(h.i18nScope, 'projects.contributions.edit');
 const I18nIntScope = _.partial(h.i18nScope, 'projects.contributions.edit_international');
 const paymentBadge = paymentMethod => paymentMethod === 'credit_card'
-        ? [m('span.fa.fa-credit-card'), ' Cartão de Crédito']
-        : [m('span.fa.fa-barcode'), ' Boleto Bancário'];
+        ? [m('span.fa.fa-credit-card'), ' Credit card']
+        : [m('span.fa.fa-barcode'), ' Bank slip'];
 
 const subscriptionEditModal = {
     controller: function(args) {
@@ -36,7 +36,7 @@ const subscriptionEditModal = {
                         } }),
                         m('.modal-dialog-header',
                             m('.fontsize-large.u-text-center',
-                                'Confirme suas alterações'
+                                'Confirm your changes'
                             )
                         ),
                         m('.modal-dialog-content',
@@ -44,7 +44,7 @@ const subscriptionEditModal = {
                                 m('.u-marginbottom-10',
                                     [
                                         m('.fontsize-smaller.fontcolor-secondary',
-                                            'Recompensa'
+                                            'Reward'
                                         ),
                                         m('div',
                                             [
@@ -88,7 +88,7 @@ const subscriptionEditModal = {
                                     ? ''
                                     : [
                                         m('.fontsize-smaller.fontcolor-secondary',
-                                            'Valor da assinatura'
+                                            'Subscription Value'
                                         ),
                                         m('.fontsize-large',
                                             [
@@ -99,7 +99,7 @@ const subscriptionEditModal = {
                                 ),
                                 m('.divider.u-marginbottom-10'),
                                 m('.fontsize-smaller.fontcolor-secondary',
-                                    'Pagamento'
+                                    'payment'
                                 ),
                                 m('.w-hidden-small.w-hidden-tiny',
                                     [
@@ -119,10 +119,10 @@ const subscriptionEditModal = {
                                                 m('span.fontweight-semibold',
                                                     [
                                                         m('span.fa.fa-money.text-success'),
-                                                        ' Cobrança hoje: '
+                                                        ' Billing today: '
                                                     ]
                                                 ),
-                                                'Nenhuma'
+                                                'None'
                                             ]
                                         ),
                                         m('.fontsize-smaller.u-marginbottom-10',
@@ -130,10 +130,10 @@ const subscriptionEditModal = {
                                                 m('span.fontweight-semibold',
                                                     [
                                                         m('span.fa.fa-calendar-o.text-success'),
-                                                        ' Próxima cobrança:'
+                                                        ' Next charge:'
                                                     ]
                                                 ),
-                                                `${h.momentify(oldSubscription().next_charge_at || Date.now())} no valor de R$${newSubscription.value}`
+                                                `${h.momentify(oldSubscription().next_charge_at || Date.now())} no value of R$${newSubscription.value}`
                                             ]
                                         )
                                     ]
@@ -150,7 +150,7 @@ const subscriptionEditModal = {
                                                         args.pay();
                                                     }
                                                 },
-                                                    'Confirmar'
+                                                    'Confirm'
                                                 )
                                             ),
                                             m('.w-col.w-col-4',
@@ -158,7 +158,7 @@ const subscriptionEditModal = {
                                                     vmIsLoading(false);
                                                     args.showModal(false);
                                                 } },
-                                                    'Cancelar'
+                                                    'Cancel'
                                                 )
                                             )
                                         ]

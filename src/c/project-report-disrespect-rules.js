@@ -53,16 +53,16 @@ const projectReportDisrespectRules = {
                             }),
                             m('label.fontsize-small.fontweight-semibold.w-form-label[for=\'radio\']', {
                                 onclick: _ => args.displayFormWithName(ctrl.formName)
-                            }, 'Este projeto desrespeita nossas regras.')
+                            }, 'This project violates our rules..')
                         ]
                    ),
                     m('.fontsize-smaller.fontcolor-secondary',
                         [
-                            'Todos os projetos no Catarse precisam respeitar nossas ',
+                            'All projects in Trend Notion need to respect our ',
                             m('a.alt-link.fontweight-semibold[href=\'http://suporte.catarse.me/hc/pt-br/articles/202387638\'][target=\'_blank\']',
-                          'Diretrizes de Criação de Projetos'
+                          'Project Creation Guidelines'
                          ),
-                            ', entre elas não oferecer recompensas proibidas, não abusar de SPAM, não usar cenas de sexo explícitas ou nudez sem autorização.'
+                            ', among them do not offer forbidden rewards, do not abuse SPAM, do not use explicit sex scenes or nudity without authorization.'
                         ]
                    ),
                     m('.u-margintop-30', {
@@ -79,46 +79,46 @@ const projectReportDisrespectRules = {
                             },
                                 [
                                     m('option[value=\'\']',
-                                'Selecione um motivo'
+                                'Select a reason'
                                ),
-                                    m('option[value=\'Recompensas proibidas\']',
-                                'Recompensas proibidas'
+                                    m('option[value=\'Forbidden Rewards\']',
+                                'Forbidden Rewards'
                                ),
-                                    m('option[value=\'Calúnia, injúria, difamação ou discriminação\']',
-                                'Calúnia, injúria, difamação ou discriminação'
+                                    m('option[value=\'Slander, libel, defamation or discrimination\']',
+                                'Slander, libel, defamation or discrimination'
                                ),
-                                    m('option[value=\'Escopo de projeto proibido\']',
-                                'Escopo de projeto proibido'
+                                    m('option[value=\'Scope of Prohibited Project\']',
+                                'Scope of Prohibited Project'
                                ),
-                                    m('option[value=\'Cenas de sexo explícitas e gratuitas\']',
-                                'Cenas de sexo explícitas e gratuitas'
+                                    m('option[value=\'Explicit free sex scenes\']',
+                                'Explicit free sex scenes'
                                ),
-                                    m('option[value=\'Divulgação de materiais de nudez sem autorização\']',
-                                'Divulgação de materiais de nudez sem autorização'
+                                    m('option[value=\'Disclosure of nudity materials without authorization\']',
+                                'Disclosure of nudity materials without authorization'
                                )
                                 ]
                          ),
                         (
-                            ctrl.reasonError() ? m(inlineError, { message: 'Selecione um motivo' }) : ''
+                            ctrl.reasonError() ? m(inlineError, { message: 'Select a reason' }) : ''
                         ),
                             m('.u-marginbottom-40',
                                 [
                                     m('.fontsize-smaller.fontweight-semibold',
-                                'Detalhes da denúncia *'
+                                'Details of the complaint *'
                                ),
                                     m('textarea.text-field.positive.w-input[maxlength=\'5000\'][required=\'required\']', {
                                         onchange: m.withAttr('value', args.details),
-                                        placeholder: 'Por favor, dê mais detalhes que nos ajudem a identificar o problema',
+                                        placeholder: 'Please give more details to help us identify the problem',
                                         class: {
                                             error: ctrl.detailsError()
                                         }
                                     }),
                               (
-                                    ctrl.detailsError() ? m(inlineError, { message: 'Informe os detalhes da denúncia' }) : ''
+                                    ctrl.detailsError() ? m(inlineError, { message: 'Please report the complaint details' }) : ''
                               )
                                 ]
                          ),
-                            m('input.btn.btn-medium.btn-inline.btn-dark.w-button[type=\'submit\'][value=\'Enviar denúncia\']', {
+                            m('input.btn.btn-medium.btn-inline.btn-dark.w-button[type=\'submit\'][value=\'Send Complaint\']', {
                                 disabled: args.submitDisabled()
                             })
                         ]

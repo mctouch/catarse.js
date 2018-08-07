@@ -21,17 +21,17 @@ const adminSubscriptions = {
                 component: filterMain,
                 data: {
                     vm: filterVM.search_index,
-                    placeholder: 'Busque por projeto, permalink, email, nome do realizador...'
+                    placeholder: 'Search by project, permalink, email, name of the director...'
                 },
             }, { // state
                 component: filterDropdown,
                 data: {
-                    label: 'Com o estado',
+                    label: 'With the status',
                     name: 'status',
                     vm: filterVM.status,
                     options: [{
                         value: '',
-                        option: 'Qualquer um'
+                        option: 'Any'
                     }, {
                         value: 'started',
                         option: 'started'
@@ -87,9 +87,9 @@ const adminSubscriptions = {
                             m('.modal-dialog-content', [
                                 m('.w-row.fontweight-semibold', [
                                     m('.w-col.w-col-3', 'ID do gateway'),
-                                    m('.w-col.w-col-4', 'Nome do apoiador'),
-                                    m('.w-col.w-col-2', 'Valor'),
-                                    m('.w-col.w-col-3', 'Projeto'),
+                                    m('.w-col.w-col-4', 'Name of the supporter'),
+                                    m('.w-col.w-col-2', 'Value'),
+                                    m('.w-col.w-col-3', 'Project'),
                                 ]),
                                 _.map(toChargebackCollection(), (item, index) => m('.divider.fontsize-smallest.lineheight-looser', [
                                     m('.w-row', [
@@ -121,7 +121,7 @@ const adminSubscriptions = {
                                     m('.w-col.w-col-5',
                                         m('a.btn.btn-medium.btn-terciary.w-button', {
                                             onclick: args.displayModal.toggle
-                                        }, 'Voltar')
+                                        }, 'Come back')
                                     ),
                                     m('.w-col.w-col-1')
                                 ])
@@ -168,15 +168,15 @@ const adminSubscriptions = {
                 m('.w-inline-block', [
                     m('button.btn-inline.btn.btn-small.btn-terciary', {
                         onclick: displayChargebackForm.toggle
-                    }, 'Chargeback em massa'),
+                    }, 'Bulk Chargeback'),
                         (displayChargebackForm() ? m('.dropdown-list.card.u-radius.dropdown-list-medium.zindex-10', [
                             m('.w-form', [
                                 (processChargebacksLoader() ?
                                     h.loader()
                                     : m('form', { onsubmit: searchToChargebackPayments }, [
-                                        m('label.fontsize-small', 'Insira os IDs do gateway separados por vírgula'),
+                                        m('label.fontsize-small', 'Enter gateway IDs separated by commas'),
                                         m('textarea.text-field.w-input', { oninput: m.withAttr('value', chargebackIds) }),
-                                        m('button.btn.btn-small.w-button', 'Virar apoios para chargeback')
+                                        m('button.btn.btn-small.w-button', 'Flip backs for chargeback')
                                     ])
                                 )
                             ])
@@ -197,20 +197,20 @@ const adminSubscriptions = {
                 error
             },
             data: {
-                label: 'Assinaturas'
+                label: 'About us'
             },
             submit
         };
     },
 
     view: function(ctrl) {
-        const label = 'Assinaturas';
+        const label = 'About us';
         return m('', [
             (ctrl.displayChargebackConfirmationModal() ? m(modalBox, {
                 displayModal: ctrl.displayChargebackConfirmationModal,
                 content: ctrl.chargebackConfirmationModalContentWrapper({
-                    modalTitle: 'Aprovar chargebacks',
-                    ctaText: 'Aprovar',
+                    modalTitle: 'Approve chargebacks',
+                    ctaText: 'Approve',
                     displayModal: ctrl.displayChargebackConfirmationModal,
                     onClickCallback: ctrl.processChargebacks
                 })

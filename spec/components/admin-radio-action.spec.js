@@ -17,8 +17,8 @@ describe('AdminRadioAction', () => {
         updateKey: 'contribution_id',
         selectKey: 'reward_id',
         radios: 'rewards',
-        callToAction: 'Alterar Recompensa',
-        outerLabel: 'Recompensa',
+        callToAction: 'Change Reward',
+        outerLabel: 'Reward',
         getModel: testModel,
         updateModel: testModel,
         validate: () => {

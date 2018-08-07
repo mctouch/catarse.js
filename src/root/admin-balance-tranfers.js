@@ -27,7 +27,7 @@ const adminBalanceTranfers = {
                     component: filterMain,
                     data: {
                         vm: filterVM.full_text_index,
-                        placeholder: 'Busque pelo email, ids do usuario, ids de transferencia e eventos de saldo'
+                        placeholder: 'Search for email, user ids, transfer ids, and balance events'
                     }
                 },
                 {
@@ -38,35 +38,35 @@ const adminBalanceTranfers = {
                         vm: filterVM.state,
                         options: [{
                             value: '',
-                            option: 'Qualquer um'
+                            option: 'Any'
                         }, {
                             value: 'pending',
-                            option: 'Pendente'
+                            option: 'Pendant'
                         }, {
                             value: 'authorized',
-                            option: 'Autorizado'
+                            option: 'Authorized'
                         }, {
                             value: 'processing',
-                            option: 'Processando'
+                            option: 'Processing'
                         }, {
                             value: 'transferred',
-                            option: 'Concluido'
+                            option: 'Concluded'
                         }, {
                             value: 'error',
-                            option: 'Erro'
+                            option: 'Error'
                         }, {
                             value: 'rejected',
-                            option: 'Rejeitado'
+                            option: 'Rejected'
                         }, {
                             value: 'gateway_error',
-                            option: 'Erro no gateway'
+                            option: 'Gateway error'
                         }]
                     }
                 },
                 {
                     component: filterDateRange,
                     data: {
-                        label: 'Data da solicitação',
+                        label: 'Request date',
                         first: filterVM.created_date.gte,
                         last: filterVM.created_date.lte
                     }
@@ -75,7 +75,7 @@ const adminBalanceTranfers = {
                 {
                     component: filterDateRange,
                     data: {
-                        label: 'Data da confirmação',
+                        label: 'Date of confirmation',
                         first: filterVM.transferred_date.gte,
                         last: filterVM.transferred_date.lte
                     }
@@ -84,7 +84,7 @@ const adminBalanceTranfers = {
                 {
                     component: filterNumberRange,
                     data: {
-                        label: 'Valores entre',
+                        label: 'Values ​​between',
                         first: filterVM.amount.gte,
                         last: filterVM.amount.lte
                     }
@@ -171,7 +171,7 @@ const adminBalanceTranfers = {
                                     m('.w-col.w-col-5',
                                         m('a.btn.btn-medium.btn-terciary.w-button', {
                                             onclick: args.displayModal.toggle
-                                        }, 'Voltar')
+                                        }, 'Come back')
                                        ),
                                     m('.w-col.w-col-1')
                                 ])
@@ -260,39 +260,39 @@ const adminBalanceTranfers = {
             inputActions = () => {
                 const authorizedSum = h.formatNumber(_.reduce(authorizedCollection(), (memo, item) => memo + item.amount, 0), 2, 3);
                 return m('', [
-                    m('button.btn.btn-inline.btn-small.btn-terciary.u-marginright-20.w-button', { onclick: selectAll }, (selectAllLoading() ? 'carregando...' : 'Selecionar todos')),
-                      (selectedItemsIDs().length > 1 ? m('button.btn.btn-inline.btn-small.btn-terciary.u-marginright-20.w-button', { onclick: unSelectAll }, `Desmarcar todos (${selectedItemsIDs().length})`) : ''),
+                    m('button.btn.btn-inline.btn-small.btn-terciary.u-marginright-20.w-button', { onclick: selectAll }, (selectAllLoading() ? 'Loading...' : 'Select all')),
+                      (selectedItemsIDs().length > 1 ? m('button.btn.btn-inline.btn-small.btn-terciary.u-marginright-20.w-button', { onclick: unSelectAll }, `Deselect All (${selectedItemsIDs().length})`) : ''),
                       (selectedAny() ?
                        m('.w-inline-block', [
                            m('button.btn.btn-inline.btn-small.btn-terciary.w-button', {
                                onclick: actionMenuToggle.toggle
                            }, [
-                               `Marcar como (${selectedItemsIDs().length})`,
+                               `Mark as (${selectedItemsIDs().length})`,
                            ]),
                            (actionMenuToggle() ?
                             m('.card.dropdown-list.dropdown-list-medium.u-radius.zindex-10[id=\'transfer\']', [
                                 m('a.dropdown-link.fontsize-smaller[href=\'javascript:void(0);\']', {
                                     onclick: event => displayApprovalModal.toggle()
-                                }, 'Aprovada'),
+                                }, 'Approved'),
                                 m('a.dropdown-link.fontsize-smaller[href=\'javascript:void(0);\']', {
                                     onclick: event => displayManualModal.toggle()
-                                }, 'Transferencia manual'),
+                                }, 'Manual transfer'),
                                 m('a.dropdown-link.fontsize-smaller[href=\'javascript:void(0);\']', {
                                     onclick: event => displayRejectModal.toggle()
-                                }, 'Recusada')
+                                }, 'Refused')
                             ]) : '')
                        ]) : ''),
                       (authorizedCollection().length > 0 ? m('._w-inline-block.u-right', [
                           m('button.btn.btn-small.btn-inline', {
                               onclick: displayProcessTransfer.toggle
-                          }, `Repassar saques aprovados (${authorizedCollection().length})`),
+                          }, `Review approved withdrawals(${authorizedCollection().length})`),
                           (displayProcessTransfer() ? m('.dropdown-list.card.u-radius.dropdown-list-medium.zindex-10', [
                               m('.w-form', [
                                   (processingTranfersLoader() ? h.loader() : m('form', [
-                                      m('label.fontsize-smaller.umarginbottom-20', `Tem certeza que deseja repassar ${authorizedCollection().length} saques aprovados (total de R$ ${authorizedSum}) ?`),
+                                      m('label.fontsize-smaller.umarginbottom-20', `Are you sure you want to review ${authorizedCollection().length} approved withdrawals (total R$ ${authorizedSum}) ?`),
                                       m('button.btn.btn-small', {
                                           onclick: processAuthorizedTransfers
-                                      }, 'Repassar saques aprovados')
+                                      }, 'Review approved withdrawals')
                                   ]))
                               ])
                           ]) : '')
@@ -328,7 +328,7 @@ const adminBalanceTranfers = {
                 error
             },
             data: {
-                label: 'Pedidos de saque'
+                label: 'Orders for service'
             },
             submit
         };
@@ -342,8 +342,8 @@ const adminBalanceTranfers = {
             (ctrl.displayApprovalModal() ? m(modalBox, {
                 displayModal: ctrl.displayApprovalModal,
                 content: ctrl.generateWrapperModal({
-                    modalTitle: 'Aprovar saques',
-                    ctaText: 'Aprovar',
+                    modalTitle: 'Approve sacks',
+                    ctaText: 'Approve',
                     displayModal: ctrl.displayApprovalModal,
                     onClickCallback: ctrl.approveSelectedIDs
                 })
@@ -351,8 +351,8 @@ const adminBalanceTranfers = {
             (ctrl.displayManualModal() ? m(modalBox, {
                 displayModal: ctrl.displayManualModal,
                 content: ctrl.generateWrapperModal({
-                    modalTitle: 'Transferencia manual de saques',
-                    ctaText: 'Aprovar',
+                    modalTitle: 'Manual transfer of serves',
+                    ctaText: 'Approve',
                     displayModal: ctrl.displayManualModal,
                     onClickCallback: ctrl.manualTransferSelectedIDs
                 })
@@ -360,8 +360,8 @@ const adminBalanceTranfers = {
             (ctrl.displayRejectModal() ? m(modalBox, {
                 displayModal: ctrl.displayRejectModal,
                 content: ctrl.generateWrapperModal({
-                    modalTitle: 'Rejeitar saques',
-                    ctaText: 'Rejeitar',
+                    modalTitle: 'Reject withdrawals',
+                    ctaText: 'Reject',
                     displayModal: ctrl.displayRejectModal,
                     onClickCallback: ctrl.rejectSelectedIDs
                 })

@@ -76,7 +76,7 @@ const userPrivateContributed = {
             failedCollection = ctrl.failedPages.collection();
 
         return m('.content[id=\'private-contributed-tab\']', ctrl.error() ? m.component(inlineError, {
-            message: 'Erro ao carregar os projetos.'
+            message: 'Error loading projects.'
         }) : ctrl.loader() ? h.loader() :
             (_.isEmpty(subsCollection) && _.isEmpty(onlineCollection) && _.isEmpty(successfulCollection) && _.isEmpty(failedCollection)) ?
             m('.w-container',
@@ -84,9 +84,9 @@ const userPrivateContributed = {
                     m('.w-col.w-col-3'),
                     m('.w-col.w-col-6', [
                         m('.fontsize-large.u-marginbottom-30', [
-                            'Você ainda não apoiou nenhum projeto no',
+                            'You have not yet supported any',
                             m.trust('&nbsp;'),
-                            'Catarse...'
+                            'Trend...'
                         ]),
                         m('.w-row', [
                             m('.w-col.w-col-3'),
@@ -97,7 +97,7 @@ const userPrivateContributed = {
                                         m.route('/explore');
                                     }
                                 },
-                                    'Apoie agora!'
+                                    'Support now!'
                                 )
                             ),
                             m('.w-col.w-col-3')
@@ -108,23 +108,23 @@ const userPrivateContributed = {
             ) :
             [
                 m.component(userContributedList, {
-                    title: 'Assinaturas',
+                    title: 'About us',
                     collection: subsCollection,
                     isSubscription: true,
                     pagination: ctrl.subscriptions
                 }),
                 m.component(userContributedList, {
-                    title: 'Projetos em andamento',
+                    title: 'Projects in progress',
                     collection: onlineCollection,
                     pagination: ctrl.onlinePages
                 }),
                 m.component(userContributedList, {
-                    title: 'Projetos bem-sucedidos',
+                    title: 'Successful Projects',
                     collection: successfulCollection,
                     pagination: ctrl.successfulPages
                 }),
                 m.component(userContributedList, {
-                    title: 'Projetos não-financiados',
+                    title: 'Non-funded projects',
                     collection: failedCollection,
                     pagination: ctrl.failedPages,
                     hideSurveys: true

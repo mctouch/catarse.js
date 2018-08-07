@@ -14,20 +14,20 @@ const deliverContributionModalContent = {
                     m('span.fa.fa-check-circle',
                         ''
                     ),
-                    ' Recompensas a caminho! Obaaa!!!!'
+                    ' Rewards on the way! Obaaa!!!!'
                 ])
             ),
             m('.modal-dialog-content', [
                 m('p.fontsize-small.u-marginbottom-30', [
                     m('span.fontweight-semibold',
-                        `Você selecionou ${args.amount} apoios.`
+                        `You have selected ${args.amount} supports.`
                     ),
-                    ' Após sua confirmação, os apoiadores que efetuaram esses apoios ao seu projeto serão notificados de que suas recompensas serão entregues em breve.'
+                    ' Upon your confirmation, supporters who have made these supports for your project will be notified that their rewards will be delivered shortly.'
                 ]),
                 m('.w-form', [
                     m('form', [
                         m('.fontsize-smaller',
-                            'Se quiser adicionar alguma informação nessa mensagem, use o espaço abaixo! É um ótimo momento para agradecer a essas pessoas que acreditaram em você!'
+                            'If you want to add some information in this post, use the space below! It's a great time to thank those people who believed in you.!'
                         ),
                         m("textarea.height-mini.text-field.w-input[placeholder='Digite sua mensagem (opcional)']", {
                             value: args.message(),
@@ -39,7 +39,7 @@ const deliverContributionModalContent = {
                     m('.w-col.w-col-1'),
                     m('.w-col.w-col-10',
                         m('.fontsize-small.fontweight-semibold.u-marginbottom-20.u-text-center',
-                            'Você confirma que a recompensa dos apoios selecionados foram enviadas?'
+                            'You confirm that the reward for the selected supports has been sent?'
                         )
                     ),
                     m('.w-col.w-col-1')
@@ -57,7 +57,7 @@ const deliverContributionModalContent = {
                         m('a.btn.btn-medium.btn-terciary.w-button', {
                             onclick: args.displayModal.toggle
                         },
-                            'Voltar'
+                            'Come back'
                         )
                     ),
                     m('.w-col.w-col-1')

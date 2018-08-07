@@ -65,14 +65,14 @@ const menuProfile = {
                                 m('.w-col.w-col-12',
                                     [
                                         m('.fontweight-semibold.fontsize-smaller.u-marginbottom-10',
-                                            'Meu histórico'
+                                            'My history'
                                         ),
                                         m('ul.w-list-unstyled.u-marginbottom-20',
                                             [
                                                 m('li.lineheight-looser',
                                                   m(`a.alt-link.fontsize-smaller[href='/pt/users/${user.id}/edit#balance']`,
                                                     m('span', [
-                                                        'Saldo ',
+                                                        'Balance ',
                                                         (ctrl.userBalance() > 0 ? m('span.fontcolor-secondary',
                                                           `R$ ${h.formatNumber(ctrl.userBalance(), 2, 3)}`) : ''),
                                                     ])
@@ -80,44 +80,44 @@ const menuProfile = {
                                                  ),
                                                 m('li.lineheight-looser',
                                                     m(`a.alt-link.fontsize-smaller[href='/pt/users/${user.id}/edit#contributions']`,
-                                                        'Histórico de apoio'
+                                                        'Support history'
                                                     )
                                                 ),
                                                 m('li.lineheight-looser',
                                                   m(`a.alt-link.fontsize-smaller[href='/pt/users/${user.id}/edit#projects']`,
-                                                    'Projetos criados'
+                                                    'Projects Created'
                                                    )
                                                  ),
                                                 m('li.w-hidden-main.w-hidden-medium.lineheight-looser',
                                                     m(`a.alt-link.fontsize-smaller[href='/pt/users/${user.id}/edit#projects']`,
-                                                        'Projetos criados'
+                                                        'Projects Created'
                                                     )
                                                  )
                                             ]
                                         ),
                                         m('.fontweight-semibold.fontsize-smaller.u-marginbottom-10',
-                                            'Configurações'
+                                            'settings'
                                         ),
                                         m('ul.w-list-unstyled.u-marginbottom-20',
                                             [
                                                 m('li.lineheight-looser',
                                                   m('a.alt-link.fontsize-smaller[href=\'/connect-facebook/\']',
-                                                    'Encontre amigos'
+                                                    'Find friends'
                                                    ),
                                                  ),
                                                 m('li.lineheight-looser',
                                                     m(`a.alt-link.fontsize-smaller[href='/pt/users/${user.id}/edit#about_me']`,
-                                                        'Perfil público'
+                                                        'Public profile'
                                                     )
                                                 ),
                                                 m('li.lineheight-looser',
                                                     m(`a.alt-link.fontsize-smaller[href='/pt/users/${user.id}/edit#notifications']`,
-                                                        'Notificações'
+                                                        'Notifications'
                                                     )
                                                 ),
                                                 m('li.lineheight-looser',
                                                     m(`a.alt-link.fontsize-smaller[href='/pt/users/${user.id}/edit#settings']`,
-                                                        'Dados cadastrais'
+                                                        'Registration data'
                                                     )
                                                 )
                                             ]
@@ -130,37 +130,37 @@ const menuProfile = {
                                             [
                                                 m('li.lineheight-looser',
                                                     m('a.alt-link.fontsize-smaller[href=\'/pt/new-admin#/users\']',
-                                                        'Usuários'
+                                                        'Users'
                                                     )
                                                 ),
                                                 m('li.lineheight-looser',
                                                     m('a.alt-link.fontsize-smaller[href=\'/pt/new-admin\']',
-                                                        'Apoios'
+                                                        'Support'
                                                     )
                                                 ),
                                                 m('li.lineheight-looser',
                                                   m('a.alt-link.fontsize-smaller[href=\'/pt/new-admin#/balance-transfers\']',
-                                                    'Saques'
+                                                    'Withdrawals'
                                                    )
                                                  ),
                                                 m('li.lineheight-looser',
                                                     m('a.alt-link.fontsize-smaller[href=\'/pt/admin/financials\']',
-                                                        'Rel. Financeiros'
+                                                        'Financial Relation'
                                                     )
                                                 ),
                                                 m('li.lineheight-looser',
                                                     m('a.alt-link.fontsize-smaller[href=\'/pt/new-admin#/projects\']',
-                                                        'Admin projetos'
+                                                        'Admin projects'
                                                     )
                                                 ),
                                                 m('li.lineheight-looser',
                                                   m('a.alt-link.fontsize-smaller[href=\'/pt/new-admin#/subscriptions\']',
-                                                    'Admin assinaturas'
+                                                    'Admin signatures'
                                                    )
                                                  ),
                                                 m('li.lineheight-looser',
                                                   m('a.alt-link.fontsize-smaller[href=\'/pt/new-admin#/notifications\']',
-                                                    'Admin notificações'
+                                                    'Admin notifications'
                                                    )
                                                 ),
                                                 m('li.lineheight-looser',
@@ -170,24 +170,24 @@ const menuProfile = {
                                                 )
                                             ]
                                         ) : '',
-                                        m('.fontsize-mini', 'Seu e-mail de cadastro é: '),
+                                        m('.fontsize-mini', 'Your registration email is: '),
                                         m('.fontsize-smallest.u-marginbottom-20', [
                                             m('span.fontweight-semibold', `${user.email} `),
-                                            m(`a.alt-link[href='/pt/users/${user.id}/edit#about_me']`, 'alterar e-mail')
+                                            m(`a.alt-link[href='/pt/users/${user.id}/edit#about_me']`, 'Change e-mail')
                                         ]),
                                         m('.divider.u-marginbottom-20'),
                                         m('a.alt-link[href=\'/pt/logout\']',
-                                            'Sair'
+                                            'Get out'
                                         )
                                     ]
                                 ),
                                 // m(`.w-col.w-col-4.w-hidden-small.w-hidden-tiny`,
                                 //    [
                                 //        m(`.fontweight-semibold.fontsize-smaller.u-marginbottom-10`,
-                                //            `Projetos apoiados`
+                                //            `Support projects`
                                 //        ),
                                 //        m(`ul.w-list-unstyled.u-marginbottom-20`, ctrl.contributedProjects() ?
-                                //            _.isEmpty(ctrl.contributedProjects) ? 'Nenhum projeto.' :
+                                //            _.isEmpty(ctrl.contributedProjects) ? 'No project.' :
                                 //            m.component(quickProjectList, {
                                 //                projects: m.prop(_.map(ctrl.contributedProjects(), (contribution) => {
                                 //                    return {
@@ -201,22 +201,22 @@ const menuProfile = {
                                 //                })),
                                 //                loadMoreHref: '/pt/users/${user.id}/edit#contributions',
                                 //                ref: 'user_menu_my_contributions'
-                                //            }) : 'carregando...'
+                                //            }) : 'Loading...'
                                 //        )
                                 //    ]
                                 // ),
                                 // m(`.w-col.w-col-4.w-hidden-small.w-hidden-tiny`,
                                 //    [
                                 //        m(`.fontweight-semibold.fontsize-smaller.u-marginbottom-10`,
-                                //            `Projetos criados`
+                                //            `Projects Created`
                                 //        ),
                                 //        m(`ul.w-list-unstyled.u-marginbottom-20`, ctrl.latestProjects() ?
-                                //            _.isEmpty(ctrl.latestProjects) ? 'Nenhum projeto.' :
+                                //            _.isEmpty(ctrl.latestProjects) ? 'No project.' :
                                 //            m.component(quickProjectList, {
                                 //                projects: ctrl.latestProjects,
                                 //                loadMoreHref: '/pt/users/${user.id}/edit#contributions',
                                 //                ref: 'user_menu_my_projects'
-                                //            }) : 'carregando...'
+                                //            }) : 'Loading...'
                                 //        )
                                 //    ]
                                 // )

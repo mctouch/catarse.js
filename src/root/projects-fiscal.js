@@ -104,7 +104,7 @@ const projectsFiscal = {
                                     ]),
                                     m('.card.u-radius.u-marginbottom-20', [
                                         m('span.fontweight-semibold',
-                                            m.trust('Atenção:')
+                                            m.trust('Attention:')
                                         ),
                                         m.trust(window.I18n.t('doc_download_explanation', fiscalScope()))
                                     ]),
@@ -112,7 +112,7 @@ const projectsFiscal = {
                                         (idx > 0 ? m('li.divider.u-marginbottom-10') : ''),
                                         m('li.fontsize-smaller.u-marginbottom-10',
                                             m('div', [
-                                                'Informe de Rendimentos -',
+                                                'Report income -',
                                                 m.trust('&nbsp;'),
                                                 m(`a.alt-link[href='/projects/${project.project_id}/inform/${inform}']`,
                                                     inform
@@ -125,7 +125,7 @@ const projectsFiscal = {
                                         (idx > 0 || !_.isEmpty(projectFiscalData.informs) ? m('li.divider.u-marginbottom-10') : ''),
                                         m('li.fontsize-smaller.u-marginbottom-10',
                                             m('div', [
-                                                'Nota de Débito -',
+                                                'Debit note -',
                                                 m.trust('&nbsp;'),
                                                 m(`a.alt-link[href='/projects/${project.project_id}/debit_note/${note}']`,
                                                     note.replace(/^(\d\d\d\d)(\d\d)(\d\d)$/, '$3/$2/$1')

@@ -36,17 +36,17 @@ const userCard = {
                         user.address_city
                     ),
                     m('.fontsize-smallest',
-                        `${h.pluralize(user.total_published_projects, ' projeto', ' projetos')} criados`
+                        `${h.pluralize(user.total_published_projects, ' project', ' home')} created`
                     ),
                     m('.fontsize-smallest',
-                        `apoiou ${h.pluralize(user.total_contributed_projects, ' projeto', ' projetos')}`
+                        `supported ${h.pluralize(user.total_contributed_projects, ' project', ' home')}`
                     )
                 ])
             ]),
             m('.project-author-contacts', [
                 m('ul.w-list-unstyled.fontsize-smaller.fontweight-semibold', [
                     (!_.isEmpty(user.facebook_link) ? m('li', [
-                        m(`a.link-hidden[itemprop="url"][href="${user.facebook_link}"][target="_blank"]`, 'Perfil no Facebook')
+                        m(`a.link-hidden[itemprop="url"][href="${user.facebook_link}"][target="_blank"]`, 'Profile not Facebook')
                     ]) : ''), (!_.isEmpty(user.twitter_username) ? m('li', [
                         m(`a.link-hidden[itemprop="url"][href="https://twitter.com/${user.twitter_username}"][target="_blank"]`, 'Perfil no Twitter')
                     ]) : ''),
@@ -60,7 +60,7 @@ const userCard = {
                 content: contactModalC
             }) : ''),
             m(UserFollowBtn, { follow_id: user.id, following: user.following_this_user, enabledClass: '.btn.btn-medium.btn-message.u-marginbottom-10', disabledClass: '.btn.btn-medium.btn-message.u-marginbottom-10' }),
-            (!_.isEmpty(user.email) ? m('a.btn.btn-medium.btn-message[href=\'javascript:void(0);\']', { onclick: ctrl.displayModal.toggle }, 'Enviar mensagem') : '')
+            (!_.isEmpty(user.email) ? m('a.btn.btn-medium.btn-message[href=\'javascript:void(0);\']', { onclick: ctrl.displayModal.toggle }, 'Send Message') : '')
         ]));
     }
 };

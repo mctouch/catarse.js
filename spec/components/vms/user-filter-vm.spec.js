@@ -12,8 +12,8 @@ describe('admin.userFilterVM', function() {
 
   describe("full_text_index.toFilter", function() {
     it("should remove all diacritics to send filter", function() {
-      vm.full_text_index('rémoção dos acêntüs');
-      expect(vm.full_text_index.toFilter()).toEqual('remocao dos acentus');
+      vm.full_text_index('retraction of the accents');
+      expect(vm.full_text_index.toFilter()).toEqual('removal of acentus');
     });
   });
 });

@@ -28,10 +28,10 @@ const surveyCreatePreview = {
                         m('.w-col.w-col-2'),
                         m('.w-col.w-col-8', [
                             m('.fontsize-larger.fontweight-semibold.lineheight-looser',
-                                'Revise o questionário'
+                                'Review the questionnaire'
                             ),
                             m('.fontsize-base',
-                                'Os seus apoiadores irão receber um link para o questionário abaixo por email. Veja se está tudo correto antes de enviá-lo!'
+                                'Your supporters will receive a link to the questionnaire below by email. See if everything is correct before sending it!'
                             )
                         ]),
                         m('.w-col.w-col-2')
@@ -49,20 +49,20 @@ const surveyCreatePreview = {
                                 (args.confirmAddress ?
                                 m('.u-marginbottom-30.w-form', [
                                     m('.fontcolor-secondary.fontsize-base.fontweight-semibold',
-                                        'Endereço de entrega da recompensa'
+                                        'Reward delivery address'
                                     ),
                                     m('.fontcolor-secondary.fontsize-smaller.u-marginbottom-30',
-                                        'Para onde Nome do Realizador deve enviar sua recompensa quando estiver pronta.'
+                                        'To where Directors name should send your reward when you are ready.'
                                     ),
                                     m('form', [
                                         m('.w-row', [
                                             m('.w-sub-col.w-col.w-col-6', [
                                                 m('label.field-label.fontweight-semibold',
-                                                    'País / Country'
+                                                    'country / Country'
                                                 ),
                                                 m('select.positive.text-field.w-select', [
                                                     m("option[value='']",
-                                                        'Selecione...'
+                                                        'Select...'
                                                     )
                                                 ])
                                             ]),
@@ -75,26 +75,26 @@ const surveyCreatePreview = {
                                         ]),
                                         m('div', [
                                             m('label.field-label.fontweight-semibold',
-                                                'Rua'
+                                                'Street'
                                             ),
                                             m("input.positive.text-field.w-input[type='email']")
                                         ]),
                                         m('.w-row', [
                                             m('.w-sub-col.w-col.w-col-4', [
                                                 m('label.field-label.fontweight-semibold',
-                                                    'Número'
+                                                    'Number'
                                                 ),
                                                 m("input.positive.text-field.w-input[type='email']")
                                             ]),
                                             m('.w-sub-col.w-col.w-col-4', [
                                                 m('label.field-label.fontweight-semibold',
-                                                    'Complemento'
+                                                    'Complement'
                                                 ),
                                                 m("input.positive.text-field.w-input[type='email']")
                                             ]),
                                             m('.w-col.w-col-4', [
                                                 m('label.field-label.fontweight-semibold',
-                                                    'Bairro'
+                                                    'Neighborhood'
                                                 ),
                                                 m("input.positive.text-field.w-input[type='email']")
                                             ])
@@ -108,17 +108,17 @@ const surveyCreatePreview = {
                                             ]),
                                             m('.w-sub-col.w-col.w-col-4', [
                                                 m('label.field-label.fontweight-semibold',
-                                                    'Cidade'
+                                                    'City'
                                                 ),
                                                 m("input.positive.text-field.w-input[type='email']")
                                             ]),
                                             m('.w-col.w-col-4', [
                                                 m('label.field-label.fontweight-semibold',
-                                                    'Estado'
+                                                    'State'
                                                 ),
                                                 m('select.positive.text-field.w-select', [
                                                     m("option[value='']",
-                                                        'Selecione...'
+                                                        'Select...'
                                                     )
                                                 ])
                                             ])
@@ -126,7 +126,7 @@ const surveyCreatePreview = {
                                         m('.w-row', [
                                             m('.w-sub-col.w-col.w-col-6', [
                                                 m('label.field-label.fontweight-semibold',
-                                                    'Telefone'
+                                                    'telephone'
                                                 ),
                                                 m("input.positive.text-field.w-input[type='email']")
                                             ]),
@@ -162,7 +162,7 @@ const surveyCreatePreview = {
                                         question.description
                                     ),
                                     m('form',
-                                        m("input.positive.text-field.w-input[placeholder='Sua resposta'][type='text']")
+                                        m("input.positive.text-field.w-input[placeholder='Your answer'][type='text']")
                                     )
                                 ]))
                             ])
@@ -177,7 +177,7 @@ const surveyCreatePreview = {
                     m('.w-col.w-col-8', [
                         m('.u-marginbottom-30.u-text-center', [
                             m('.fontsize-small.fontweight-semibold.u-marginbottom-10',
-                                `O questionário acima será enviado para os ${args.reward.paid_count} apoiadores da recompensa`
+                                `The above questionnaire will be sent to ${args.reward.paid_count} reward supporters`
                             ),
                             m(rewardCardBig, { reward: args.reward })
                         ]),
@@ -186,7 +186,7 @@ const surveyCreatePreview = {
                                 'OBS:'
                             ),
                             m.trust('&nbsp;'),
-                            'As perguntas serão reenviadas automaticamente para aqueles que não responderem em até 4 dias. Caso os apoiadores continuem sem enviar as respostas, o questionário será reenviado mais duas vezes.'
+                            'Questions will automatically be resubmitted to those who do not respond within 4 days. If supporters continue without submitting responses, the questionnaire will be resent twice more.'
                         ])
                     ]),
                     m('.w-col.w-col-2')
@@ -200,12 +200,12 @@ const surveyCreatePreview = {
                             ),
                             ' ',
                             m.trust('&nbsp;'),
-                            'Enviar'
+                            'Submit'
                         ])
                     ),
                     m('.w-col.w-col-2',
                         m("a.btn.btn-large.btn-terciary[href='javascript:void(0);']", { onclick: ctrl.togglePreview },
-                            'Editar'
+                            'Edit'
                         )
                     ),
                     m('.w-col.w-col-3')

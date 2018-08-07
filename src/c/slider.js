@@ -7,7 +7,7 @@
  *     ...
  *     m.component(c.Slider, {
  *         slides: [m('slide1'), m('slide2'), m('slide3')],
- *         title: 'O que estão dizendo por aí...'
+ *         title: 'What are they saying there?...'
  *     })
  *     ...
  * }

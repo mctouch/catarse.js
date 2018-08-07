@@ -45,7 +45,7 @@ const projectGoalsBox = {
                   ]),
                   m('.fontsize-base.fontweight-semibold.u-marginbottom-20.w-hidden-small.w-hidden-tiny',
                     m('span',
-                        'Metas'
+                        'Goals'
                     )
                 )
               ]),
@@ -64,7 +64,7 @@ const projectGoalsBox = {
                     })
                 ),
                   m('.fontsize-smaller.fontweight-semibold.u-margintop-10',
-                    `R$${subscriptionData.amount_paid_for_valid_period} de R$${goals[currentGoalIndex()].value} por mês`
+                    `R$${subscriptionData.amount_paid_for_valid_period} de R$${goals[currentGoalIndex()].value} a month`
                 )
               ]),
               m('.fontsize-smaller', [

@@ -62,14 +62,14 @@ describe('PaymentStatus', () => {
 
         it('should return a boleto CSS class when contribution payment method is boleto', () => {
             let contribution = ContributionDetailMockery(1, {
-                payment_method: 'BoletoBancario'
+                payment_method: 'Bank slip'
             })[0];
             setController(contribution);
             expect(ctrl.paymentMethodClass()).toEqual(CSSboleto);
         });
         it('should return a credit card CSS class when contribution payment method is credit card', () => {
             let contribution = ContributionDetailMockery(1, {
-                payment_method: 'CartaoDeCredito'
+                payment_method: 'Credit card'
             })[0];
             setController(contribution);
             expect(ctrl.paymentMethodClass()).toEqual(CSScreditcard);
@@ -100,11 +100,11 @@ describe('PaymentStatus', () => {
             }));
         };
 
-        it('should return an HTML element describing a boleto when payment_method is boleto', () => {
-            expect(getOutput('BoletoBancario').has('#boleto-detail')).toBeTrue();
+        it('should return an HTML element describing a ticket when payment_method is ticket', () => {
+            expect(getOutput('Bank slip').has('#ticket-detail')).toBeTrue();
         });
         it('should return an HTML element describing a credit card when payment_method is credit card', () => {
-            expect(getOutput('CartaoDeCredito').has('#creditcard-detail')).toBeTrue();
+            expect(getOutput('Credit card').has('#creditcard-detail')).toBeTrue();
         });
     });
 });

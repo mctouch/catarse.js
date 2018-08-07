@@ -37,7 +37,7 @@ const projectUserCard = {
         }))];
         const userDetail = args.userDetails();
 
-        return m('#user-card', _.isEmpty(userDetail) ? 'carregando...' : m('.u-marginbottom-30.u-text-center-small-only', [
+        return m('#user-card', _.isEmpty(userDetail) ? 'Loading...' : m('.u-marginbottom-30.u-text-center-small-only', [
             (ctrl.displayModal() ? m.component(modalBox, {
                 displayModal: ctrl.displayModal,
                 content: contactModalC
@@ -67,9 +67,9 @@ const projectUserCard = {
                         }, userVM.displayName(userDetail))
                     ]),
                     (!_.isNull(userDetail.deactivated_at) ? '' : m('.fontsize-smallest', [
-                        h.pluralize(userDetail.total_published_projects, ' criado', ' criados'),
+                        h.pluralize(userDetail.total_published_projects, ' created', ' created'),
                         m.trust('&nbsp;&nbsp;|&nbsp;&nbsp;'),
-                        h.pluralize(userDetail.total_contributed_projects, ' apoiado', ' apoiados')
+                        h.pluralize(userDetail.total_contributed_projects, ' supported', ' supported')
                     ])),
                     (!_.isNull(userDetail.deactivated_at) ? '' : m('ul.w-hidden-tiny.w-hidden-small.w-list-unstyled.fontsize-smaller.fontweight-semibold.u-margintop-20.u-marginbottom-20', [
                         (!_.isEmpty(userDetail.facebook_link) ? m('li', [
@@ -80,7 +80,7 @@ const projectUserCard = {
                                     lbl: userDetail.facebook_link,
                                     project: project()
                                 })
-                            }, 'Perfil no Facebook')
+                            }, 'Profile not Facebook')
                         ]) : ''), (!_.isEmpty(userDetail.twitter_username) ? m('li', [
                             m(`a.link-hidden${args.isDark ? '.link-hidden-white' : ''}[itemprop="url"][href="https://twitter.com/${userDetail.twitter_username}"][target="_blank"]`, {
                                 onclick: h.analytics.event({
@@ -89,7 +89,7 @@ const projectUserCard = {
                                     lbl: userDetail.twitter_username,
                                     project: project()
                                 })
-                            }, 'Perfil no Twitter')
+                            }, 'Profile not Twitter')
                         ]) : ''),
                         _.map(userDetail.links, (link) => {
                             const parsedLink = h.parseUrl(link.link);
@@ -120,7 +120,7 @@ const projectUserCard = {
                                 lbl: userDetail.id,
                                 project: project()
                             }, ctrl.sendMessage)
-                        }, 'Contato')
+                        }, 'Contact')
                     ] : ''),
                     args.project().is_admin_role ?
                     m('p', userDetail.email) : ''

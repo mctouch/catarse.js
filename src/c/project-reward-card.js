@@ -41,9 +41,9 @@ const projectRewardCard = {
             const shippingFee = rewardVM.hasShippingOptions(vm.selectedReward()) ? vm.shippingFeeForCurrentReward(selectedDestination) : { value: 0 };
 
             if (!selectedDestination() && rewardVM.hasShippingOptions(vm.selectedReward())) {
-                vm.error('Por favor, selecione uma opção de frete válida.');
+                vm.error('Please select a valid freight option.');
             } else if (valueFloat < vm.selectedReward().minimum_value + shippingFee.value) {
-                vm.error(`O valor de apoio para essa recompensa deve ser de no mínimo R$${vm.selectedReward().minimum_value} ${projectVM.isSubscription(projectVM.currentProject()) ? '' : `+ frete R$${h.formatNumber(shippingFee.value, 2, 3)}`} `);
+                vm.error(`The support amount for this reward must be at least R $${vm.selectedReward().minimum_value} ${projectVM.isSubscription(projectVM.currentProject()) ? '' : `+ freight R$${h.formatNumber(shippingFee.value, 2, 3)}`} `);
             } else {
                 vm.error('');
                 const valueUrl = window.encodeURIComponent(String(valueFloat).replace('.', ','));
@@ -113,7 +113,7 @@ const projectRewardCard = {
             config: ctrl.isRewardOpened(reward) ? h.scrollTo() : Function.prototype
         }, [
             m('.u-marginbottom-20', [
-                m('.fontsize-base.fontweight-semibold', `R$ ${h.formatNumber(reward.minimum_value)} ou mais${isSub ? ' por mês' : ''}`)
+                m('.fontsize-base.fontweight-semibold', `R$ ${h.formatNumber(reward.minimum_value)} or more${isSub ? ' a month' : ''}`)
             ]),
             m('.fontsize-smaller.fontweight-semibold',
               reward.title
@@ -129,7 +129,7 @@ const projectRewardCard = {
             ctrl.isLongDescription() && ctrl.isRewardOpened() ? m('a[href="javascript:void(0);"].alt-link.fontsize-smallest.gray.link-more.u-marginbottom-20', {
                 onclick: () => ctrl.toggleDescriptionExtended(reward.id)
             }, [
-                ctrl.isRewardDescriptionExtended() ? 'menos ' : 'mais ',
+                ctrl.isRewardDescriptionExtended() ? 'less ' : 'more ',
                 m('span.fa.fa-angle-down', {
                     class: ctrl.isRewardDescriptionExtended() ? 'reversed' : ''
                 })
@@ -137,7 +137,7 @@ const projectRewardCard = {
             isSub ? null : m('.u-marginbottom-20.w-row', [
                 m('.w-col.w-col-6', !_.isEmpty(reward.deliver_at) ? [
                     m('.fontcolor-secondary.fontsize-smallest',
-                      m('span', 'Entrega prevista:')
+                      m('span', 'Expected delivery:')
                      ),
                     m('.fontsize-smallest',
                       h.momentify(reward.deliver_at, 'MMM/YYYY')
@@ -146,7 +146,7 @@ const projectRewardCard = {
                 m('.w-col.w-col-6', rewardVM.hasShippingOptions(reward) || reward.shipping_options === 'presential' ? [
                     m('.fontcolor-secondary.fontsize-smallest',
                       m('span',
-                        'Envio:'
+                        'Send:'
                        )
                      ),
                     m('.fontsize-smallest',
@@ -156,21 +156,21 @@ const projectRewardCard = {
             ]),
             reward.maximum_contributions > 0 ? [
                 (h.rewardSouldOut(reward) ? m('.u-margintop-10', [
-                    m('span.badge.badge-gone.fontsize-smaller', 'Esgotada')
+                    m('span.badge.badge-gone.fontsize-smaller', 'Out of stock')
                 ]) : m('.u-margintop-10', [
                     m('span.badge.badge-attention.fontsize-smaller', [
-                        m('span.fontweight-bold', 'Limitada'),
-                        project.open_for_contributions ? ` (${h.rewardRemaning(reward)} de ${reward.maximum_contributions} disponíveis)` : ''
+                        m('span.fontweight-bold', 'Limited'),
+                        project.open_for_contributions ? ` (${h.rewardRemaning(reward)} de ${reward.maximum_contributions} available)` : ''
                     ])
                 ]))
             ] : '',
             m('.fontcolor-secondary.fontsize-smallest.fontweight-semibold',
               h.pluralize.apply(
                   null,
-                  isSub ? [reward.paid_count, ' assinante', ' assinantes'] : [reward.paid_count, ' apoio', ' apoios'])
+                  isSub ? [reward.paid_count, ' subscriber', ' subscribers'] : [reward.paid_count, ' support', ' supports'])
              ),
             reward.waiting_payment_count > 0 ? m('.maximum_contributions.in_time_to_confirm.clearfix', [
-                m('.pending.fontsize-smallest.fontcolor-secondary', h.pluralize(reward.waiting_payment_count, ' apoio em prazo de confirmação', ' apoios em prazo de confirmação.'))
+                m('.pending.fontsize-smallest.fontcolor-secondary', h.pluralize(reward.waiting_payment_count, ' support in confirmation period', ' support in confirmation period.'))
             ]) : '',
             project.open_for_contributions && !h.rewardSouldOut(reward) && !args.hasSubscription() ? [
                 ctrl.isRewardOpened() ? m('.w-form', [
@@ -180,7 +180,7 @@ const projectRewardCard = {
                         m('.divider.u-marginbottom-20'),
                         rewardVM.hasShippingOptions(reward) ? m('div', [
                             m('.fontcolor-secondary.u-marginbottom-10',
-                              'Local de entrega'
+                              'Local by delivery'
                              ),
                             m('select.positive.text-field.w-select', {
                                 onchange: m.withAttr('value', ctrl.selectDestination),
@@ -199,7 +199,7 @@ const projectRewardCard = {
                              )
                         ]) : '',
                         m('.fontcolor-secondary.u-marginbottom-10',
-                          `Valor do apoio${isSub ? ' mensal' : ''}`
+                          `Value of support${isSub ? ' monthly' : ''}`
                          ),
                         m('.w-row.u-marginbottom-20', [
                             m('.w-col.w-col-3.w-col-small-3.w-col-tiny-3',

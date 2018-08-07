@@ -49,13 +49,13 @@ const subscriptionStatusIcon = {
 
         return m('span', [
             m('span.fontsize-smaller', [
-                m(`span.fa.${statusClass[subscription.status] || 'Erro'}`,
+                m(`span.fa.${statusClass[subscription.status] || 'Error'}`,
                   ' '
                 ),
                 window.I18n.t(`status.${subscription.status}`, I18nScope())
             ]),
 	          shouldShowTransitionDate ? m('.fontcolor-secondary.fontsize-mini.fontweight-semibold.lineheight-tightest',
-                                                                         `em ${moment(subscription.transition_date).format('DD/MM/YYYY')}`
+                                                                         `in ${moment(subscription.transition_date).format('DD/MM/YYYY')}`
                                                                         ) : ''
         ]);
     }

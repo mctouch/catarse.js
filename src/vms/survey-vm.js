@@ -10,10 +10,10 @@ const openQuestionType = 'open',
         description: '',
         survey_question_choices_attributes: m.prop([
             {
-                option: 'opção 1'
+                option: 'option 1'
             },
             {
-                option: 'opção 2'
+                option: 'option 2'
             }
         ]),
         toggleDropdown: h.toggleProp(false, true)

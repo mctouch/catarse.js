@@ -31,7 +31,7 @@ const projectsExplore = {
             chosenRecommender = m.prop(null),
             currentMode = m.prop(filtersMap.all_modes),
             selectedCategory = m.prop({
-                name: 'Todas as categorias',
+                name: 'All categories',
                 id: null
             }),
             defaultFilter = h.paramByName('filter') || 'all',
@@ -47,7 +47,7 @@ const projectsExplore = {
                 if (_.contains(availableRecommenders, newFilter)) {
                     history.replaceState(null, null, ' ');
                     selectedCategory({
-                        name: 'Todas as categorias',
+                        name: 'All categories',
                         id: null
                     });
                 }
@@ -297,14 +297,14 @@ const projectsExplore = {
             m('.hero-search.explore', [
                 m('.u-text-center.w-container', [
                     m('.explore-text-fixed',
-                        'Quero ver'
+                        'I want to see'
                     ),
                     m('.explore-filter-wrapper', [
                         m('.explore-span-filter', {
                             onclick: ctrl.modeToggle.toggle
                         }, [
                             m('.explore-mobile-label',
-                                'MODALIDADE'
+                                'MODALITY'
                             ),
                             m('.inline-block',
                                 ctrl.currentMode().title
@@ -319,7 +319,7 @@ const projectsExplore = {
                                 },
                                 class: ctrl.currentMode() === null ? 'selected' : ''
                             },
-                                'Todos os projetos'
+                                'All Projects'
                             ),
                             m("a.explore-filter-link[href=\'javascript:void(0);\']", {
                                 onclick: () => {
@@ -327,7 +327,7 @@ const projectsExplore = {
                                 },
                                 class: ctrl.currentMode() === 'not_sub' ? 'selected' : ''
                             },
-                                'Projetos pontuais'
+                                'Point projects'
                             ),
                             m("a.explore-filter-link[href=\'javascript:void(0);\']", {
                                 onclick: () => {
@@ -335,7 +335,7 @@ const projectsExplore = {
                                 },
                                 class: ctrl.currentMode() === 'sub' ? 'selected' : ''
                             },
-                                'Projetos recorrentes'
+                                'Recurring projects'
                             ),
                             m('a.modal-close.fa.fa-close.fa-lg.w-hidden-main.w-hidden-medium.w-inline-block', {
                                 onclick: ctrl.modeToggle.toggle
@@ -343,14 +343,14 @@ const projectsExplore = {
                         ])
                     ]),
                     m('.explore-text-fixed',
-                        'de'
+                        'from'
                     ),
                     m('.explore-filter-wrapper', [
                         m('.explore-span-filter', {
                             onclick: ctrl.categoryToggle.toggle
                         }, [
                             m('.explore-mobile-label',
-                                'CATEGORIA'
+                                'CATEGORY'
                             ),
                             m('.inline-block',
                                 ctrl.selectedCategory().name
@@ -365,13 +365,13 @@ const projectsExplore = {
                                         onclick: () => {
                                             ctrl.categoryToggle.toggle();
                                             ctrl.selectedCategory({
-                                                name: 'Todas as categorias',
+                                                name: 'All categories',
                                                 id: null
                                             });
                                         },
                                         class: ctrl.selectedCategory().id === null ? 'selected' : ''
                                     },
-                                        'Todas as categorias'
+                                        'All categories'
                                     ),
                                     categoryColumn(ctrl.categories(), 0, Math.floor(_.size(ctrl.categories()) / 2))
                                 ]),
@@ -386,14 +386,14 @@ const projectsExplore = {
                     ]),
                     ctrl.showFilter() ? [
                         m('.explore-text-fixed',
-                            'que são'
+                            'that are'
                         ),
                         m('.explore-filter-wrapper', [
                             m('.explore-span-filter', {
                                 onclick: ctrl.filterToggle.toggle
                             }, [
                                 m('.explore-mobile-label',
-                                    'FILTRO'
+                                    'FILTER'
                                 ),
                                 m('.inline-block',
                                     ctrl.currentFilter().nicename
@@ -424,7 +424,7 @@ const projectsExplore = {
                     m('.w-row', [
                         m('.w-col.w-col-9.w-col-tiny-9.w-col-small-9',
                             m('.fontsize-large',
-                                `${ctrl.projects().total()} projetos encontrados`
+                                `${ctrl.projects().total()} found projects`
                             )
                         ),
                         m('.w-col.w-col-3.w-col-tiny-3.w-col-small-3')
@@ -490,7 +490,7 @@ const projectsExplore = {
                                     ctrl.projects().nextPage();
                                     return false;
                                 }
-                            }, 'Carregar mais')
+                            }, 'Load more')
                         ]),
                     ])
                 ])
@@ -503,7 +503,7 @@ const projectsExplore = {
                             ctrl.externalLinkCategories[categoryId()].icon : 'https://daks2k3a4ib2z.cloudfront.net/54b440b85608e3f4389db387/56f4414d3a0fcc0124ec9a24_icon-launch-explore.png'
                     }),
                     m('h2.fontsize-larger.u-marginbottom-60',
-                        hasSpecialFooter ? ctrl.externalLinkCategories[categoryId()].title : 'Lance sua campanha no Catarse!'),
+                        hasSpecialFooter ? ctrl.externalLinkCategories[categoryId()].title : 'Launch your Trend campaign!'),
                     m('.w-row', [
                         m('.w-col.w-col-4.w-col-push-4', [
                             hasSpecialFooter ?
@@ -512,7 +512,7 @@ const projectsExplore = {
                             }, ctrl.externalLinkCategories[categoryId()].cta) :
                             m('a.w-button.btn.btn-large', {
                                 href: '/start?ref=ctrse_explore'
-                            }, 'Aprenda como')
+                            }, 'Learn how')
                         ])
                     ])
                 ])

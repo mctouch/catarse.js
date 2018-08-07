@@ -19,7 +19,7 @@ describe('adminReward', () => {
             });
 
             it('should render "no reward" text when reward_id is null', () => {
-                $output.should.contain('Apoio sem recompensa');
+                $output.should.contain('Support without reward');
             });
         });
         describe("when contribution has reward", function() {

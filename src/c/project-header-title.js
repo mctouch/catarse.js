@@ -14,7 +14,7 @@ const projectHeaderTitle = {
                 args.children,
                 m('h1.u-text-center.fontsize-larger.fontweight-semibold.project-name[itemprop="name"]', h.selfOrEmpty(project().name || project().project_name)),
                 !isSub ? m('h2.u-text-center.fontsize-base.lineheight-looser[itemprop="author"]', [
-                    'por ',
+                    'by ',
                     project().user ? userVM.displayName(project().user) : (project().owner_public_name ? project().owner_public_name : project().owner_name)
                 ]) : m('.w-row',
                     m('.w-col.w-col-6.w-col-push-3',

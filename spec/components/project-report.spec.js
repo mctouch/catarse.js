@@ -18,15 +18,15 @@ describe('ProjectReport', () => {
         });
 
         it('Should render normal report', () => {
-            expect($projectReportMountedComponent.contains('Este projeto desrespeita nossas regras.')).toBeTrue();
+            expect($projectReportMountedComponent.contains('This project violates our rules..')).toBeTrue();
         });
 
         it('Should render intellectual property violation complaint form', () => {
-            expect($projectReportMountedComponent.contains('Este projeto infringe propriedade intelectual')).toBeTrue();
+            expect($projectReportMountedComponent.contains('This project infringes intellectual property')).toBeTrue();
         });
 
         it('Should render reward not received', () => {
-            expect($projectReportMountedComponent.contains('Apoiei este projeto e ainda não recebi a recompensa')).toBeTrue();
+            expect($projectReportMountedComponent.contains('I supported this project and have not received the reward yet')).toBeTrue();
         });
     });
 });

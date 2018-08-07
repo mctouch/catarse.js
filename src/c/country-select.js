@@ -42,7 +42,7 @@ const countrySelect = {
         return m('.u-marginbottom-30.w-row', [
             m('.w-col.w-col-6', [
                 m('.field-label.fontweight-semibold', [
-                    'País / ',
+                    'country / ',
                     m('em',
                         'Country'
                     ),

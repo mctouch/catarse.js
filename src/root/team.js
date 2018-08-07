@@ -9,7 +9,7 @@ const team = {
                 m('.w-container.u-text-center', [
                     m('img.icon-hero[src="https://catarse.me/assets/logo-yellow.png"]'),
                     m('.u-text-center.u-marginbottom-20.fontsize-largest',
-                      'Conheça nosso time')
+                      'Meet Our Team')
                 ])
             ]),
             m.component(teamTotal),

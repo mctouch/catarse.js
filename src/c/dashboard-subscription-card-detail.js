@@ -41,7 +41,7 @@ const dashboardSubscriptionCardDetail = {
                     m('.w-col.w-col-12', [
                         m('.u-marginbottom-20.card.u-radius', [
                             m('.fontsize-small.fontweight-semibold.u-marginbottom-10',
-                                'Detalhes da assinatura'
+                                'Signature Details'
                             ),
                             m('.fontsize-smaller', [
                                 m('div', [
@@ -54,30 +54,30 @@ const dashboardSubscriptionCardDetail = {
                                 ]),
                                 m('div', [
                                     m('span.fontcolor-secondary',
-                                        'Valor da assinatura: '
+                                        'Subscription Value: '
                                     ),
                                     `R$${subscription.amount / 100}`
                                 ]),
                                 m('div', [
                                     m('span.fontcolor-secondary',
-                                        'Recompensa: '
-                                    ), !_.isEmpty(reward) ? `R$${reward.minimum_value} - ${reward.title} - ${reward.description.substring(0, 90)}(...)` : 'Sem recompensa'
+                                        'Reward: '
+                                    ), !_.isEmpty(reward) ? `R$${reward.minimum_value} - ${reward.title} - ${reward.description.substring(0, 90)}(...)` : 'No reward'
                                 ]),
                                 m('div', [
                                     m('span.fontcolor-secondary',
-                                        'Meio de pagamento: '
+                                        'Means of payment: '
                                     ),
                                     m(paymentMethodIcon, { subscription })
                                 ]),
                                 m('div', [
                                     m('span.fontcolor-secondary',
-                                        'Tempo de assinatura: '
+                                        'Subscription Time: '
                                     ),
-                                    `${subscription.paid_count} meses`
+                                    `${subscription.paid_count} months`
                                 ]),
                                 m('.fontsize-base.u-margintop-10', [
                                     m('span.fontcolor-secondary',
-                                        'Total apoiado: '
+                                        'Total supported: '
                                     ),
                                     m.trust('&nbsp;'),
                                     m('span.fontweight-semibold.text-success',
@@ -88,21 +88,21 @@ const dashboardSubscriptionCardDetail = {
                         ]),
                         m('.u-marginbottom-20.card.u-radius', [
                             m('.fontsize-small.fontweight-semibold.u-marginbottom-10',
-                                'Perfil'
+                                'Profile'
                             ),
                             m('.fontsize-smaller', [
                                 m('div',
                                     subscription.user_email
                                 ),
                                 m('div',
-                                    `Conta no Catarse desde ${moment(user.created_at).format('MMMM YYYY')}`
+                                    `Account is not credited since ${moment(user.created_at).format('MMMM YYYY')}`
                                 ),
                                 m('.u-marginbottom-10', [
-                                    `Apoiou ${user.total_contributed_projects} projetos `,
+                                    `Supported ${user.total_contributed_projects} home `,
                                     m.trust('&nbsp;'),
                                     '| ',
                                     m.trust('&nbsp;'),
-                                    `Criou ${user.total_published_projects} projetos`
+                                    `Created ${user.total_published_projects} home`
                                 ]),
                                 (ctrl.displayModal() ? m.component(modalBox, {
                                     displayModal: ctrl.displayModal,
@@ -110,7 +110,7 @@ const dashboardSubscriptionCardDetail = {
                                 }) : ''),
                                 (m('a.btn.btn-small.btn-inline.btn-edit.u-marginright-10.w-button', {
                                     onclick: ctrl.displayModal.toggle
-                                }, 'Enviar mensagem')),
+                                }, 'Send Message')),
                                 m(UserFollowBtn, {
                                     follow_id: user.id,
                                     following: user.following_this_user,
@@ -122,7 +122,7 @@ const dashboardSubscriptionCardDetail = {
                         (user && user.address) ?
                             m('.u-marginbottom-20.card.u-radius', [
                                 m('.fontsize-small.fontweight-semibold.u-marginbottom-10',
-                                    'Endereço'
+                                    'Address'
                                 ),
                                 m('.fontsize-smaller', [
                                     m('div', [user.address.street, user.address.street_number, user.address.complementary].join(', ')),

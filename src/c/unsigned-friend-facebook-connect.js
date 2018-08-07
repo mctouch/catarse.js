@@ -19,12 +19,12 @@ const UnsignedFriendFacebookConnect = {
                 m('.card.card-big', [
                     m('.w-row', [
                         m('.w-col.w-col-8', [
-                            m('.fontsize-largest.u-marginbottom-20', 'Encontre projetos incríveis junto com seus amigos'),
-                            m('.fontsize-small', 'O universo do Catarse junto com a sua rede do Facebook te farão descobrir projetos incríveis!')
+                            m('.fontsize-largest.u-marginbottom-20', 'Find amazing projects with your friends'),
+                            m('.fontsize-small', 'The universe of Trend along with your Facebook network will make you discover incredible projects!')
                         ]),
                         m('.w-col.w-col-4', [
-                            m('a.w-button.btn.btn-fb.btn-large.u-margintop-30.u-marginbottom-10[href="/connect-facebook"]', 'Conecte seu facebook'),
-                            m('.fontsize-smallest.fontcolor-secondary.u-text-center', 'Nós nunca postaremos nada no facebook sem sua permissão')
+                            m('a.w-button.btn.btn-fb.btn-large.u-margintop-30.u-marginbottom-10[href="/connect-facebook"]', 'Connect your facebook'),
+                            m('.fontsize-smallest.fontcolor-secondary.u-text-center', 'We will never post anything on facebook without your permission')
                         ])
                     ])
                 ])

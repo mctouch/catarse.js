@@ -100,7 +100,7 @@ const adminNotifications = {
 								m('.w-form', [
     m('form', [
         m('.fontsize-larger.u-marginbottom-10.u-text-center',
-											'Notificações'
+											'Notifications'
 										),
 										(ctrl.loaderTemp() && !_.isEmpty(templatesCollection) ? h.loader() : m(
 											'select.medium.text-field.w-select', {
@@ -110,7 +110,7 @@ const adminNotifications = {
 													templatesCollection,
 													item => m('option', { value: item.label }, item.label)
 												);
-    maped.unshift(m("option[value='']", 'Selecione uma notificação'));
+    maped.unshift(m("option[value='']", 'Select a notification'));
     return maped;
 })())
 										)
@@ -165,7 +165,7 @@ const adminNotifications = {
                 m('label.fontsize-small', [
                     'Content',
                     m('a.alt-link.u-right',
-												'Ver variáveis'
+												'View variables'
 											)
                 ]),
                 m('textarea.positive.text-field.w-input[rows="20"]', {
@@ -181,7 +181,7 @@ const adminNotifications = {
     m('.w-col.w-col-6', [
         m('.fontsize-base.fontweight-semibold.u-marginbottom-20.u-text-center', [
             m('span.fa.fa-eye', ''),
-            'Visualização'
+            'Preview'
         ]),
         m('', m.trust(ctrl.renderedTemplate()))
     ])

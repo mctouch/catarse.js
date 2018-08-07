@@ -74,10 +74,10 @@ const projectReminder = {
 
               (project().in_reminder ? [
                   m('span.fa.fa-heart'),
-                  ' Lembrete ativo'
+                  ' Active Reminder'
               ] : [
                   m('span.fa.fa-heart-o'),
-                  ' Lembrar-me'
+                  ' Remember Me Forgot your password?'
               ])
             ),
 
@@ -86,7 +86,7 @@ const projectReminder = {
             }, [
                 (ctrl.l() ? h.loader() : (project().in_reminder ? m('span.fa.fa-heart') : m('span.fa.fa-heart-o')))
             ]), (ctrl.popNotification() ? m.component(popNotification, {
-                message: 'Ok, Vamos te mandar um lembrete por e-mail antes do fim da campanha!'
+                message: 'Ok, Let us send you an email reminder before the end of the campaign!'
             }) : '')
         ]);
     }

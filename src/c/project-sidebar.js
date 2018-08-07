@@ -31,7 +31,7 @@ const projectSidebar = {
                             if (progress <= parseInt(project().progress)) {
                                 progressBar.style.width = `${progress}%`;
                                 pledgedEl.innerText = `R$ ${h.formatNumber(pledged)}`;
-                                contributorsEl.innerText = `${parseInt(contributors)} pessoas`;
+                                contributorsEl.innerText = `${parseInt(contributors)} people`;
                                 el.innerText = `${progress}%`;
                                 pledged += pledgedIncrement;
                                 contributors += contributorsIncrement;
@@ -110,7 +110,7 @@ const projectSidebar = {
                         m('.u-marginbottom-20', [
                             m(`#pledged.${isSub ? 'fontsize-larger' : 'fontsize-largest'}.fontweight-semibold.u-text-center-small-only`, [
                                 `R$ ${pledged ? h.formatNumber(pledged) : '0'}`,
-                                isSub ? m('span.fontsize-large', ' por mês') : null
+                                isSub ? m('span.fontsize-large', ' a month') : null
                             ]),
                             isSub ? m('.fontsize-small.u-text-center-small-only', [
                                 window.I18n.t('subscribers_call', I18nScope()),
@@ -119,7 +119,7 @@ const projectSidebar = {
                                 : m('.fontsize-small.u-text-center-small-only', [
                                     window.I18n.t('contributors_call', I18nScope()),
                                     m('span#contributors.fontweight-semibold', window.I18n.t('contributors_count', I18nScope({ count: totalContributors }))),
-                                    (!project().expires_at && elapsed) ? ` em ${window.I18n.t(`datetime.distance_in_words.x_${elapsed.unit}`, { count: elapsed.total }, I18nScope())}` : ''
+                                    (!project().expires_at && elapsed) ? ` in ${window.I18n.t(`datetime.distance_in_words.x_${elapsed.unit}`, { count: elapsed.total }, I18nScope())}` : ''
                                 ])
                         ]),
                         m('.meter', [
@@ -130,7 +130,7 @@ const projectSidebar = {
                             })
                         ]),
                         isSub
-                            ? m('.fontsize-smaller.fontweight-semibold.u-margintop-10', `${progress ? parseInt(progress) : '0'}% de R$${subGoal.value} por mês`)
+                            ? m('.fontsize-smaller.fontweight-semibold.u-margintop-10', `${progress ? parseInt(progress) : '0'}% de R$${subGoal.value} a month`)
                             : m('.w-row.u-margintop-10', [
                                 m('.w-col.w-col-5.w-col-small-6.w-col-tiny-6', [
                                     m('.fontsize-small.fontweight-semibold.lineheight-tighter', `${progress ? parseInt(progress) : '0'}%`)
@@ -175,7 +175,7 @@ const projectSidebar = {
                 m('.u-marginbottom-30.u-text-center-small-only',
                     m(`button.btn.btn-inline.btn-medium.btn-terciary${projectVM.isSubscription(project) ? '.btn-terciary-negative' : ''}`, {
                         onclick: ctrl.displayShareBox.toggle
-                    }, 'Compartilhar este projeto')
+                    }, 'Share this project')
                 ),
                 ctrl.displayShareBox() ? m(projectShareBox, {
                     project,
