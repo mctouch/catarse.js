@@ -35,7 +35,7 @@ describe('ProjectRewardList', () => {
             });
 
             expect(output.find('.card-gone').length).toEqual(1);
-            expect(output.contains('Esgotada')).toEqual(true);
+            expect(output.contains('Out of stock')).toEqual(true);
         });
 
         it('should render card-reward when reward is not sould out', () => {
@@ -46,7 +46,7 @@ describe('ProjectRewardList', () => {
             });
 
             expect(output.find('.card-reward').length).toEqual(1);
-            expect(output.contains('Esgotada')).toEqual(false);
+            expect(output.contains('Out of stock')).toEqual(false);
         });
 
         it('should render card-reward stats when reward is limited and project is opened for contributions', () => {
@@ -59,10 +59,10 @@ describe('ProjectRewardList', () => {
             });
 
             expect(output.find('.card-reward').length).toEqual(1);
-            expect(output.contains('Limitada')).toEqual(true);
-            expect(output.contains('(3 de 10 disponíveis)')).toEqual(true);
-            expect(output.contains('2 apoios')).toEqual(true);
-            expect(output.contains('5 apoios em prazo de confirmação')).toEqual(true);
+            expect(output.contains('Limited')).toEqual(true);
+            expect(output.contains('(3 out of 10 available)')).toEqual(true);
+            expect(output.contains('2 supports')).toEqual(true);
+            expect(output.contains('5 support in confirmation period')).toEqual(true);
         });
 
         it('should render card-reward details', () => {
@@ -73,8 +73,8 @@ describe('ProjectRewardList', () => {
             });
 
             expect(output.find('.card-reward').length).toEqual(1);
-            expect(output.contains('R$ 20 ou mais')).toEqual(true);
-            expect(output.contains('Entrega prevista:')).toEqual(true);
+            expect(output.contains('$ 20 or more')).toEqual(true);
+            expect(output.contains('Expected delivery:')).toEqual(true);
             expect(output.contains(h.momentify(rewardDetail.deliver_at, 'MMM/YYYY'))).toEqual(true)
             expect(output.contains(rewardDetail.description)).toEqual(true);
         });

@@ -8,7 +8,7 @@ beforeAll(function(){
             data: {
                 profile_img_thumbnail: "bar_avatar",
                 name: "Foo",
-                city: 'Lorem',
+                city: 'lorem',
                 state: 'KJ',
                 total_contributed_projects: 1,
                 total_published_projects: 1

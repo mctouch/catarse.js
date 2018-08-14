@@ -6,7 +6,7 @@ beforeAll(function() {
       user_id: 405699,
       name: 'Ryane Leão',
       address: {
-          street: 'teste rua',
+          street: 'street test',
           street_number: '123',
           complementary: 'test complement',
           state: 'test state',

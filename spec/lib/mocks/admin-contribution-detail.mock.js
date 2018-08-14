@@ -29,7 +29,7 @@ beforeAll(function(){
         gateway_id : null,
         gateway_fee : null,
         gateway_data : {},
-        payment_method : 'desconhecido',
+        payment_method : 'unknown',
         project_state : 'successful',
         has_rewards : true,
         pending_at : '2015-01-16T17:25:56.611561',

@@ -3,11 +3,11 @@ beforeAll(function(){
         var attrs = attrs || {};
         var data = {
             user_id: 1,
-            bank_name: "Banco XX",
+            bank_name: "Bank XX",
             bank_code:"001",
             account: "11111",
             account_digit: "1",
-            account_type: "Corrente",
+            account_type: "Current",
             agency: "1111",
             agency_digit: "x",
             owner_name: "Owner name",

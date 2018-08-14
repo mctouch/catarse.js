@@ -5,17 +5,17 @@ beforeAll(function(){
         component: filterMain,
         data: {
           vm: m.prop(),
-          placeholder: 'Busque por projeto, email, Ids do usuário e do apoio...'
+          placeholder: 'Search by project, email, user and support ids ...'
         }
       },
       { //state
         component: filterDropdown,
         data: {
-          label: 'Com o estado',
+          label: 'With the status',
           name: 'state',
           vm: m.prop(),
           options: [
-            {value: '', option: 'Qualquer um'},
+            {value: '', option: 'Any'},
             {value: 'paid', option: 'paid'},
             {value: 'refused', option: 'refused'},
             {value: 'pending', option: 'pending'},
@@ -33,8 +33,8 @@ beforeAll(function(){
           name: 'gateway',
           vm: m.prop(),
           options: [
-            {value: '', option: 'Qualquer um'},
-            {value: 'Pagarme', option: 'Pagarme'},
+            {value: '', option: 'Any'},
+            {value: 'Pay me', option: 'Pay me'},
             {value: 'MoIP', option: 'MoIP'},
             {value: 'PayPal', option: 'PayPal'},
             {value: 'Credits', option: 'Créditos'}
@@ -44,7 +44,7 @@ beforeAll(function(){
       { //value
         component: filterNumberRange,
         data: {
-          label: 'Valores entre',
+          label: 'Values ​​between',
           first: m.prop(),
           last: m.prop()
         }
@@ -52,7 +52,7 @@ beforeAll(function(){
       { //created_at
         component: filterDateRange,
         data: {
-          label: 'Período do apoio',
+          label: 'Support period',
           first: m.prop(),
           last: m.prop()
         }

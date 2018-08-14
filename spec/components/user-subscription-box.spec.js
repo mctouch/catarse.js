@@ -9,12 +9,12 @@ describe('UserSubscriptionBox', () => {
         beforeAll(() => {
             subscriptionData = SubscriptionVersionMockery();
             paymentInfoData = PaymentInfoMockery({
-                "boleto_expiration_date": '2018-06-20T00:00:00'
+                "ticket_expiration_date": '2018-06-20T00:00:00'
             }); // generate with a fixed pass date to avoid yesterday fixed timestamp
             $subscriptionVersionWithNewDataShow = mq(m.component(userSubscriptionBox, {
                 subscription: _.extend({}, subscriptionData, {
-                    boleto_url: paymentInfoData.boleto_url,
-                    boleto_expiration_date: paymentInfoData.boleto_expiration_date,
+                    ticket_url: paymentInfoData.ticket_url,
+                    ticket_expiration_date: paymentInfoData.ticket_expiration_date,
                     payment_status: paymentInfoData.status
                 })
             }));
@@ -29,15 +29,15 @@ describe('UserSubscriptionBox', () => {
         });
 
         it('Should render new reward of the current paid subscription', () => {
-            expect($subscriptionVersionWithNewDataShow.contains('Notas')).toBeTrue(); 
+            expect($subscriptionVersionWithNewDataShow.contains('Notes')).toBeTrue(); 
         });
 
         it('Should render info about next charge', () => {
-            expect($subscriptionVersionWithNewDataShow.contains('As alterações destacadas entrarão em vigor na próxima cobrança')).toBeTrue();
+            expect($subscriptionVersionWithNewDataShow.contains('The highlighted changes will take effect on the next charge')).toBeTrue();
         });
 
         it('Should render generate second slip button', () => {
-            expect($subscriptionVersionWithNewDataShow.contains('Gerar segunda via')).toBeTrue();
+            expect($subscriptionVersionWithNewDataShow.contains('Generate duplicate')).toBeTrue();
         });
     });
 });

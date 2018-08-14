@@ -106,16 +106,16 @@ window.CatarseAnalytics = window.CatarseAnalytics || (function(){
       }
       var fromCatarse=request.referrer && /^https?:\/\/([^\\/]+\.)?catarse\.me/.test(request.referrer);
       if(fromCatarse) {
-        //Só pega o ultimo ref. Não atualiza utms...
-        o.ref = (request.query&&request.query.ref) || o.ref; //preferencia para a query.
+        //Just take the last ref. Do not update utms...
+        o.ref = (request.query&&request.query.ref) || o.ref; //preference for query.
       } else if(/*!fromCatarse && */ request.referrer || (!o._time || new Date().getTime()-o._time>10*60*1000/*10min*/)) {
         var m=request.referrer && request.referrer.match(/https?:\/\/([^\/\?#]+)/);
         var refDomain=(m && m[1]) || undefined;
         var query=request.query;
-        //se, e somente se, tem algum utm na query...
+        //if and only if it has some utm in the query...
         if(query && ['utm_campaign','utm_source','utm_medium','utm_content','utm_term'].some(function(p){
           return !!query[p];
-        })) {//então, substitui todos, mesmo os q nao tem, pois são um conjunto de informações...
+        })) {//so it replaces all of them, even if they do not, since they are a set of information ...
           o.domain  = refDomain;
           o.campaign=query.utm_campaign;
           o.source=  query.utm_source;
@@ -124,16 +124,16 @@ window.CatarseAnalytics = window.CatarseAnalytics || (function(){
           o.term=    query.utm_term;
         } else if (refDomain && !['domain','utm_campaign','utm_source','utm_medium','utm_content','utm_term'].some(function(p){
           return !!o[p];
-        })) {//se tem refDomain e não tem no origin algum utm ou domain anterior...
+        })) {//if it has refDomain and does not have in the origin some utm or previous domain...
           o.domain  = refDomain;
         }
 
         if(!o.campaign && query && query.ref) {
-          //nesse caso, como veio de outro dominio, sem utm params, mas com ref, assumimos q esse ref é um campaign.
+          //in this case, as it came from another domain, without utm params, but with ref, assume that this ref is a campaign.
           o.campaign = query.ref;
         }
       }
-      //fazemos o _time aqui por causa da verificação acima !o._time, indicando q foi criado agora.
+      //we do _time here because of the check up! o._time, indicating q was created now.
       o._time=new Date().getTime();
       cookie.set('ctrse_origin',JSON.stringify(o),180,'/',false,'.catarse.me');
       return o;
@@ -141,7 +141,7 @@ window.CatarseAnalytics = window.CatarseAnalytics || (function(){
   } catch(e) {
     console.error('[CatarseAnalytics] error',e);
   }
-  //Metodos semelhantes ao modulo "h"
+  //Similar methods to the module "h"
   function _getApiHost() {
     if(window.CatarseAnalyticsURL)
       return window.CatarseAnalyticsURL;
@@ -171,7 +171,7 @@ window.CatarseAnalytics = window.CatarseAnalytics || (function(){
   function _getProject() {
     if(_project)
       return _project;
-    var el = document.getElementById('project-show-root')||document.getElementById('project-header'),//pode não existir
+    var el = document.getElementById('project-show-root')||document.getElementById('project-header'),//may not exist
         data = el && (el.getAttribute('data-parameters')||el.getAttribute('data-stats'));
     if(data) {
       try {
@@ -187,7 +187,7 @@ window.CatarseAnalytics = window.CatarseAnalytics || (function(){
       try {
         var project = eventObj.project||_getProject(),
             user = eventObj.user||_getUser();
-        var ga = window.ga;//o ga tem q ser verificado aqui pq pode não existir na criaçaõ do DOM
+        var ga = window.ga;//the ga has to be checked here because it may not exist in DOM creation
         var gaTracker = (typeof ga==='function' && ga.getAll && ga.getAll() && ga.getAll()[0]) || null;
         ignoreGA = ignoreGA || typeof ga!=='function';
 
@@ -245,7 +245,7 @@ window.CatarseAnalytics = window.CatarseAnalytics || (function(){
         if(!ignoreGA) {
           //https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#the_send_method
           ga('send', 'event', eventObj.cat, eventObj.act, eventObj.lbl, eventObj.val, {
-            nonInteraction: eventObj.nonInteraction!==false,//default é true,e só será false se, e somente se, esse parametro for definido como false
+            nonInteraction: eventObj.nonInteraction!==false,//default is true, and will only be false if, and only if, that parameter is set to false
             transport: 'beacon'
           });
         }

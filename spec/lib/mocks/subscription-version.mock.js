@@ -33,7 +33,7 @@ beforeAll(function(){
                     "document_number": "12345678912"
                 },
                 "anonymous": false,
-                "payment_method": "boleto",
+                "payment_method": "ticket",
                 "is_international": false,
                 "credit_card_owner_document": null
             },
@@ -77,12 +77,12 @@ beforeAll(function(){
                 "is_international": false
             },
             "current_reward_data":{
-                "title": "Notas",
+                "title": "Notes",
                 "metadata": null,
                 "row_order": 4194304,
                 "current_ip": "127.0.0.1",
                 "deliver_at": "2018-04-01",
-                "description": "Mais notas",
+                "description": "More notes",
                 "minimum_value": 1000.0,
                 "shipping_options": "free",
                 "maximum_contributions": 0
@@ -94,13 +94,13 @@ beforeAll(function(){
                 "next_retry_at": null,
                 "status": 'paid',
                 "created_at":"2018-04-27T17:42:51.16365",
-                "payment_method": "boleto"
+                "payment_method": "ticket"
             },
             "last_paid_payment_data": {
                 "id":"95d8b23f-a088-4539-8803-35604ab53ed9",
                 "status": 'paid',
                 "created_at":"2018-04-27T17:42:51.16365",
-                "payment_method": "boleto"
+                "payment_method": "ticket"
             }
         };
         data = _.extend(data, attrs);

@@ -2,8 +2,8 @@ beforeAll(function(){
   ProjectDetailsMockery = function(attrs){
     var attrs = attrs || {};
     var data = {
-      name: "Histórias de Verdade",
-      headline: "Historinhas bíblicas para crianças",
+      name: "Truth Stories",
+      headline: "Bible stories for children",
       project_id: 6051,
       progress: 41,
       pledged: 5220.0,
@@ -19,8 +19,8 @@ beforeAll(function(){
       reminder_count: 23,
       remaining_time: {total: 22, unit: "days"},
       elapsed_time: {total: 20, unit: 'days'},
-      mode: 'aon',
-      user: {id: 123, name: "Lorem ipsum"},
+      mode: 'one',
+      user: {id: 123, name: "Lorem Ipsum"},
       video_embed_url: "//www.youtube.com/embed/6Klp834jk3M",
       video_url: "https://youtu.be/6Klp834jk3M",
       address: {

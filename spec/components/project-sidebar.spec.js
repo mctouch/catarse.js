@@ -72,7 +72,7 @@ describe('ProjectSidebar', () => {
                     in_reminder: true
                 });
 
-                expect(output.contains('Lembrete ativo')).toEqual(true);
+                expect(output.contains('Active Reminder')).toEqual(true);
                 expect(output.find('#project-reminder').length).toEqual(1);
             });
 
@@ -85,7 +85,7 @@ describe('ProjectSidebar', () => {
                     in_reminder: false
                 });
 
-                expect(output.contains('Lembrar-me')).toEqual(true);
+                expect(output.contains('Remember Me Forgot your password?')).toEqual(true);
                 expect(output.find('#project-reminder').length).toEqual(1);
             });
 
